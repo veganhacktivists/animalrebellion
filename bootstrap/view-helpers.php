@@ -15,7 +15,7 @@ use RelativeTime\RelativeTime;
 function icon(string $iconType, string $iconName)
 {
     $iconHtml = <<<HTML
-        <i class="icon fa$iconType fa-$iconName fa-fw"></i>
+        <i class="icon fa$iconType fas-$iconName fa-fw"></i>
 HTML;
 
     return new HtmlString($iconHtml);
