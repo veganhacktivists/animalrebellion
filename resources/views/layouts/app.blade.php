@@ -15,6 +15,10 @@
     </script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <script src="https://unpkg.com/react@16.8.6/umd/react.production.min.js"></script>
+
+    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.production.min.js"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,900" rel="stylesheet">
