@@ -4,7 +4,7 @@
 
 @section('content')
 
-
+@include('inc.blog_form')
 
 @endsection
 
