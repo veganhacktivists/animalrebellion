@@ -13,6 +13,13 @@
     </a>
 </li>
 
+<li>
+  <a href="{{ backpack_url('aboutpage') }}">
+    <i class="fa fa-files-o"></i>
+    <span>About Pages</span>
+  </a>
+</li>
+
 <li class="treeview">
     <a href="#">
         <i class="fa fa-group"></i>
