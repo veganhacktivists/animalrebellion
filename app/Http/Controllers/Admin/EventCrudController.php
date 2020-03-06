@@ -9,7 +9,6 @@ use App\Http\Requests\EventRequest as StoreRequest;
 use App\Http\Requests\EventRequest as UpdateRequest;
 use App\Models\Event;
 use Backpack\CRUD\CrudPanel;
-use Carbon\Carbon;
 
 /**
  * Class EventCrudController
@@ -46,8 +45,10 @@ class EventCrudController extends CrudController
         $this->crud->addField([
             'name' => 'name',
             'type' => 'text',
-            'label' => 'Event Name',
-            'placeholder' => 'Name of the event'
+            'label' => 'Name',
+            'attributes' => [
+                'placeholder' => 'Name of the event'
+            ]
         ]);
 
         $this->crud->addField([
@@ -58,7 +59,10 @@ class EventCrudController extends CrudController
                 'format' => 'DD-MM-YYYY',
                 'language' => 'en'
             ],
-            'allows_null' => false
+            'allows_null' => false,
+            'attributes' => [
+                'placeholder' => 'Event start date'
+            ]
         ]);
 
         $this->crud->addField([
@@ -69,7 +73,10 @@ class EventCrudController extends CrudController
                 'format' => 'DD-MM-YYYY',
                 'language' => 'en'
             ],
-            'allows_null' => false
+            'allows_null' => false,
+            'attributes' => [
+                'placeholder' => 'Event end date'
+            ]
         ]);
 
         $this->crud->addField([
@@ -88,12 +95,18 @@ class EventCrudController extends CrudController
             'name' => 'address',
             'type' => 'text',
             'label' => 'Address',
+            'attributes' => [
+                'placeholder' => 'Event location'
+            ]
         ]);
 
         $this->crud->addField([
             'name' => 'city',
             'type' => 'text',
             'label' => 'City',
+            'attributes' => [
+                'placeholder' => 'Event city'
+            ]
         ]);
 
         $this->crud->addField([
@@ -347,7 +360,8 @@ class EventCrudController extends CrudController
                 'Zaire' => 'Zaire',
                 'Zambia' => 'Zambia',
                 'Zimbabwe' => 'Zimbabwe',
-            ]
+            ],
+            'default' => 'United Kingdom'
         ]);
 
         $this->crud->addField([
@@ -363,13 +377,16 @@ class EventCrudController extends CrudController
                 Event::TYPE_TALK => ucwords(Event::TYPE_TALK)
             ],
             'allows_null' => false,
-            'default' => 'one'
+            'default' => Event::TYPE_ALL
         ]);
 
         $this->crud->addField([
             'name' => 'hosted_by',
             'type' => 'text',
             'label' => 'Event Host',
+            'attributes' => [
+                'placeholder' => 'The host(s) of the event'
+            ]
         ]);
 
         $this->crud->addField([
@@ -383,8 +400,11 @@ class EventCrudController extends CrudController
 
         $this->crud->addField([
             'name' => 'image',
-            'label' => 'Link to image',
-            'type' => 'url'
+            'label' => 'Image URL',
+            'type' => 'url',
+            'attributes' => [
+                'placeholder' => 'Link to the event image'
+            ]
         ]);
 
         // add asterisk for fields that are required in EventRequest
