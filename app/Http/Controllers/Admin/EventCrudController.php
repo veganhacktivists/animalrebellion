@@ -374,7 +374,8 @@ class EventCrudController extends CrudController
                 Event::TYPE_ACTIVITY => ucwords(Event::TYPE_ACTIVITY),
                 Event::TYPE_EVENT => ucwords(Event::TYPE_EVENT),
                 Event::TYPE_MEETING => ucwords(Event::TYPE_MEETING),
-                Event::TYPE_TALK => ucwords(Event::TYPE_TALK)
+                Event::TYPE_TALK => ucwords(Event::TYPE_TALK),
+                Event::TYPE_TRAINING => ucwords(Event::TYPE_TRAINING)
             ],
             'allows_null' => false,
             'default' => Event::TYPE_ALL

@@ -43,6 +43,7 @@ class Event extends Model
     const TYPE_EVENT = 'event';
     const TYPE_MEETING = 'meeting';
     const TYPE_TALK = 'talk';
+    const TYPE_TRAINING = 'training';
 
     /*
     |--------------------------------------------------------------------------

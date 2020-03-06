@@ -44,7 +44,8 @@ class EventRequest extends FormRequest
                     Event::TYPE_ACTIVITY,
                     Event::TYPE_EVENT,
                     Event::TYPE_MEETING,
-                    Event::TYPE_TALK
+                    Event::TYPE_TALK,
+                    Event::TYPE_TRAINING
                 ])
             ],
             'hosted_by' => 'required|min:5|max:255',
