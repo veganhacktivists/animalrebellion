@@ -26,6 +26,7 @@ class CreateEventsTable extends Migration
             $table->string('type');
             $table->string('hosted_by');
             $table->text('description');
+            $table->string('image');
             $table->timestamps();
         });
     }

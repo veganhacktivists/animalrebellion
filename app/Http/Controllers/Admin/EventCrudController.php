@@ -381,6 +381,12 @@ class EventCrudController extends CrudController
             ]
         ]);
 
+        $this->crud->addField([
+            'name' => 'image',
+            'label' => 'Link to image',
+            'type' => 'url'
+        ]);
+
         // add asterisk for fields that are required in EventRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
