@@ -14,17 +14,17 @@
 </li>
 
 <li>
-  <a href="{{ backpack_url('aboutpage') }}">
-    <i class="fa fa-files-o"></i>
-    <span>About Pages</span>
-  </a>
+    <a href="{{ backpack_url('aboutpage') }}">
+        <i class="fa fa-files-o"></i>
+        <span>About Pages</span>
+    </a>
 </li>
 
 <li>
-  <a href="{{ backpack_url('event') }}">
-    <i class="fa fa-files-o"></i>
-    <span>Events</span>
-  </a>
+    <a href="{{ backpack_url('event') }}">
+        <i class="fa fa-calendar"></i>
+        <span>Events</span>
+    </a>
 </li>
 
 <li class="treeview">
