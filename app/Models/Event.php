@@ -24,16 +24,6 @@ class Event extends Model
     // protected $hidden = [];
     // protected $dates = [];
 
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'start' => 'datetime',
-        'end' => 'datetime',
-    ];
-
     public function setDatetimeAttribute($value)
     {
         $this->attributes['start_date'] = Date::parse($value);
