@@ -20,7 +20,7 @@ class Event extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['name', 'start', 'end', 'location', 'type', 'hosted_by', 'description'];
+    protected $fillable = ['name', 'start', 'end', 'address', 'city', 'country', 'type', 'hosted_by', 'description'];
     // protected $hidden = [];
     // protected $dates = [];
 

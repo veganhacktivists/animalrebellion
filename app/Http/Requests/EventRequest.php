@@ -31,7 +31,9 @@ class EventRequest extends FormRequest
             'name' => 'required|min:5|max:255',
             'start' => 'required',
             'end' => 'required',
-            'location' => 'required|min:5|max:255',
+            'address' => 'required|max:255',
+            'city' => 'required|max:255',
+            'country' => 'required|min:5|max:255',
             'type' => [
                 'required',
                 Rule::in([
