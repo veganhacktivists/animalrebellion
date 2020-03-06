@@ -29,8 +29,10 @@ class EventRequest extends FormRequest
     {
         return [
             'name' => 'required|min:5|max:255',
-            'start' => 'required',
-            'end' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required',
             'address' => 'required|max:255',
             'city' => 'required|max:255',
             'country' => 'required|min:5|max:255',

@@ -20,7 +20,7 @@ class Event extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['name', 'start', 'end', 'address', 'city', 'country', 'type', 'hosted_by', 'description'];
+    protected $fillable = ['name', 'start_date', 'end_date', 'start_time', 'end_time', 'address', 'city', 'country', 'type', 'hosted_by', 'description'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -34,9 +34,12 @@ class Event extends Model
         'end' => 'datetime',
     ];
 
-    public function setDatetimeAttribute($value) {
-        $this->attributes['start'] = Date::parse($value);
-        $this->attributes['end'] = Date::parse($value);
+    public function setDatetimeAttribute($value)
+    {
+        $this->attributes['start_date'] = Date::parse($value);
+        $this->attributes['end_date'] = Date::parse($value);
+        $this->attributes['start_time'] = Date::parse($value);
+        $this->attributes['end_time'] = Date::parse($value);
     }
 
     /*

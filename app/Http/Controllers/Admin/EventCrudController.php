@@ -35,8 +35,10 @@ class EventCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         $this->crud->addColumn('name');
-        $this->crud->addColumn('start');
-        $this->crud->addColumn('end');
+        $this->crud->addColumn('start_date');
+        $this->crud->addColumn('end_date');
+        $this->crud->addColumn('start_time');
+        $this->crud->addColumn('end_time');
         $this->crud->addColumn('city');
         $this->crud->addColumn('country');
         $this->crud->addColumn('type');
@@ -49,25 +51,37 @@ class EventCrudController extends CrudController
         ]);
 
         $this->crud->addField([
-            'name' => 'start',
-            'label' => 'Start Date and Time',
+            'name' => 'start_date',
+            'label' => 'Start Date',
             'type' => 'datetime_picker',
             'datetime_picker_options' => [
-                'format' => 'DD-MM-YYYY HH:mm',
+                'format' => 'DD-MM-YYYY',
                 'language' => 'en'
             ],
             'allows_null' => false
         ]);
 
         $this->crud->addField([
-            'name' => 'end',
-            'label' => 'End Date and Time',
+            'name' => 'end_date',
+            'label' => 'End Date',
             'type' => 'datetime_picker',
             'datetime_picker_options' => [
-                'format' => 'DD-MM-YYYY HH:mm',
+                'format' => 'DD-MM-YYYY',
                 'language' => 'en'
             ],
             'allows_null' => false
+        ]);
+
+        $this->crud->addField([
+            'name' => 'start_time',
+            'label' => 'Start time',
+            'type' => 'time'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'end_time',
+            'label' => 'End time',
+            'type' => 'time'
         ]);
 
         $this->crud->addField([

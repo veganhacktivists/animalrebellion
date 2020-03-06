@@ -15,8 +15,10 @@ class EventsTableSeeder extends Seeder
     {
         Event::create([
             'name' => 'Lorem ipsum dolor sit amet',
-            'start' => Carbon::now(),
-            'end' => (Carbon::now())->addDay(),
+            'start_date' => Carbon::now()->format('Y-m-d'),
+            'end_date' => (Carbon::now())->addDay()->format('Y-m-d'),
+            'start_time' => Carbon::now()->format('H:i:s'),
+            'end_time' => (Carbon::now())->addDay()->format('H:i:s'),
             'address' => 'Event Address',
             'city' => 'London',
             'country' => 'United Kingdom',
@@ -27,8 +29,10 @@ class EventsTableSeeder extends Seeder
 
         Event::create([
             'name' => 'Lorem ipsum dolor sit amet',
-            'start' => (Carbon::now())->addDay(),
-            'end' => (Carbon::now())->addDay()->addHours(2),
+            'start_date' => Carbon::now()->format('Y-m-d'),
+            'end_date' => (Carbon::now())->addDays(2)->format('Y-m-d'),
+            'start_time' => Carbon::now()->format('H:i:s'),
+            'end_time' => (Carbon::now())->addDay()->format('H:i:s'),
             'address' => 'Event Address',
             'city' => 'London',
             'country' => 'United Kingdom',
@@ -39,8 +43,10 @@ class EventsTableSeeder extends Seeder
 
         Event::create([
             'name' => 'Lorem ipsum dolor sit amet',
-            'start' => (Carbon::now())->addDay()->subHours(2),
-            'end' => (Carbon::now())->addDay(),
+            'start_date' => Carbon::now()->subDays(2)->format('Y-m-d'),
+            'end_date' => (Carbon::now())->format('Y-m-d'),
+            'start_time' => Carbon::now()->format('H:i:s'),
+            'end_time' => (Carbon::now())->addDay()->format('H:i:s'),
             'address' => 'Event Address',
             'city' => 'London',
             'country' => 'United Kingdom',
