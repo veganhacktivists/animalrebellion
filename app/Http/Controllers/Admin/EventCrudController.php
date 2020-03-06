@@ -50,7 +50,7 @@ class EventCrudController extends CrudController
 
         $this->crud->addField([
             'name' => 'start',
-            'label' => 'Event start',
+            'label' => 'Start Date and Time',
             'type' => 'datetime_picker',
             'datetime_picker_options' => [
                 'format' => 'DD-MM-YYYY HH:mm',
@@ -61,7 +61,7 @@ class EventCrudController extends CrudController
 
         $this->crud->addField([
             'name' => 'end',
-            'label' => 'Event end',
+            'label' => 'End Date and Time',
             'type' => 'datetime_picker',
             'datetime_picker_options' => [
                 'format' => 'DD-MM-YYYY HH:mm',
