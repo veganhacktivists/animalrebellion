@@ -13,7 +13,7 @@
 
 Auth::routes(['verify' => true]);
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::view('/privacy', 'privacy_policy')->name('privacy_policy');
 
 Route::view('/contact', 'contact.form')->name('contact.form');

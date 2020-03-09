@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use Carbon\Carbon;
+
 class HomeController extends Controller
 {
     /**
@@ -9,7 +12,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -19,6 +21,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $events = Event::whereDate('end_date', '>=', Carbon::now())
+            ->orderBy('start_date')
+            ->take(3)->get();
+
+        return view('welcome', compact('events'));
     }
 }
