@@ -31,5 +31,8 @@
       </div>
     </div>
     @endforeach
+    <div class="container text-center">
+      <a href="{{url('/events')}}" class="btn btn-lg btn-secondary">View All Events</a>
+    </div>
   </div>
   @endsection
