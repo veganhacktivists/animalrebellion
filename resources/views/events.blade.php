@@ -12,7 +12,10 @@
         <div class="col-12 mt-3">
             <div class="card">
                 <div class="d-flex">
-                    <div class="p-3">
+                    <div class="ribbon-holder mt-3 mb-3">
+                        <div class="ribbon ribbon-holder">
+                            {{ucwords($event->type)}}
+                        </div>
                         <img class="" src="{{$event->image}}" width="300" alt="Card image cap">
                     </div>
                     <div class="card-body">

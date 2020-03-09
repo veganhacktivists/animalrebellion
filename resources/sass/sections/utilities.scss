@@ -1,0 +1,16 @@
+// Ribbon
+.ribbon-holder {
+    overflow: hidden;
+    position: relative;
+}
+
+.ribbon {
+    background: black;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.3rem;
+    font-family: "FucXed", sans-serif;
+    line-height: 1.1;
+}
