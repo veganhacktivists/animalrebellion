@@ -1,11 +1,22 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+@font-face{
+    font-family:"FucXed";
+    font-style:normal;
+    font-weight:normal;
+    src:url('../fonts/fucxedcaps.woff2')  format("woff2");
+    font-display:swap;
+}
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+//App
+@import 'sections/menu';
 
 .herp {
     background: green;
