@@ -19,7 +19,8 @@
         "guzzlehttp/guzzle": "~6.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "laravelcollective/html": "^6.0",
+        "laravelcollective/html": "^6.1",
+        "unisharp/laravel-filemanager": "^2.0",
         "van-ons/laraberg": "^1.0",
         "yaro/log-envelope": "^1.6"
     },

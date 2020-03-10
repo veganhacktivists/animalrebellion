@@ -15,6 +15,7 @@ Auth::routes(['verify' => true]);
 
 Route::view('/', 'welcome')->name('home');
 Route::view('/privacy', 'privacy_policy')->name('privacy_policy');
+Route::view('/blog', 'post')->name('blog');
 
 Route::view('/contact', 'contact.form')->name('contact.form');
 Route::post('/contact', 'SendContactEmailController')->name('contact.send');

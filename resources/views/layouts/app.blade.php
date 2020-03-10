@@ -19,6 +19,12 @@
 
     <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.production.min.js"></script>
 
+    <script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
+
+    <script src="https://unpkg.com/react@16.8.6/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.production.min.js"></script>
+
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,900" rel="stylesheet">
@@ -26,8 +32,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
 
-    @if (config('base.livewire'))
+
+  @if (config('base.livewire'))
       @livewireAssets
     @endif
   </head>

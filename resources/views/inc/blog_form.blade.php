@@ -1,3 +1,10 @@
-{{echo Form::model($blogPost, ['route' => ['post.create', $blogPost->id]]);}}
+<div  class="container">
 
-{{echo Form::close();}}
+{!! Form::open(['url' => '#']) !!}
+<textarea id="blog-content" name="content" hidden></textarea>
+{!! Form::close() !!}
+
+</div>
+<script>
+  Laraberg.init('blog-content', { laravelFilemanager: true })
+</script>
