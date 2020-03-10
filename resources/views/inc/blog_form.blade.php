@@ -6,5 +6,8 @@
 
 </div>
 <script>
-  Laraberg.init('blog-content', { laravelFilemanager: true })
+  window.addEventListener('DOMContentLoaded', (event) => {
+    Laraberg.init('blog-content', { laravelFilemanager: true })
+    Laraberg.setContent
+  });
 </script>
