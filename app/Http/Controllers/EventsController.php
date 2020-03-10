@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 
 class EventsController extends Controller
 {
-    const PAGINATION = 10;
-
     /**
      * Display a listing of the resource.
      *
@@ -17,9 +15,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::whereDate('end_date', '>=', Carbon::now())->paginate(self::PAGINATION);
-
-        return view('events', compact('events'));
+        return view('events');
     }
 
     /**
