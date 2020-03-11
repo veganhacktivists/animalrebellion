@@ -1,4 +1,4 @@
-<div class="col-md mb-3">
+<div class="col-md-4 mb-3">
   <div class="block-shadow mb-3">
     <div class="card border-0 mb-3">
       <img src="{{ $event->image }}" class="card-img-top" alt="An awesome event!">
