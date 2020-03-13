@@ -11,7 +11,7 @@
             <span><i class="fa fa-map-marker-alt pr-1"></i>{{ $event->city }}</span>
           </div>
 
-          <a href="#" class="btn btn-success px-5">Find out more</a>
+          <a href="{{url('/events/' . $event->slug)}}" class="btn btn-success px-5">Find out more</a>
       </div>
     </div>
   </div>

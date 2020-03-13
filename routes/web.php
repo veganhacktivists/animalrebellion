@@ -15,6 +15,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/events', 'EventsController@index');
+Route::get('/events/{slug}', 'EventsController@show');
 Route::view('/privacy', 'privacy_policy')->name('privacy_policy');
 
 Route::view('/contact', 'contact.form')->name('contact.form');

@@ -24,9 +24,11 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $event = Event::where('slug', $slug)->first();
+        
+        return view('event-details', compact('event'));
     }
 
     /**
