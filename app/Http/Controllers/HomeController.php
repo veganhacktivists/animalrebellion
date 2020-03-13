@@ -23,8 +23,8 @@ class HomeController extends Controller
     {
         $events = Event::whereDate('end_date', '>=', Carbon::now())
             ->orderBy('start_date')
-            ->take(3)->get();
+            ->get();
 
-        return view('welcome', compact('events'));
+        return view('home', compact('events'));
     }
 }
