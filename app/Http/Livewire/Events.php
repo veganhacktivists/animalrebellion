@@ -4,12 +4,11 @@ namespace App\Http\Livewire;
 
 use App\Models\Event;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class Events extends Component
 {
-    const LIMIT = 25;
+    const LIMIT = 50;
 
     public $startDate;
     public $endDate;
@@ -22,7 +21,12 @@ class Events extends Component
 
     public function mount()
     {
-        $this->events = Event::whereDate('end_date', '>=', Carbon::now())->take(self::LIMIT)->get()->toArray();
+        $this->events = Event::whereDate('end_date', '>=', Carbon::now())
+            ->orderBy('start_date', 'asc')
+            ->take(self::LIMIT)
+            ->get()
+            ->toArray();
+
         $this->startDate = '';
         $this->endDate = '';
         $this->location = '';
