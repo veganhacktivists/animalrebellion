@@ -83,7 +83,7 @@ class Events extends Component
 
     public function upcomingInDays($days)
     {
-        $this->startDate = '';
+        $this->startDate = Carbon::now()->format('Y-m-d');
         $this->endDate = Carbon::now()->addDays($days)->format('Y-m-d');
         $this->search();
     }
