@@ -4,25 +4,67 @@ namespace App\Http\Livewire;
 
 use App\Models\Event;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class Events extends Component
 {
-    const PAGINATION = 10;
+    const LIMIT = 25;
 
     public $startDate;
     public $endDate;
+    public $location;
+    public $keyword;
+    public $isLoading;
+    public $events;
 
-    protected $listeners = ['dateChanged' => 'filterEvents'];
+    protected $listeners = ['dateChanged' => 'dateChangedEventListener'];
+
+    public function mount()
+    {
+        $this->events = Event::whereDate('end_date', '>=', Carbon::now())->take(self::LIMIT)->get()->toArray();
+        $this->startDate = '';
+        $this->endDate = '';
+        $this->location = '';
+        $this->isLoading = false;
+    }
 
     public function render()
     {
-        $events = Event::whereDate('end_date', '>=', Carbon::now())->paginate(self::PAGINATION);
-
-        return view('livewire.events', ['events' => $events]);
+        return view('livewire.events', ['events' => $this->events]);
     }
 
-    public function filterEvents()
+    public function search()
     {
+        $this->isLoading = true;
+
+        $events = Event::whereDate('end_date', '>=', Carbon::now());
+
+        if ($this->startDate) {
+            $events = $events->whereDate('start_date', '>=', Carbon::parse($this->startDate));
+        }
+
+        if ($this->endDate) {
+            $events = $events->whereDate('end_date', '<=', Carbon::parse($this->endDate));
+        }
+
+        if ($this->location) {
+            $events =  $events->where('city', 'like', '%' . $this->location . '%');
+        }
+
+        if ($this->keyword) {
+            $events =  $events->where('name', 'like', '%' . $this->keyword . '%');
+        }
+
+        $this->events = $events->get()->toArray();
+
+        $this->isLoading = false;
+    }
+
+    public function dateChangedEventListener($field, $val)
+    {
+        $this->isLoading = true;
+        $this->$field = $val;
+        $this->search();
     }
 }
