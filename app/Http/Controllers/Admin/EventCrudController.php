@@ -91,13 +91,19 @@ class EventCrudController extends CrudController
         $this->crud->addField([
             'name' => 'start_time',
             'label' => 'Start time',
-            'type' => 'time'
+            'type' => 'text',
+            'attributes' => [
+                'placeholder' => '09:00:00'
+            ]
         ]);
 
         $this->crud->addField([
             'name' => 'end_time',
             'label' => 'End time',
-            'type' => 'time'
+            'type' => 'text',
+            'attributes' => [
+                'placeholder' => '21:00:00'
+            ]
         ]);
 
         $this->crud->addField([
