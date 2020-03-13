@@ -49,11 +49,11 @@ class EventSearch extends Component
         }
 
         if ($this->location) {
-            $events =  $events->where('city', 'like', '%' . $this->location . '%');
+            $events =  $events->whereRaw('LOWER(city) LIKE ?', ['%' . strtolower($this->location) . '%']);
         }
 
         if ($this->keyword) {
-            $events =  $events->where('name', 'like', '%' . $this->keyword . '%');
+            $events =  $events->whereRaw('LOWER(name) LIKE ?', ['%' . strtolower($this->keyword) . '%']);
         }
 
         if ($this->eventType) {
