@@ -50,7 +50,8 @@ class EventRequest extends FormRequest
             ],
             'hosted_by' => 'required|min:5|max:255',
             'description' => 'required|min:5|max:2000',
-            'image' => 'required|url'
+            'image' => 'required|url',
+            'slug' => 'required|min:5|max:255|unique:events,slug'
         ];
     }
 
