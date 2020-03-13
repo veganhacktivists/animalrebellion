@@ -16,7 +16,6 @@ class Events extends Component
     public $location;
     public $keyword;
     public $eventType;
-    public $isLoading;
     public $events;
 
     protected $listeners = ['dateChanged' => 'dateChangedEventListener'];
@@ -29,7 +28,6 @@ class Events extends Component
         $this->location = '';
         $this->keyword = '';
         $this->eventType = '';
-        $this->isLoading = false;
     }
 
     public function render()
@@ -39,8 +37,6 @@ class Events extends Component
 
     public function search()
     {
-        $this->isLoading = true;
-
         $events = Event::whereDate('end_date', '>=', Carbon::now());
 
         if ($this->startDate) {
@@ -63,24 +59,32 @@ class Events extends Component
             $events =  $events->where('type', '=', $this->eventType);
         }
 
-        $this->events = $events->get()->toArray();
-
-        $this->isLoading = false;
+        $this->events = $events->orderBy('start_date')->get()->toArray();
     }
 
     public function dateChangedEventListener($field, $val)
     {
-        $this->isLoading = true;
         $this->$field = $val;
         $this->search();
     }
 
     public function typeChangedEventListener($type)
     {
-        if ($type) {
-            $this->isLoading = true;
-            $this->eventType = $type;
-            $this->search();
-        }
+        $this->eventType = $type;
+        $this->search();
+    }
+
+    public function today()
+    {
+        $this->startDate = Carbon::now()->format('Y-m-d');
+        $this->endDate = Carbon::now()->format('Y-m-d');
+        $this->search();
+    }
+
+    public function upcomingInDays($days)
+    {
+        $this->startDate = '';
+        $this->endDate = Carbon::now()->addDays($days)->format('Y-m-d');
+        $this->search();
     }
 }

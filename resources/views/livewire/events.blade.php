@@ -55,23 +55,23 @@
         </div>
         <div class="row">
             <div class="col-6 col-md-3">
-                <button wire:click="search" class="btn btn-primary btn-block">
-                    Search
-                </button>
-            </div>
-            <div class="col-6 col-md-3">
-                <button class="btn btn-primary btn-block">
+                <button wire:click="today" class="btn btn-primary btn-block">
                     Today
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="btn btn-primary btn-block">
+                <button wire:click="upcomingInDays(7)" class="btn btn-primary btn-block">
                     Next 7 Days
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="btn btn-primary btn-block">
+                <button wire:click="upcomingInDays(30)" class="btn btn-primary btn-block">
                     Next 30 Days
+                </button>
+            </div>
+            <div class="col-6 col-md-3">
+                <button wire:click="mount" class="btn btn-primary btn-block">
+                    Reset
                 </button>
             </div>
         </div>
@@ -117,7 +117,7 @@
     </div>
     @endforeach
 
-    @if(count($events) == 0 && !$isLoading)
+    @if(count($events) == 0)
     <div class="container p-4 mt-4 mb-4" wire:loading.class="d-none">
         <div class="row text-center">
             <div class="col-12">
