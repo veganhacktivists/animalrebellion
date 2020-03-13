@@ -78,7 +78,7 @@ class EventSearch extends Component
     public function today()
     {
         $this->startDate = Carbon::now()->format('Y-m-d');
-        $this->endDate = Carbon::now()->format('Y-m-d');
+        $this->endDate = '';
         $this->search();
     }
 
