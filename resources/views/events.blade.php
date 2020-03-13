@@ -7,6 +7,6 @@
     <h1>Events</h1>
 </div>
 
-@livewire('events')
+@livewire('event-search')
 
 @endsection

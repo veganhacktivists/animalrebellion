@@ -6,10 +6,8 @@ use App\Models\Event;
 use Carbon\Carbon;
 use Livewire\Component;
 
-class Events extends Component
+class EventSearch extends Component
 {
-    const LIMIT = 50;
-
     public $startDate;
     public $endDate;
     public $location;
@@ -23,7 +21,6 @@ class Events extends Component
     {
         $this->events = Event::whereDate('end_date', '>=', Carbon::now())
             ->orderBy('start_date', 'asc')
-            ->take(self::LIMIT)
             ->get()
             ->toArray();
 
@@ -36,7 +33,7 @@ class Events extends Component
 
     public function render()
     {
-        return view('livewire.events', ['events' => $this->events]);
+        return view('livewire.event-search', ['events' => $this->events]);
     }
 
     public function search()
