@@ -400,8 +400,14 @@ class EventCrudController extends CrudController
         ]);
 
         $this->crud->addField([
-            'name' => 'description',
-            'label' => 'Event Description',
+            'name' => 'short_description',
+            'label' => 'Short Description',
+            'type' => 'textarea'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'full_description',
+            'label' => 'Full Description',
             'type' => 'summernote',
             'options' => [
                 'height' => 100

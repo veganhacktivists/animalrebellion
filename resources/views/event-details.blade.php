@@ -62,7 +62,7 @@
         </div>
 
         <div class="mt-4">
-            <p>{!! $event->description !!}</p>
+            <p>{!! $event->full_description !!}</p>
         </div>
 
         <a href="{{url('/events')}}" class="btn btn-lg btn-secondary">
