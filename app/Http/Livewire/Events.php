@@ -15,6 +15,7 @@ class Events extends Component
     public $endDate;
     public $location;
     public $keyword;
+    public $eventType;
     public $isLoading;
     public $events;
 
@@ -26,6 +27,8 @@ class Events extends Component
         $this->startDate = '';
         $this->endDate = '';
         $this->location = '';
+        $this->keyword = '';
+        $this->eventType = '';
         $this->isLoading = false;
     }
 
@@ -56,6 +59,10 @@ class Events extends Component
             $events =  $events->where('name', 'like', '%' . $this->keyword . '%');
         }
 
+        if ($this->eventType) {
+            $events =  $events->where('type', '=', $this->eventType);
+        }
+
         $this->events = $events->get()->toArray();
 
         $this->isLoading = false;
@@ -66,5 +73,14 @@ class Events extends Component
         $this->isLoading = true;
         $this->$field = $val;
         $this->search();
+    }
+
+    public function typeChangedEventListener($type)
+    {
+        if ($type) {
+            $this->isLoading = true;
+            $this->eventType = $type;
+            $this->search();
+        }
     }
 }

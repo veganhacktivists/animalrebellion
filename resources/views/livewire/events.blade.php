@@ -39,8 +39,8 @@
         <div class="row">
             <div class="col-6 col-md-3">
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Event Type</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <label for="eventType">Event Type</label>
+                    <select class="form-control" id="eventType" wire:change="typeChangedEventListener($event.target.value)" wire:model="eventType">
                         <option value="">Select from list</option>
                         <option value="{{App\Models\Event::TYPE_ALL}}">{{ucwords(App\Models\Event::TYPE_ALL)}}</option>
                         <option value="{{App\Models\Event::TYPE_ACTION}}">{{ucwords(App\Models\Event::TYPE_ACTION)}}</option>
