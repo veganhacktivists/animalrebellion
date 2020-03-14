@@ -1,6 +1,18 @@
+body {
+    font-size: 1.05em;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-primary;
     color: $green;
     text-transform: uppercase;
     letter-spacing: 0.5px
+}
+
+.event-details {
+    .label {
+        color: $black;
+        padding-bottom: 1%;
+        border-bottom: 1px solid black;
+    }
 }
