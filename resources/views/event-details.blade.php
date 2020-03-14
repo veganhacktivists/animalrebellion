@@ -65,7 +65,7 @@
             <p>{!! $event->full_description !!}</p>
         </div>
 
-        <a href="{{url('/events')}}" class="btn btn-lg btn-secondary">
+        <a href="{{url('/events')}}" class="btn btn-lg btn-dark">
             See Other Events
         </a>
     </div>

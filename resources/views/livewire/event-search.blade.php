@@ -55,22 +55,22 @@
         </div>
         <div class="row">
             <div class="col-6 col-md-3 mt-2">
-                <button wire:click="today" class="btn btn-primary btn-block">
+                <button wire:click="today" class="btn btn-sm btn-primary btn-block">
                     Today
                 </button>
             </div>
             <div class="col-6 col-md-3 mt-2">
-                <button wire:click="upcomingInDays(7)" class="btn btn-primary btn-block">
+                <button wire:click="upcomingInDays(7)" class="btn btn-sm btn-primary btn-block">
                     Next 7 Days
                 </button>
             </div>
             <div class="col-6 col-md-3 mt-2">
-                <button wire:click="upcomingInDays(30)" class="btn btn-primary btn-block">
+                <button wire:click="upcomingInDays(30)" class="btn btn-sm btn-primary btn-block">
                     Next 30 Days
                 </button>
             </div>
             <div class="col-6 col-md-3 mt-2">
-                <button wire:click="mount" class="btn btn-primary btn-block">
+                <button wire:click="mount" class="btn btn-sm btn-primary btn-block">
                     Reset
                 </button>
             </div>
@@ -108,7 +108,7 @@
                             <p class="card-text">
                                 {{$event['address']}}, {{$event['city']}}, {{$event['country']}}
                             </p>
-                            <a href="{{url('/events/' . $event['slug'])}}" class="btn btn-primary float-right">View Event</a>
+                            <a href="{{url('/events/' . $event['slug'])}}" class="btn btn-sm btn-dark float-right">View Event</a>
                         </div>
                     </div>
                 </div>
