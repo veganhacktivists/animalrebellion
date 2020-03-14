@@ -1,5 +1,40 @@
 .btn {
     font-weight: bold;
     text-transform: uppercase;
-    font-family: "FucXed", sans-serif;
+    font-family: $font-family-primary;
+    font-size: 1.2rem;
+    border-radius: 0;
+    border: 0;
+}
+
+.btn-primary,
+.btn-primary:link,
+.btn-primary:target,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:visited {
+    background-color: $green;
+    color: $black;
+    border: 0;
+}
+
+.btn-primary:hover {
+    background-color: $light-green;
+    color: $black;
+}
+
+.btn-dark {
+    background-color: $black;
+    color: $white;
+}
+
+.btn-dark:hover {
+    background-color: $dark-gray;
+    color: $white;
+}
+
+.btn-lg {
+    font-size: 1.5rem;
+    width: 100%;
+    max-width: 17.5em;
 }

@@ -1,6 +1,6 @@
 .nav-link {
-    color: white !important;
+    color: $white !important;
     font-weight: bold;
-    font-family: "FucXed", sans-serif;
+    font-family: $font-family-primary;
     font-size: $font-size-base * 1.7;
 }
