@@ -9,10 +9,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.5px
 }
 
-.event-details {
-    .label {
-        color: $black;
-        padding-bottom: 1%;
-        border-bottom: 1px solid black;
-    }
+.text-featured {
+    font-size: 1.4rem;
+    padding: 2% 5%;
 }

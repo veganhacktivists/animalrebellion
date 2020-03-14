@@ -61,13 +61,15 @@
             </div>
         </div>
 
-        <div class="mt-4">
+        <div class="mt-4 mb-4">
             <p>{!! $event->full_description !!}</p>
         </div>
 
-        <a href="{{url('/events')}}" class="btn btn-lg btn-dark">
-            See Other Events
-        </a>
+        <div class="text-center">
+            <a href="{{url('/events')}}" class="btn btn-lg btn-dark">
+                See Other Events
+            </a>
+        </div>
     </div>
 </div>
 
