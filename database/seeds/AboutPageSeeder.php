@@ -26,7 +26,7 @@ class AboutPageSeeder extends Seeder
                 'followed by rest and reflection are key to sustaining our movement. There is no singular definition, '.
                 'but a framework based on natural principles allows each of us to develop our own approach to practicing a '.
                 'regenerative way of being. At its simplest this means putting a little bit more in than we take out.',
-            'slug' => 'culture',
+                'slug' => 'culture',
         ]);
     }
 }
