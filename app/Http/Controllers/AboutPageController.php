@@ -8,6 +8,8 @@ class AboutPageController extends Controller
 {
     public function show(AboutPage $aboutPage)
     {
-        return view('about.show', compact('aboutPage'));
+        $otherPages = AboutPage::where('id', '!=', $aboutPage->id)->get();
+
+        return view('about.show', compact('aboutPage', 'otherPages'));
     }
 }
