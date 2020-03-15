@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-  <h3>{{ $aboutPage->header }}</h3>
+  <div class="container">
+    <h1 class="h1 mb-4">{{ $aboutPage->header }}</h1>
 
-  <p>{!!  nl2br($aboutPage->content) !!}</p>
+    <p>{!!  nl2br($aboutPage->content) !!}</p>
+  </div>
 @endsection
