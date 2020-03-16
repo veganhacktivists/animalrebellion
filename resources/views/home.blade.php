@@ -4,7 +4,7 @@
 
 @section('content')
   <div class="container">
-    <h2 class="h1 mb-4">Events</h2>
+    <h1 class="mb-4">Events</h1>
 
     @foreach($events->chunk(3) as $eventRow)
       <div class="row">
@@ -14,6 +14,6 @@
       </div>
     @endforeach
     <div class="container text-center">
-      <a href="{{url('/events')}}" class="btn btn-lg btn-secondary">View All Events</a>
+      <a href="{{url('/events')}}" class="btn btn-lg btn-dark">View All Events</a>
     </div>
 @endsection

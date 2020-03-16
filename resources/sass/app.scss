@@ -17,11 +17,10 @@
 
 //App
 @import 'sections/menu';
+@import 'sections/layout';
+@import 'sections/background';
 @import 'sections/typography';
 @import 'sections/btn';
 @import 'sections/block-shadow';
 @import 'sections/utilities';
-
-.herp {
-    background: green;
-}
+@import 'sections/events';

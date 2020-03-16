@@ -77,15 +77,15 @@ class EventSearch extends Component
 
     public function today()
     {
-        $this->startDate = Carbon::now()->format('Y-m-d');
+        $this->startDate = Carbon::now()->format('d-m-Y');
         $this->endDate = '';
         $this->search();
     }
 
     public function upcomingInDays($days)
     {
-        $this->startDate = Carbon::now()->format('Y-m-d');
-        $this->endDate = Carbon::now()->addDays($days)->format('Y-m-d');
+        $this->startDate = Carbon::now()->format('d-m-Y');
+        $this->endDate = Carbon::now()->addDays($days)->format('d-m-Y');
         $this->search();
     }
 }

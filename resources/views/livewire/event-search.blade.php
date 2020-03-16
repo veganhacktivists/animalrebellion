@@ -1,11 +1,11 @@
 <div>
-    <div class="container">
+    <div class="event-filters">
         <div class="row">
             <div class="col-6 col-md-3">
                 <div class="form-group">
                     <label for="startDate">From</label>
                     <div class='input-group date' id='startDatePicker'>
-                        <input type='text' class="form-control" placeholder="DD/MM/YYYY" wire:model="startDate" />
+                        <input type='text' class="form-control" placeholder="DD/MM/YYYY" wire:model="startDate" onkeydown="event.preventDefault()" />
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -16,7 +16,7 @@
                 <div class="form-group">
                     <label for="endDate">To</label>
                     <div class='input-group date' id='endDatePicker'>
-                        <input type='text' class="form-control" placeholder="DD/MM/YYYY" wire:model="endDate" />
+                        <input type='text' class="form-control" placeholder="DD/MM/YYYY" wire:model="endDate" onkeydown="event.preventDefault()" />
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -52,27 +52,31 @@
                     </select>
                 </div>
             </div>
+
         </div>
-        <div class="row">
-            <div class="col-6 col-md-3 mt-2">
-                <button wire:click="today" class="btn btn-primary btn-block">
+        <div class="row mt-2">
+            <div class="col-6 col-md-2 mt-2">
+                <button wire:click="today" class="btn btn-primary btn-block p-2">
                     Today
                 </button>
             </div>
-            <div class="col-6 col-md-3 mt-2">
-                <button wire:click="upcomingInDays(7)" class="btn btn-primary btn-block">
+            <div class="col-6 col-md-2 mt-2">
+                <button wire:click="upcomingInDays(7)" class="btn btn-primary btn-block p-2">
                     Next 7 Days
                 </button>
             </div>
-            <div class="col-6 col-md-3 mt-2">
-                <button wire:click="upcomingInDays(30)" class="btn btn-primary btn-block">
+            <div class="col-6 col-md-2 mt-2">
+                <button wire:click="upcomingInDays(30)" class="btn btn-primary btn-block p-2">
                     Next 30 Days
                 </button>
             </div>
-            <div class="col-6 col-md-3 mt-2">
-                <button wire:click="mount" class="btn btn-primary btn-block">
+            <div class="col-6 col-md-2 mt-2">
+                <button wire:click="mount" class="btn btn-primary btn-block p-2">
                     Reset
                 </button>
+            </div>
+            <div class="col-12 col-md-4 text-right">
+                <h5 class="mt-3 event-count">{{count($events)}} {{count($events) === 1 ? 'Event' : 'Events'}}</h5>
             </div>
         </div>
     </div>
@@ -108,7 +112,7 @@
                             <p class="card-text">
                                 {{$event['address']}}, {{$event['city']}}, {{$event['country']}}
                             </p>
-                            <a href="{{url('/events/' . $event['slug'])}}" class="btn btn-primary float-right">View Event</a>
+                            <a href="{{url('/events/' . $event['slug'])}}" class="btn btn-sm btn-dark float-right">View Event</a>
                         </div>
                     </div>
                 </div>
@@ -130,14 +134,16 @@
     <script type="text/javascript">
         $('#startDatePicker').datepicker({
             format: 'dd-mm-yyyy',
-            autoclose: true
+            autoclose: true,
+            orientation: 'bottom left'
         }).on('changeDate', function(e) {
             window.livewire.emit('dateChanged', 'startDate', e.format());
         });
 
         $('#endDatePicker').datepicker({
             format: 'dd-mm-yyyy',
-            autoclose: true
+            autoclose: true,
+            orientation: 'bottom left'
         }).on('changeDate', function(e) {
             window.livewire.emit('dateChanged', 'endDate', e.format());
         });;
