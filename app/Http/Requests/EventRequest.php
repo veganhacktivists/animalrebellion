@@ -51,13 +51,8 @@ class EventRequest extends FormRequest
             'hosted_by' => 'required|min:5|max:255',
             'short_description' => 'required|min:5|max:300',
             'full_description' => 'required|min:5|max:2000',
-            'image' => 'required|url',
-            'slug' => 'required|min:5|max:255'
+            'image' => 'required|url'
         ];
-
-        if (!$this->route('event')) {
-            $rules['slug'] .= '|unique:events,slug';
-        }
 
         return $rules;
     }

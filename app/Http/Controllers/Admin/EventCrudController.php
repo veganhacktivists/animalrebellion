@@ -52,15 +52,6 @@ class EventCrudController extends CrudController
         ]);
 
         $this->crud->addField([
-            'name' => 'slug',
-            'type' => 'text',
-            'label' => 'URL Slug',
-            'attributes' => [
-                'placeholder' => 'The slug of the event'
-            ]
-        ]);
-
-        $this->crud->addField([
             'name' => 'start_date',
             'label' => 'Start Date',
             'type' => 'datetime_picker',
