@@ -27,7 +27,7 @@ class EventRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'name' => 'required|min:5|max:255',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
@@ -49,9 +49,12 @@ class EventRequest extends FormRequest
                 ])
             ],
             'hosted_by' => 'required|min:5|max:255',
-            'description' => 'required|min:5|max:2000',
+            'short_description' => 'required|min:5|max:300',
+            'full_description' => 'required|min:5|max:2000',
             'image' => 'required|url'
         ];
+
+        return $rules;
     }
 
     /**
