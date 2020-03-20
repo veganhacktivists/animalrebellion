@@ -3,11 +3,10 @@
 namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
-use Illuminate\Database\Eloquent\Model;
-use Spatie\Geocoder\Facades\Geocoder;
 use Faker\Factory;
 use Faker\Provider\Address;
-
+use Illuminate\Database\Eloquent\Model;
+use Spatie\Geocoder\Facades\Geocoder;
 
 class LocalGroup extends Model
 {
@@ -33,14 +32,16 @@ class LocalGroup extends Model
     |--------------------------------------------------------------------------
     */
 
-    /** On creation of a new localGroup, grab lat/lng coordinates
-     * via Geocoder lib and assign in the coords table
-     *
-     * TO DO: Implement Google API key with Geocoder library.
-     * Currently, this is faking random coordinates in order to move
-     * forward unblocked.  */
-    protected static function boot() {
+    protected static function boot()
+    {
         parent::boot();
+
+        /** On creation of a new localGroup, grab lat/lng coordinates
+         * via Geocoder lib and assign in the coords table.
+         *
+         * TO DO: Implement Google API key with Geocoder library.
+         * Currently, this is faking random coordinates in order to move
+         * forward unblocked.  */
         static::created(function ($localGroup) {
             //$address = $localGroup->address1."," . $localGroup->address2."," . $localGroup->address3."," . $localGroup->city."," . $localGroup->state_or_province."," . $localGroup->country."," . $localGroup->postal_code;
             //$location = Geocoder::getCoordinatesForAddress($address);
@@ -50,11 +51,15 @@ class LocalGroup extends Model
             $lat = $faker->latitude();
             $lng = $faker->longitude();
 
-                $localGroup->coords()->create([
-                    'lat' => $lat,
-                    'lng' => $lng,
-                ]);
-            });
+            $localGroup->coords()->create([
+                'lat' => $lat,
+                'lng' => $lng,
+            ]);
+        });
+
+        static::deleted(function ($localGroup) {
+            $localGroup->coords()->delete();
+        });
     }
 
     /*
@@ -62,9 +67,11 @@ class LocalGroup extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function coords() {
+    public function coords()
+    {
         return $this->hasOne('App\Models\Coord');
     }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
