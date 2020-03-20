@@ -15,8 +15,8 @@ class CreateCoordsTable extends Migration
         Schema::create('coords', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('local_group_id');
-            $table->float('lat');
-            $table->float('lon');
+            $table->decimal('lat', 10, 8);
+            $table->decimal('lng', 11, 8);
             $table->timestamps();
         });
     }

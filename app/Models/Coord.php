@@ -19,7 +19,7 @@ class Coord extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['lat', 'lon'];
+    protected $fillable = ['lat', 'lng'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -38,6 +38,7 @@ class Coord extends Model
     {
         return $this->belongsTo('App\Models\LocalGroup');
     }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
