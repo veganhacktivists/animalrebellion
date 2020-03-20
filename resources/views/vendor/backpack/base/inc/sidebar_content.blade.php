@@ -30,7 +30,7 @@
 <li>
   <a href='{{ backpack_url('localgroup') }}'>
     <i class="fa fa-map-marker"></i>
-    <span> Local Groups</span>
+    <span>Local Groups</span>
   </a>
 </li>
 
