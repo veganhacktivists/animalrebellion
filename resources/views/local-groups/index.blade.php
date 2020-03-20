@@ -3,7 +3,11 @@
 @section('content')
 
 <div class="container text-center">
-  <h1>Local Groups</h1>
+  <div class="row">
+    <div class="col-12 pt-5">
+      <h1>Local Groups</h1>
+    </div>
+  </div>
   <div class="row">
     <div class="col-12 text-left mt-2">
       <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.</p>
