@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
 class LocalGroupRequest extends FormRequest
@@ -26,7 +25,11 @@ class LocalGroupRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:5|max:255',
+            'address1' => 'required|min:5',
+            'city' => 'required|max:255',
+            'country' => 'required|min:5|max:255',
+            'postal_code' => 'required|max:255',
         ];
     }
 
@@ -38,7 +41,6 @@ class LocalGroupRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
         ];
     }
 
@@ -50,7 +52,6 @@ class LocalGroupRequest extends FormRequest
     public function messages()
     {
         return [
-            //
         ];
     }
 }
