@@ -15,6 +15,7 @@ class LocalGroupsController extends Controller
     public function index()
     {
         $groups = LocalGroup::get();
+
         return view('local-groups.index', compact('groups'));
     }
 
