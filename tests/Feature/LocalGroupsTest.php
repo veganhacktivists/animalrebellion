@@ -23,4 +23,12 @@ class LocalGroupsTest extends TestCase
         $response = $this->get('/local-groups');
         $response->assertSee("Local Groups");
     }
+
+    /** @test */
+    public function users_can_see_all_local_groups()
+    {
+        $group = factory('App\Models\LocalGroup')->create();
+        $response = $this->get('/local-groups');
+        $response->assertSee($group->name);
+    }
 }
