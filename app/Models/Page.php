@@ -11,7 +11,7 @@ class Page extends Model
 
     protected $table = 'pages';
 
-    protected $fillable = ['type'];
+    protected $guarded = ['id'];
 
     protected $childTypes = [
         'about_page' => AboutPage::class,

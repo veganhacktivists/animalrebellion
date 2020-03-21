@@ -59,6 +59,14 @@ class AboutPageCrudController extends CrudController
             ]
         );
         $this->crud->addField([
+            'name' => 'header',
+            'type' => 'text',
+            'label' => 'Header (the bolded text users see at the top of the page',
+            'attributes' => [
+                'placeholder' => 'Page header',
+            ],
+        ]);
+        $this->crud->addField([
             'name' => 'content',
             'type' => 'summernote',
             'label' => 'Content (the textual body of the page)',
