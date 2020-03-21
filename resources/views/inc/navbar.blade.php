@@ -1,6 +1,12 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-success shadow-sm">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
   <div class="container">
-    {{ link_to_route('home', config('app.name'), null, ['class' => 'navbar-brand']) }}
+    <a href="{{url('')}}" class="logo d-flex flex-row">
+      <img class="logo-img" src="https://animalrebellion.org/wp-content/uploads/2020/01/cropped-Animal-Rebellion-Logo-White-No-Background.png" alt="">
+      <div class="ml-4">
+        <h4 class="logo-text mb-0 mt-2">Animal</h4>
+        <h4 class="logo-text">Rebellion</h4>
+      </div>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
       <span class="navbar-toggler-icon"></span>
     </button>

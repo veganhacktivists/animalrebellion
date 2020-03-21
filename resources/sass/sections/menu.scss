@@ -1,6 +1,26 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
 .nav-link {
-    color: white !important;
+    color: $white !important;
     font-weight: bold;
-    font-family: "FucXed", sans-serif;
+    font-family: $font-family-primary;
     font-size: $font-size-base * 1.7;
+}
+
+.logo {
+    .logo-text {
+        color: $white;
+    }
+    .logo-img {
+        height: 65px;
+    }
+}
+
+.logo:hover {
+    text-decoration: none;
 }

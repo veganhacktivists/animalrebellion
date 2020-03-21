@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use App\Models\AboutPage;
 use Illuminate\Support\Facades\View;
+use App\Models\AboutPage;
+use App\Models\Event;
+use App\Observers\EventObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         View::share('aboutPages', AboutPage::all());
+        Event::observe(EventObserver::class);
     }
 }
