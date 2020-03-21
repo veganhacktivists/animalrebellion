@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
-use Illuminate\Database\Eloquent\Model;
+use Parental\HasParent;
 
-class AboutPage extends Model
+class AboutPage extends Page
 {
     use CrudTrait;
+    use HasParent;
 
     /*
     |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ class AboutPage extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'about_pages';
+    // protected $table = 'about_pages';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];

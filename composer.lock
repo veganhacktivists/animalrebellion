@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa7ec9facae23ea54b7ad89471f11de8",
+    "content-hash": "588aeba929c0dfe6bc0e7e6cf11b31a7",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -382,12 +382,12 @@
             "version": "5.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/BePsvPT/secure-headers.git",
+                "url": "https://github.com/bepsvpt/secure-headers.git",
                 "reference": "6198bd959d291b89be65221febf566044ba246bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BePsvPT/secure-headers/zipball/6198bd959d291b89be65221febf566044ba246bc",
+                "url": "https://api.github.com/repos/bepsvpt/secure-headers/zipball/6198bd959d291b89be65221febf566044ba246bc",
                 "reference": "6198bd959d291b89be65221febf566044ba246bc",
                 "shasum": ""
             },
@@ -494,6 +494,46 @@
             "description": "Build and test rich client-side functionality: with only backend code.",
             "abandoned": "livewire/livewire",
             "time": "2019-11-11T23:44:45+00:00"
+        },
+        {
+            "name": "calebporzio/parental",
+            "version": "v0.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/calebporzio/parental.git",
+                "reference": "2784b61433102d8813916566a56cb1e2cfb40e82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/calebporzio/parental/zipball/2784b61433102d8813916566a56cb1e2cfb40e82",
+                "reference": "2784b61433102d8813916566a56cb1e2cfb40e82",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.6.0|~5.7.0|~5.8.0|^6.0.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.8.*",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Parental\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Caleb Porzio",
+                    "email": "calebporzio@gmail.com"
+                }
+            ],
+            "description": "A simple eloquent trait that allows relationships to be accessed through child models.",
+            "time": "2019-10-16T18:13:27+00:00"
         },
         {
             "name": "composer/installers",
