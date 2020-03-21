@@ -2,6 +2,11 @@
 
 @section('content')
 
+<!-- Expose groups data array to javascript -->
+<script>
+  var groups = {!!json_encode($groups) !!};
+</script>
+
 <div class="container text-center">
   <div class="row">
     <div class="col-12 pt-5">
@@ -23,13 +28,5 @@
       <div id="map" class="map"></div>
     </div>
   </div>
-
-  <ul>
-    @foreach($groups as $group)
-    <li>
-      {{ $group->name }}
-    </li>
-    @endforeach
-  </ul>
 </div>
 @endsection

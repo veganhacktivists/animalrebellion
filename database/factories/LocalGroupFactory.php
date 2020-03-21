@@ -13,5 +13,7 @@ $factory->define(LocalGroup::class, function (Faker $faker) {
         'state_or_province' => $faker->state,
         'country' => $faker->country,
         'postal_code' => $faker->postcode,
+        'lat' => $faker->latitude,
+        'lng' => $faker->longitude,
     ];
 });
