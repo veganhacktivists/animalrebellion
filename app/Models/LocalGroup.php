@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
-use Faker\Provider\Address;
 use Illuminate\Database\Eloquent\Model;
 use OpenCage\Geocoder\Geocoder;
 
@@ -37,23 +36,22 @@ class LocalGroup extends Model
 
         /** On creation of a new localGroup, grab lat/lng coordinates
          * via Geocoder lib and assign in the coords table. */
-
         static::created(function ($localGroup) {
             $address = $localGroup->address1;
 
             if ($localGroup->address2) {
-                $address = $address . ', ' .$localGroup->address2;
+                $address = $address.', '.$localGroup->address2;
             }
 
             if ($localGroup->address3) {
-                $address = $address . ', ' .$localGroup->address3;
+                $address = $address.', '.$localGroup->address3;
             }
 
             if ($localGroup->state_or_province) {
-                $address = $address .', ' .$localGroup->state_or_province;
+                $address = $address.', '.$localGroup->state_or_province;
             }
 
-            $address = $address .', ' . $localGroup->city .', ' .$localGroup->postal_code .', ' .$localGroup->country;
+            $address = $address.', '.$localGroup->city.', '.$localGroup->postal_code.', '.$localGroup->country;
 
             $geocoder = new Geocoder(env('OPEN_CAGE_API_KEY'));
             $results = $geocoder->geocode($address);
