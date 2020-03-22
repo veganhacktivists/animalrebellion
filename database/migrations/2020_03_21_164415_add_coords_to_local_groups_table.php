@@ -14,8 +14,8 @@ class AddCoordsToLocalGroupsTable extends Migration
     public function up()
     {
         Schema::table('local_groups', function (Blueprint $table) {
-            $table->decimal('lat', 10, 8);
-            $table->decimal('lng', 11, 8);
+            $table->decimal('lat', 10, 8)->nullable();
+            $table->decimal('lng', 11, 8)->nullable();
         });
     }
 

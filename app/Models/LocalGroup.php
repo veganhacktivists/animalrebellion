@@ -5,7 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\CrudTrait;
 use Faker\Provider\Address;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Geocoder\Facades\Geocoder;
+use OpenCage\Geocoder\Geocoder;
 
 class LocalGroup extends Model
 {
@@ -31,21 +31,37 @@ class LocalGroup extends Model
     |--------------------------------------------------------------------------
     */
 
-    // protected static function boot()
-    // {
-    //     parent::boot();
+    protected static function boot()
+    {
+        parent::boot();
 
-    //     /** On creation of a new localGroup, grab lat/lng coordinates
-    //      * via Geocoder lib and assign in the coords table.
-    //      *
-    //      * TO DO: Implement Google API key with Geocoder library.
-    //      * Currently, this is faking random coordinates in order to move
-    //      * forward unblocked.  */
-    //     static::created(function ($localGroup) {
-    //         //$address = $localGroup->address1."," . $localGroup->address2."," . $localGroup->address3."," . $localGroup->city."," . $localGroup->state_or_province."," . $localGroup->country."," . $localGroup->postal_code;
-    //         //$location = Geocoder::getCoordinatesForAddress($address);
-    //     }
-    // }
+        /** On creation of a new localGroup, grab lat/lng coordinates
+         * via Geocoder lib and assign in the coords table. */
+
+        static::created(function ($localGroup) {
+            $address = $localGroup->address1;
+
+            if ($localGroup->address2) {
+                $address = $address . ', ' .$localGroup->address2;
+            }
+
+            if ($localGroup->address3) {
+                $address = $address . ', ' .$localGroup->address3;
+            }
+
+            if ($localGroup->state_or_province) {
+                $address = $address .', ' .$localGroup->state_or_province;
+            }
+
+            $address = $address .', ' . $localGroup->city .', ' .$localGroup->postal_code .', ' .$localGroup->country;
+
+            $geocoder = new Geocoder(env('OPEN_CAGE_API_KEY'));
+            $results = $geocoder->geocode($address);
+            $localGroup->lat = $results['results'][0]['geometry']['lat'];
+            $localGroup->lng = $results['results'][0]['geometry']['lng'];
+            $localGroup->save();
+        });
+    }
 
     /*
     |--------------------------------------------------------------------------

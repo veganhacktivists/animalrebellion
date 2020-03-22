@@ -17,12 +17,12 @@ class LocalGroupTableSeeder extends Seeder
 
         //** manual database seeds; prefer factory method */
         // LocalGroup::create([
-        //     'name' => 'Empire State Group',
-        //     'address1' => '20 W 34th Street',
+        //     'name' => 'Empire State Group @ Orchard Grocer',
+        //     'address1' => '78 Orchard St',
         //     'city' => 'New York',
         //     'state_or_province' => 'NY',
         //     'country' => 'United States of America',
-        //     'postal_code' => '10001',
+        //     'postal_code' => '10002',
         // ]);
 
         // LocalGroup::create([
