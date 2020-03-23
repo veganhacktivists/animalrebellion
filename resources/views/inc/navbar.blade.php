@@ -19,18 +19,20 @@
 
       {{-- Right Side Of Navbar --}}
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a id="aboutDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            About Us <span class="caret"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="aboutDropdown">
+              @foreach($aboutPages as $aboutPage)
+                <a class="dropdown-item" href="{{ route('about.show', $aboutPage) }}">{{ $aboutPage->title }}</a>
+              @endforeach
+          </div>
+        </li>
         <li class="nav-item">
           {{ link_to_route('contact.form', __('Contact'), null, ['class' => 'nav-link']) }}
         </li>
         @guest
-          <li class="nav-item">
-            {{ link_to_route('login', __('Login'), null, ['class' => 'nav-link']) }}
-          </li>
-          @if (Route::has('register'))
-            <li class="nav-item">
-              {{ link_to_route('register', __('Register'), null, ['class' => 'nav-link']) }}
-            </li>
-          @endif
         @else
           <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

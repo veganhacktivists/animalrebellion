@@ -26,3 +26,7 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('/account', 'DeleteAccountController')->name('account.destroy');
 });
+
+Route::resource('about', 'AboutPageController')->parameters([
+   'about' => 'about_page',
+])->only('show');

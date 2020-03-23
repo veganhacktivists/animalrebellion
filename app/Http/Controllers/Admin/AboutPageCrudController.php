@@ -32,8 +32,55 @@ class AboutPageCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+        // Columns when browsing
+        $this->crud->addColumn('title');
+        $this->crud->addColumn('header');
+        $this->crud->addColumn(['name' => 'content', 'type' => 'textarea', 'label' => 'Content']);
+
+        // Fields on the edit page
+        $this->crud->addField(
+            [
+                'name' => 'title',
+                'type' => 'text',
+                'label' => 'Title',
+                'attributes' => [
+                    'placeholder' => 'Page title',
+                ],
+            ]
+        );
+        $this->crud->addField(
+            [
+                'name' => 'slug',
+                'type' => 'text',
+                'label' => 'Slug (the identifier that shows up in the page\'s URL',
+                'attributes' => [
+                    'placeholder' => 'Page slug',
+                ],
+            ]
+        );
+        $this->crud->addField([
+            'name' => 'header',
+            'type' => 'text',
+            'label' => 'Header (the bolded text users see at the top of the page',
+            'attributes' => [
+                'placeholder' => 'Page header',
+            ],
+        ]);
+        $this->crud->addField([
+            'name' => 'content',
+            'type' => 'summernote',
+            'label' => 'Content (the textual body of the page)',
+            'attributes' => [
+                'placeholder' => 'The textual body of the page',
+            ],
+        ]);
+        $this->crud->addField([
+           // Upload
+            'name' => 'thumbnail',
+            'label' => 'The thumbnail image that should show up for this page',
+            'type' => 'image',
+            'upload' => true,
+        ]);
 
         // add asterisk for fields that are required in AboutPageRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');

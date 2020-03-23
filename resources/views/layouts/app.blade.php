@@ -26,6 +26,22 @@
     @if (config('base.livewire'))
       @livewireAssets
     @endif
+
+    <style>
+      .custom-thumbnail {
+        /* Specify the image in the blade template */
+        /* Full height */
+        height: 100%;
+
+        min-height:350px;
+        min-width:350px;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
