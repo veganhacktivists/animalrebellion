@@ -13,10 +13,10 @@
     @foreach($otherPages->chunk(3) as $pageRow)
       <div class="row">
         @foreach($pageRow as $otherPage)
-          <div class="card justify-content-center align-items-center"
-               style="background:url({{$otherPage->thumbnail_url}}); background-repeat: no-repeat; background-size: cover; background-position: center; min-height:350px;min-width:350px;"
+          <div class="card justify-content-center align-items-center custom-thumbnail"
+               style="background-image:url({{$otherPage->thumbnail_url}});"
           >
-            <a class="text-decoration-none font-weight-bold text-white text-lg-center"
+            <a class="font-weight-bold text-primary text-xl-center h1"
                href="{{ route('about.show', $otherPage) }}"
             >
               {{ $otherPage->title }}

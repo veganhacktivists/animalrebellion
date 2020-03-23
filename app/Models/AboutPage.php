@@ -54,7 +54,11 @@ class AboutPage extends Page
 
     public function getThumbnailUrlAttribute()
     {
-        return 'http://animalrebellion.test/'.$this->thumbnail;
+        if ($this->thumbnail) {
+            return 'http://animalrebellion.test/'.$this->thumbnail;
+        } else {
+            return 'https://animalrebellion.org/wp-content/uploads/2020/02/Animal-Logo-No-Background-1-1536x855.png';
+        }
     }
 
     /*
