@@ -49,19 +49,19 @@ class PermissionsTableSeeder extends Seeder
 
         // Page CRUD operation permissions
         Permission::create([
-            'name' => BackpackUser::PERMISSION_PAGES_CREATE,
+            'name' => BackpackUser::PERMISSION_ABOUT_PAGES_CREATE,
         ]);
 
         Permission::create([
-            'name' => BackpackUser::PERMISSION_PAGES_VIEW,
+            'name' => BackpackUser::PERMISSION_ABOUT_PAGES_VIEW,
         ]);
 
         Permission::create([
-            'name' => BackpackUser::PERMISSION_PAGES_EDIT,
+            'name' => BackpackUser::PERMISSION_ABOUT_PAGES_EDIT,
         ]);
 
         Permission::create([
-            'name' => BackpackUser::PERMISSION_PAGES_DELETE,
+            'name' => BackpackUser::PERMISSION_ABOUT_PAGES_DELETE,
         ]);
     }
 }

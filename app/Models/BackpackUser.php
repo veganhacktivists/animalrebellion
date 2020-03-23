@@ -13,7 +13,7 @@ class BackpackUser extends User
     protected $table = 'users';
 
     const ROLE_ADMIN = 'admin';
-    const ROLE_CONTENT_WRITER = 'content_writer';
+    const ROLE_CONTENT_WRITER = 'content writer';
 
     // Permissions for Users
     const PERMISSION_USERS_VIEW = 'View Users';
@@ -27,11 +27,11 @@ class BackpackUser extends User
     const PERMISSION_EVENTS_EDIT = 'Edit Events';
     const PERMISSION_EVENTS_DELETE = 'Delete Events';
 
-    // Permissions for Pages
-    const PERMISSION_PAGES_VIEW = 'View Pages';
-    const PERMISSION_PAGES_CREATE = 'Create Pages';
-    const PERMISSION_PAGES_EDIT = 'Edit Pages';
-    const PERMISSION_PAGES_DELETE = 'Delete Pages';
+    // Permissions for About Pages
+    const PERMISSION_ABOUT_PAGES_VIEW = 'View About Pages';
+    const PERMISSION_ABOUT_PAGES_CREATE = 'Create About Pages';
+    const PERMISSION_ABOUT_PAGES_EDIT = 'Edit About Pages';
+    const PERMISSION_ABOUT_PAGES_DELETE = 'Delete About Pages';
 
     /**
      * Send the password reset notification.

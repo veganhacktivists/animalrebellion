@@ -22,10 +22,10 @@ class RolesTableSeeder extends Seeder
             BackpackUser::PERMISSION_EVENTS_CREATE,
             BackpackUser::PERMISSION_EVENTS_EDIT,
             BackpackUser::PERMISSION_EVENTS_DELETE,
-            BackpackUser::PERMISSION_PAGES_VIEW,
-            BackpackUser::PERMISSION_PAGES_CREATE,
-            BackpackUser::PERMISSION_PAGES_EDIT,
-            BackpackUser::PERMISSION_PAGES_DELETE,
+            BackpackUser::PERMISSION_ABOUT_PAGES_VIEW,
+            BackpackUser::PERMISSION_ABOUT_PAGES_CREATE,
+            BackpackUser::PERMISSION_ABOUT_PAGES_EDIT,
+            BackpackUser::PERMISSION_ABOUT_PAGES_DELETE,
         ])->pluck('id')->toArray();
         $adminRole->permissions()->attach($adminPermissionIds);
 
@@ -34,9 +34,9 @@ class RolesTableSeeder extends Seeder
             BackpackUser::PERMISSION_EVENTS_VIEW,
             BackpackUser::PERMISSION_EVENTS_CREATE,
             BackpackUser::PERMISSION_EVENTS_EDIT,
-            BackpackUser::PERMISSION_PAGES_VIEW,
-            BackpackUser::PERMISSION_PAGES_CREATE,
-            BackpackUser::PERMISSION_PAGES_EDIT
+            BackpackUser::PERMISSION_ABOUT_PAGES_VIEW,
+            BackpackUser::PERMISSION_ABOUT_PAGES_CREATE,
+            BackpackUser::PERMISSION_ABOUT_PAGES_EDIT
         ])->pluck('id')->toArray();
         $writerRole->permissions()->attach($writerPermissionIds);
     }

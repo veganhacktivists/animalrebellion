@@ -14,11 +14,7 @@ class AuthRequest extends FormRequest
      */
     public function authorize()
     {
-        $isLoggedIn = backpack_auth()->check();
-
-        if (!$isLoggedIn) {
-            return false;
-        }
+        abort_if(!backpack_auth()->check(), 403);
 
         if (backpack_user()->hasRole(BackpackUser::ROLE_ADMIN)) {
             return true;

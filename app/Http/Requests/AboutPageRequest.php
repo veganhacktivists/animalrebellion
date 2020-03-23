@@ -15,7 +15,7 @@ class AboutPageRequest extends AuthRequest
     {
         parent::authorize();
 
-        if (backpack_user()->can(BackpackUser::PERMISSION_PAGES_CREATE) || backpack_user()->can(BackpackUser::PERMISSION_PAGES_EDIT)) {
+        if (backpack_user()->can(BackpackUser::PERMISSION_ABOUT_PAGES_CREATE) || backpack_user()->can(BackpackUser::PERMISSION_ABOUT_PAGES_EDIT)) {
             return true;
         }
 

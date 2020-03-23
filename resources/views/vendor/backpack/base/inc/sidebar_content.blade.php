@@ -13,20 +13,25 @@
     </a>
 </li>
 
-<li>
-    <a href="{{ backpack_url('aboutpage') }}">
-        <i class="fa fa-files-o"></i>
-        <span>About Pages</span>
-    </a>
-</li>
+@can(\App\Models\BackpackUser::PERMISSION_ABOUT_PAGES_VIEW)
+  <li>
+      <a href="{{ backpack_url('aboutpage') }}">
+          <i class="fa fa-files-o"></i>
+          <span>About Pages</span>
+      </a>
+  </li>
+@endcan
 
-<li>
-    <a href="{{ backpack_url('event') }}">
-        <i class="fa fa-calendar"></i>
-        <span>Events</span>
-    </a>
-</li>
+@can(\App\Models\BackpackUser::PERMISSION_EVENTS_VIEW)
+  <li>
+      <a href="{{ backpack_url('event') }}">
+          <i class="fa fa-calendar"></i>
+          <span>Events</span>
+      </a>
+  </li>
+@endcan
 
+@role(\App\Models\BackpackUser::ROLE_ADMIN)
 <li class="treeview">
     <a href="#">
         <i class="fa fa-group"></i>
@@ -54,3 +59,4 @@
         </li>
     </ul>
 </li>
+@endrole
