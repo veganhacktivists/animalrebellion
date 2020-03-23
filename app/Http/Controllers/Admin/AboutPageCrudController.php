@@ -98,6 +98,10 @@ class AboutPageCrudController extends CrudController
     // Manage default buttons by setting access
     private function manageButtons()
     {
+        if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_ABOUT_PAGES_CREATE)) {
+            $this->crud->denyAccess('create');
+        }
+
         if ($this->user->hasPermissionTo(BackpackUser::PERMISSION_ABOUT_PAGES_VIEW)) {
             $this->crud->allowAccess('show');
         }

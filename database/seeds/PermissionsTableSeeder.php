@@ -15,7 +15,6 @@ class PermissionsTableSeeder extends Seeder
         // Users CRUD operation permissions
         Permission::create([
             'name' => BackpackUser::PERMISSION_USERS_CREATE,
-            'guard_name' => 'backpack',
         ]);
 
         Permission::create([
