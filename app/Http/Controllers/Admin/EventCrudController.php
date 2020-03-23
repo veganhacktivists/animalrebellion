@@ -30,7 +30,7 @@ class EventCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         $this->crud->setModel('App\Models\Event');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/event');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/event');
         $this->crud->setEntityNameStrings('event', 'events');
 
         /*
@@ -440,7 +440,7 @@ class EventCrudController extends CrudController
         }
 
         if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_EDIT)) {
-            $this->crud->denyAccess('edit');
+            $this->crud->denyAccess('update');
         }
 
         if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_DELETE)) {

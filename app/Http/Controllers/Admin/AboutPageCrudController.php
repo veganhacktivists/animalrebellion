@@ -103,7 +103,7 @@ class AboutPageCrudController extends CrudController
         }
 
         if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_ABOUT_PAGES_EDIT)) {
-            $this->crud->denyAccess('edit');
+            $this->crud->denyAccess('update');
         }
 
         if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_ABOUT_PAGES_DELETE)) {
