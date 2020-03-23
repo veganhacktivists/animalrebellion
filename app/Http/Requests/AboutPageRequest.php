@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Models\BackpackUser;
 
-class AboutPageRequest extends FormRequest
+class AboutPageRequest extends AuthRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,8 +13,13 @@ class AboutPageRequest extends FormRequest
      */
     public function authorize()
     {
-        // only allow updates if the user is logged in
-        return backpack_auth()->check();
+        parent::authorize();
+
+        if (backpack_user()->can(BackpackUser::PERMISSION_PAGES_CREATE) || backpack_user()->can(BackpackUser::PERMISSION_PAGES_EDIT)) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -25,10 +30,10 @@ class AboutPageRequest extends FormRequest
     public function rules()
     {
         return [
-             'title' => 'required|min:2|max:255',
-             'header' => 'required|min:3|max:150',
-             'slug' => 'required|min:1|max:50',
-             'content' => 'required',
+            'title' => 'required|min:2|max:255',
+            'header' => 'required|min:3|max:150',
+            'slug' => 'required|min:1|max:50',
+            'content' => 'required',
         ];
     }
 
@@ -39,8 +44,7 @@ class AboutPageRequest extends FormRequest
      */
     public function attributes()
     {
-        return [
-        ];
+        return [];
     }
 
     /**
@@ -50,7 +54,6 @@ class AboutPageRequest extends FormRequest
      */
     public function messages()
     {
-        return [
-        ];
+        return [];
     }
 }

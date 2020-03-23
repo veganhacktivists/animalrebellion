@@ -2,12 +2,11 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
+use App\Models\BackpackUser;
 use App\Models\Event;
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class EventRequest extends FormRequest
+class EventRequest extends AuthRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,8 +15,13 @@ class EventRequest extends FormRequest
      */
     public function authorize()
     {
-        // only allow updates if the user is logged in
-        return backpack_auth()->check();
+        parent::authorize();
+
+        if (backpack_user()->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_CREATE) || backpack_user()->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_EDIT)) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -45,13 +49,13 @@ class EventRequest extends FormRequest
                     Event::TYPE_EVENT,
                     Event::TYPE_MEETING,
                     Event::TYPE_TALK,
-                    Event::TYPE_TRAINING
-                ])
+                    Event::TYPE_TRAINING,
+                ]),
             ],
             'hosted_by' => 'required|min:5|max:255',
             'short_description' => 'required|min:5|max:300',
             'full_description' => 'required|min:5|max:2000',
-            'image' => 'required|url'
+            'image' => 'required|url',
         ];
 
         return $rules;
@@ -65,7 +69,6 @@ class EventRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
         ];
     }
 
@@ -77,7 +80,6 @@ class EventRequest extends FormRequest
     public function messages()
     {
         return [
-            //
         ];
     }
 }
