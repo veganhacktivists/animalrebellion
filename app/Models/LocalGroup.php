@@ -20,7 +20,7 @@ class LocalGroup extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['name', 'address1', 'address2', 'address3', 'city', 'state_or_province', 'country', 'postal_code', 'lat', 'lng'];
+    protected $fillable = ['name', 'address1', 'address2', 'city', 'state_or_province', 'country', 'postal_code', 'lat', 'lng', 'website_url', 'facebook_url', 'instagram_url', 'twitter_url'];
     // protected $hidden = [];
     // protected $dates = [];
 

@@ -370,6 +370,42 @@ class LocalGroupCrudController extends CrudController
             'label' => 'Longitude',
         ], 'update');
 
+        $this->crud->addField([
+            'name' => 'website_url',
+            'type' => 'url',
+            'label' => 'Website URL',
+            'attributes' => [
+                'placeholder' => 'Wesbite URL',
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'facebook_url',
+            'type' => 'url',
+            'label' => 'Facebook URL',
+            'attributes' => [
+                'placeholder' => 'Facebook URL',
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'instagram_url',
+            'type' => 'url',
+            'label' => 'Instagram URL',
+            'attributes' => [
+                'placeholder' => 'Instagram URL',
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'twitter_url',
+            'type' => 'url',
+            'label' => 'Twitter URL',
+            'attributes' => [
+                'placeholder' => 'Twitter URL',
+            ],
+        ]);
+
         // add asterisk for fields that are required in LocalGroupRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
