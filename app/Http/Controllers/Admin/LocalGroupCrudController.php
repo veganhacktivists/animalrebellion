@@ -358,6 +358,18 @@ class LocalGroupCrudController extends CrudController
             ],
         ]);
 
+        $this->crud->addField([
+            'name' => 'lat',
+            'type' => 'number',
+            'label' => 'Latitude',
+        ], 'update');
+
+        $this->crud->addField([
+            'name' => 'lng',
+            'type' => 'number',
+            'label' => 'Longitude',
+        ], 'update');
+
         // add asterisk for fields that are required in LocalGroupRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
