@@ -11,7 +11,7 @@
     <p>{!!  nl2br($aboutPage->content) !!}</p>
 
     @foreach($otherPages->chunk(3) as $pageRow)
-      <div class="row">
+      <div class="row justify-content-around">
         @foreach($pageRow as $otherPage)
           <div class="card justify-content-center align-items-center custom-thumbnail"
                style="background-image:url({{$otherPage->thumbnail_url}});"
