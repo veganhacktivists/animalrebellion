@@ -31,7 +31,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::share('aboutPages', AboutPage::all());
+        View::composer('*', function ($view) {
+            $view->with('aboutPages', AboutPage::all());
+        });
         Event::observe(EventObserver::class);
     }
 }
