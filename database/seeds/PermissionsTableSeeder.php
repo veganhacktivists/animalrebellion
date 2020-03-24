@@ -18,7 +18,7 @@ class PermissionsTableSeeder extends Seeder
         ]);
 
         Permission::create([
-            'name' => BackpackUser::PERMISSION_USERS_VIEW,
+            'name' => BackpackUser::PERMISSION_USERS_ADMIN_VIEW,
         ]);
 
         Permission::create([
@@ -35,7 +35,7 @@ class PermissionsTableSeeder extends Seeder
         ]);
 
         Permission::create([
-            'name' => BackpackUser::PERMISSION_EVENTS_VIEW,
+            'name' => BackpackUser::PERMISSION_EVENTS_ADMIN_VIEW,
         ]);
 
         Permission::create([
@@ -52,7 +52,7 @@ class PermissionsTableSeeder extends Seeder
         ]);
 
         Permission::create([
-            'name' => BackpackUser::PERMISSION_ABOUT_PAGES_VIEW,
+            'name' => BackpackUser::PERMISSION_ABOUT_PAGES_ADMIN_VIEW,
         ]);
 
         Permission::create([

@@ -13,7 +13,7 @@
     </a>
 </li>
 
-@can(\App\Models\BackpackUser::PERMISSION_ABOUT_PAGES_VIEW)
+@can(\App\Models\BackpackUser::PERMISSION_ABOUT_PAGES_ADMIN_VIEW)
   <li>
       <a href="{{ backpack_url('aboutpage') }}">
           <i class="fa fa-files-o"></i>
@@ -22,7 +22,7 @@
   </li>
 @endcan
 
-@can(\App\Models\BackpackUser::PERMISSION_EVENTS_VIEW)
+@can(\App\Models\BackpackUser::PERMISSION_EVENTS_ADMIN_VIEW)
   <li>
       <a href="{{ backpack_url('event') }}">
           <i class="fa fa-calendar"></i>

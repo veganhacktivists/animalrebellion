@@ -102,7 +102,7 @@ class AboutPageCrudController extends CrudController
             $this->crud->denyAccess('create');
         }
 
-        if ($this->user->hasPermissionTo(BackpackUser::PERMISSION_ABOUT_PAGES_VIEW)) {
+        if ($this->user->hasPermissionTo(BackpackUser::PERMISSION_ABOUT_PAGES_ADMIN_VIEW)) {
             $this->crud->allowAccess('show');
         }
 
