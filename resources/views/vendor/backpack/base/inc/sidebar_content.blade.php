@@ -1,31 +1,37 @@
 <!-- This file is used to store sidebar items, starting with Backpack\Base 0.9.0 -->
 <li>
-  <a href="{{ backpack_url('dashboard') }}">
-    <i class="fa fa-dashboard"></i>
-    <span>{{ trans('backpack::base.dashboard') }}</span>
-  </a>
+    <a href="{{ backpack_url('dashboard') }}">
+        <i class="fa fa-dashboard"></i>
+        <span>{{ trans('backpack::base.dashboard') }}</span>
+    </a>
 </li>
 
 <li>
-  <a href="{{ backpack_url('elfinder') }}">
-    <i class="fa fa-files-o"></i>
-    <span>{{ trans('backpack::crud.file_manager') }}</span>
-  </a>
+    <a href="{{ backpack_url('elfinder') }}">
+        <i class="fa fa-files-o"></i>
+        <span>{{ trans('backpack::crud.file_manager') }}</span>
+    </a>
 </li>
 
-<li>
-  <a href="{{ backpack_url('aboutpage') }}">
-    <i class="fa fa-files-o"></i>
-    <span>About Pages</span>
-  </a>
-</li>
+@can(\App\Models\BackpackUser::PERMISSION_ABOUT_PAGES_ADMIN_VIEW)
+  <li>
+      <a href="{{ backpack_url('aboutpage') }}">
+          <i class="fa fa-files-o"></i>
+          <span>About Pages</span>
+      </a>
+  </li>
+@endcan
 
-<li>
-  <a href="{{ backpack_url('event') }}">
-    <i class="fa fa-calendar"></i>
-    <span>Events</span>
-  </a>
-</li>
+@can(\App\Models\BackpackUser::PERMISSION_EVENTS_ADMIN_VIEW)
+  <li>
+      <a href="{{ backpack_url('event') }}">
+          <i class="fa fa-calendar"></i>
+          <span>Events</span>
+      </a>
+  </li>
+@endcan
+
+@role(\App\Models\BackpackUser::ROLE_ADMIN)
 
 <li>
   <a href='{{ backpack_url('localgroup') }}'>
@@ -35,30 +41,30 @@
 </li>
 
 <li class="treeview">
-  <a href="#">
-    <i class="fa fa-group"></i>
-    <span>Users, Roles, Permissions</span>
-    <i class="fa fa-angle-left pull-right"></i>
-  </a>
-
-  <ul class="treeview-menu">
-    <li>
-      <a href="{{ backpack_url('user') }}">
-        <i class="fa fa-user"></i>
-        <span>Users</span>
-      </a>
-    </li>
-    <li>
-      <a href="{{ backpack_url('role') }}">
+    <a href="#">
         <i class="fa fa-group"></i>
-        <span>Roles</span>
-      </a>
-    </li>
-    <li>
-      <a href="{{ backpack_url('permission') }}">
-        <i class="fa fa-key"></i>
-        <span>Permissions</span>
-      </a>
-    </li>
-  </ul>
+        <span>Users, Roles, Permissions</span>
+        <i class="fa fa-angle-left pull-right"></i>
+    </a>
+    <ul class="treeview-menu">
+        <li>
+            <a href="{{ backpack_url('user') }}">
+                <i class="fa fa-user"></i>
+                <span>Users</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ backpack_url('role') }}">
+                <i class="fa fa-group"></i>
+                <span>Roles</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ backpack_url('permission') }}">
+                <i class="fa fa-key"></i>
+                <span>Permissions</span>
+            </a>
+        </li>
+    </ul>
 </li>
+@endrole

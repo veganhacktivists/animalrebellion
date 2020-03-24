@@ -2,30 +2,35 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Backpack\CRUD\app\Http\Controllers\CrudController;
-
-// VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\EventRequest as StoreRequest;
+// VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\EventRequest as UpdateRequest;
+use App\Models\BackpackUser;
 use App\Models\Event;
+use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\CrudPanel;
+use Illuminate\Support\Facades\Auth;
 
 /**
- * Class EventCrudController
- * @package App\Http\Controllers\Admin
- * @property-read CrudPanel $crud
+ * Class EventCrudController.
+ *
+ * @property CrudPanel $crud
  */
 class EventCrudController extends CrudController
 {
+    private $user;
+
     public function setup()
     {
+        $this->user = Auth::user();
+
         /*
         |--------------------------------------------------------------------------
         | CrudPanel Basic Information
         |--------------------------------------------------------------------------
         */
         $this->crud->setModel('App\Models\Event');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/event');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/event');
         $this->crud->setEntityNameStrings('event', 'events');
 
         /*
@@ -47,8 +52,8 @@ class EventCrudController extends CrudController
             'type' => 'text',
             'label' => 'Name',
             'attributes' => [
-                'placeholder' => 'Name of the event'
-            ]
+                'placeholder' => 'Name of the event',
+            ],
         ]);
 
         $this->crud->addField([
@@ -57,12 +62,12 @@ class EventCrudController extends CrudController
             'type' => 'datetime_picker',
             'datetime_picker_options' => [
                 'format' => 'DD-MM-YYYY',
-                'language' => 'en'
+                'language' => 'en',
             ],
             'allows_null' => false,
             'attributes' => [
-                'placeholder' => 'Event start date'
-            ]
+                'placeholder' => 'Event start date',
+            ],
         ]);
 
         $this->crud->addField([
@@ -71,12 +76,12 @@ class EventCrudController extends CrudController
             'type' => 'datetime_picker',
             'datetime_picker_options' => [
                 'format' => 'DD-MM-YYYY',
-                'language' => 'en'
+                'language' => 'en',
             ],
             'allows_null' => false,
             'attributes' => [
-                'placeholder' => 'Event end date'
-            ]
+                'placeholder' => 'Event end date',
+            ],
         ]);
 
         $this->crud->addField([
@@ -84,8 +89,8 @@ class EventCrudController extends CrudController
             'label' => 'Start time',
             'type' => 'text',
             'attributes' => [
-                'placeholder' => '09:00:00'
-            ]
+                'placeholder' => '09:00:00',
+            ],
         ]);
 
         $this->crud->addField([
@@ -93,8 +98,8 @@ class EventCrudController extends CrudController
             'label' => 'End time',
             'type' => 'text',
             'attributes' => [
-                'placeholder' => '21:00:00'
-            ]
+                'placeholder' => '21:00:00',
+            ],
         ]);
 
         $this->crud->addField([
@@ -102,8 +107,8 @@ class EventCrudController extends CrudController
             'type' => 'text',
             'label' => 'Address',
             'attributes' => [
-                'placeholder' => 'Event location'
-            ]
+                'placeholder' => 'Event location',
+            ],
         ]);
 
         $this->crud->addField([
@@ -111,8 +116,8 @@ class EventCrudController extends CrudController
             'type' => 'text',
             'label' => 'City',
             'attributes' => [
-                'placeholder' => 'Event city'
-            ]
+                'placeholder' => 'Event city',
+            ],
         ]);
 
         $this->crud->addField([
@@ -367,7 +372,7 @@ class EventCrudController extends CrudController
                 'Zambia' => 'Zambia',
                 'Zimbabwe' => 'Zimbabwe',
             ],
-            'default' => 'United Kingdom'
+            'default' => 'United Kingdom',
         ]);
 
         $this->crud->addField([
@@ -381,10 +386,10 @@ class EventCrudController extends CrudController
                 Event::TYPE_EVENT => ucwords(Event::TYPE_EVENT),
                 Event::TYPE_MEETING => ucwords(Event::TYPE_MEETING),
                 Event::TYPE_TALK => ucwords(Event::TYPE_TALK),
-                Event::TYPE_TRAINING => ucwords(Event::TYPE_TRAINING)
+                Event::TYPE_TRAINING => ucwords(Event::TYPE_TRAINING),
             ],
             'allows_null' => false,
-            'default' => Event::TYPE_ALL
+            'default' => Event::TYPE_ALL,
         ]);
 
         $this->crud->addField([
@@ -392,14 +397,14 @@ class EventCrudController extends CrudController
             'type' => 'text',
             'label' => 'Event Host',
             'attributes' => [
-                'placeholder' => 'The host(s) of the event'
-            ]
+                'placeholder' => 'The host(s) of the event',
+            ],
         ]);
 
         $this->crud->addField([
             'name' => 'short_description',
             'label' => 'Short Description',
-            'type' => 'textarea'
+            'type' => 'textarea',
         ]);
 
         $this->crud->addField([
@@ -407,8 +412,8 @@ class EventCrudController extends CrudController
             'label' => 'Full Description',
             'type' => 'summernote',
             'options' => [
-                'height' => 100
-            ]
+                'height' => 100,
+            ],
         ]);
 
         $this->crud->addField([
@@ -416,13 +421,35 @@ class EventCrudController extends CrudController
             'label' => 'Image URL',
             'type' => 'url',
             'attributes' => [
-                'placeholder' => 'Link to the event image'
-            ]
+                'placeholder' => 'Link to the event image',
+            ],
         ]);
+
+        $this->manageButtons();
 
         // add asterisk for fields that are required in EventRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
+    }
+
+    // Manage default buttons by setting access
+    private function manageButtons()
+    {
+        if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_CREATE)) {
+            $this->crud->denyAccess('create');
+        }
+
+        if ($this->user->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_ADMIN_VIEW)) {
+            $this->crud->allowAccess('show');
+        }
+
+        if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_EDIT)) {
+            $this->crud->denyAccess('update');
+        }
+
+        if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_DELETE)) {
+            $this->crud->denyAccess('delete');
+        }
     }
 
     public function store(StoreRequest $request)

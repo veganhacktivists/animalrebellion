@@ -9,6 +9,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(PermissionsTableSeeder::class);
+
         $this->call(RolesTableSeeder::class);
 
         // Depends on Roles
@@ -17,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(EventsTableSeeder::class);
 
         $this->call(LocalGroupTableSeeder::class);
+        $this->call(AboutPageSeeder::class);
     }
 }
