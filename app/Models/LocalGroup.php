@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
-use OpenCage\Geocoder\Geocoder;
 
 class LocalGroup extends Model
 {
@@ -53,8 +52,7 @@ class LocalGroup extends Model
 
             $address = $address.', '.$localGroup->city.', '.$localGroup->postal_code.', '.$localGroup->country;
 
-            $geocoder = new Geocoder(env('OPEN_CAGE_API_KEY'));
-            $results = $geocoder->geocode($address);
+            $results = app()->make('Geocoder')->geocode($address);
             $localGroup->lat = $results['results'][0]['geometry']['lat'];
             $localGroup->lng = $results['results'][0]['geometry']['lng'];
             $localGroup->save();
