@@ -13,14 +13,24 @@ class UsersTableSeeder extends Seeder
     {
         $admin = BackpackUser::create([
             'name' => 'Admin User',
-            'email' => 'admin@'.preg_replace('/https?:\/\//', '', config('app.url')),
+            'email' => 'admin@' . preg_replace('/https?:\/\//', '', config('app.url')),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
         ]);
 
-        $admin->assignRole('admin');
+        $admin->assignRole(BackpackUser::ROLE_ADMIN);
 
-        factory(BackpackUser::class, 50)->create();
+        $contentWriter = BackpackUser::create([
+            'name' => 'Content Writer',
+            'email' => 'writer@' . preg_replace('/https?:\/\//', '', config('app.url')),
+            'email_verified_at' => now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' => Str::random(10),
+        ]);
+
+        $contentWriter->assignRole(BackpackUser::ROLE_CONTENT_WRITER);
+
+        factory(BackpackUser::class, 5)->create();
     }
 }

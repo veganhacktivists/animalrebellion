@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\EventRequest as StoreRequest;
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\EventRequest as UpdateRequest;
+use App\Models\BackpackUser;
 use App\Models\Event;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\CrudPanel;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class EventCrudController.
@@ -16,8 +18,12 @@ use Backpack\CRUD\CrudPanel;
  */
 class EventCrudController extends CrudController
 {
+    private $user;
+
     public function setup()
     {
+        $this->user = Auth::user();
+
         /*
         |--------------------------------------------------------------------------
         | CrudPanel Basic Information
@@ -419,9 +425,31 @@ class EventCrudController extends CrudController
             ],
         ]);
 
+        $this->manageButtons();
+
         // add asterisk for fields that are required in EventRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
+    }
+
+    // Manage default buttons by setting access
+    private function manageButtons()
+    {
+        if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_CREATE)) {
+            $this->crud->denyAccess('create');
+        }
+
+        if ($this->user->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_ADMIN_VIEW)) {
+            $this->crud->allowAccess('show');
+        }
+
+        if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_EDIT)) {
+            $this->crud->denyAccess('update');
+        }
+
+        if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_DELETE)) {
+            $this->crud->denyAccess('delete');
+        }
     }
 
     public function store(StoreRequest $request)
