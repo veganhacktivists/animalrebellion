@@ -32,6 +32,14 @@
 @endcan
 
 @role(\App\Models\BackpackUser::ROLE_ADMIN)
+
+<li>
+  <a href='{{ backpack_url('localgroup') }}'>
+    <i class="fa fa-map-marker"></i>
+    <span>Local Groups</span>
+  </a>
+</li>
+
 <li class="treeview">
     <a href="#">
         <i class="fa fa-group"></i>

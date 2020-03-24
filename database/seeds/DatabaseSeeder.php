@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(EventsTableSeeder::class);
 
+        $this->call(LocalGroupTableSeeder::class);
         $this->call(AboutPageSeeder::class);
     }
 }

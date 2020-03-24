@@ -15,6 +15,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('events', 'EventsController')->only(['index', 'show']);
+Route::resource('local-groups', 'LocalGroupsController')->only(['index']);
 Route::view('/privacy', 'privacy_policy')->name('privacy_policy');
 
 Route::view('/contact', 'contact.form')->name('contact.form');
