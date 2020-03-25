@@ -53,6 +53,13 @@
         <span>Items</span>
       </a>
     </li>
+
+    <li>
+      <a href='{{ backpack_url('item_type') }}'>
+        <i class='fa fa-list-ul'></i>
+        <span>Item Types</span>
+      </a>
+    </li>
   </ul>
 </li>
 

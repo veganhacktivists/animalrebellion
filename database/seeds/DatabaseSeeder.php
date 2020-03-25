@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LocalGroupTableSeeder::class);
         $this->call(AboutPageSeeder::class);
         $this->call(ItemsTableSeeder::class);
+        $this->call(ItemTypesTableSeeder::class);
     }
 }
