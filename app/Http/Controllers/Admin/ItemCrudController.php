@@ -35,6 +35,15 @@ class ItemCrudController extends CrudController
         // TODO: remove setFromDb() and manually define Fields and Columns
         $this->crud->setFromDb();
 
+        $this->crud->addField(['label' => 'Category',
+            'type' => 'select2',
+            'name' => 'item_type_id', // the db column for the foreign key
+            'entity' => 'item_type', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\ItemType", // foreign key model
+            ],
+        );
+
         // add asterisk for fields that are required in ItemRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');

@@ -35,6 +35,12 @@ class ItemType extends Model
     |--------------------------------------------------------------------------
     */
 
+    /** Establish hasMany relationship with Item */
+    public function items()
+    {
+        return $this->hasMany('App\Models\Item');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

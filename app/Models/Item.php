@@ -35,6 +35,12 @@ class Item extends Model
     |--------------------------------------------------------------------------
     */
 
+    /** Establish belongsTo relationship with ItemType */
+    public function item_type()
+    {
+        return $this->belongsTo('App\Models\ItemType');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
