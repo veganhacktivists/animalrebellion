@@ -10,15 +10,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(PermissionsTableSeeder::class);
-
         $this->call(RolesTableSeeder::class);
 
         // Depends on Roles
         $this->call(UsersTableSeeder::class);
 
         $this->call(EventsTableSeeder::class);
-
         $this->call(LocalGroupTableSeeder::class);
         $this->call(AboutPageSeeder::class);
+        $this->call(ItemsTableSeeder::class);
     }
 }

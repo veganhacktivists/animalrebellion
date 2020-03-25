@@ -14,4 +14,5 @@ Route::group([
     CRUD::resource('aboutpage', 'AboutPageCrudController');
     CRUD::resource('event', 'EventCrudController');
     CRUD::resource('localgroup', 'LocalGroupCrudController');
+    CRUD::resource('item', 'ItemCrudController');
 }); // this should be the absolute last line of this file
