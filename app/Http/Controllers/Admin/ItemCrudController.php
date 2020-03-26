@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\ItemRequest as StoreRequest;
-// VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\ItemRequest as UpdateRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\CrudPanel;
@@ -41,6 +40,18 @@ class ItemCrudController extends CrudController
             'entity' => 'item_type', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
             'model' => "App\Models\ItemType", // foreign key model
+            ],
+        );
+
+        $this->crud->addField([       // Select2Multiple = n-n relationship (with pivot table)
+            'label' => 'Tags',
+            'type' => 'select2_multiple',
+            'name' => 'tags', // the method that defines the relationship in your Model
+            'entity' => 'tags', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => "App\Models\ItemTag", // foreign key model
+            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+            'select_all' => true, // show Select All and Clear buttons?
             ],
         );
 

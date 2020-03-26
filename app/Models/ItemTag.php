@@ -35,6 +35,13 @@ class ItemTag extends Model
     |--------------------------------------------------------------------------
     */
 
+    /** Establish belongsToMany relationship with Item.
+     * Specify table and value to relieve ambiguity
+    */
+    public function items()
+    {
+        return $this->belongsToMany('App\Models\Item', 'item_tag', 'item_tag_id')->withTimestamps();
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES
