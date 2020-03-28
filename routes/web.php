@@ -11,7 +11,8 @@
 |
 */
 
-Auth::routes(['verify' => true]);
+/** General site visitors should not be able to login to the publicly available site */
+//Auth::routes(['verify' => true]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('events', 'EventsController')->only(['index', 'show']);
@@ -21,12 +22,13 @@ Route::view('/privacy', 'privacy_policy')->name('privacy_policy');
 Route::view('/contact', 'contact.form')->name('contact.form');
 Route::post('/contact', 'SendContactEmailController')->name('contact.send');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/settings', 'SettingsController@edit')->name('settings.edit');
-    Route::put('/settings', 'SettingsController@update')->name('settings.update');
-
-    Route::delete('/account', 'DeleteAccountController')->name('account.destroy');
-});
+/* Commenting this out for now as users can be managed in Backpack
+ * and general site visitors should not be able to login. */
+// Route::middleware('auth')->group(function () {
+//     Route::get('/settings', 'SettingsController@edit')->name('settings.edit');
+//     Route::put('/settings', 'SettingsController@update')->name('settings.update');
+//     Route::delete('/account', 'DeleteAccountController')->name('account.destroy');
+// });
 
 Route::resource('about', 'AboutPageController')->parameters([
    'about' => 'about_page',
