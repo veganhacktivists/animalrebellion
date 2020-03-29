@@ -10,7 +10,7 @@ class AboutPageController extends Controller
     {
         abort_unless($aboutPage->published, 404);
 
-        $otherPages = AboutPage::where('id', '!=', $aboutPage->id)->get();
+        $otherPages = AboutPage::where('id', '!=', $aboutPage->id)->where(['published' => true])->get();
 
         return view('about.show', compact('aboutPage', 'otherPages'));
     }

@@ -37,4 +37,22 @@ class AboutPageTest extends TestCase
         $response->assertDontSee($page->header);
         $response->assertDontSee($page->slug);
     }
+
+    public function testDoesNotLinkToDraftPagees()
+    {
+        $page = factory(AboutPage::class)->create(['published' => true]);
+
+        $visiblePage = factory(AboutPage::class)->create(['published' => true]);
+
+        $draftPage = factory(AboutPage::class)->create(['published' => false]);
+
+        $this->assertNotTrue($draftPage->published);
+
+        $response = $this->get('/about/'.$page->slug);
+
+        $response->assertStatus(200);
+        $response->assertSee($page->header);
+        $response->assertSee($visiblePage->slug);
+        $response->assertDontSee($draftPage->slug);
+    }
 }
