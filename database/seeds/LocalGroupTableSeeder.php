@@ -13,7 +13,7 @@ class LocalGroupTableSeeder extends Seeder
     public function run()
     {
         //** Use factory method to seed database */
-        factory(App\Models\LocalGroup::class, 30)->create();
+        factory(App\Models\LocalGroup::class, 5)->create();
 
         //** manual database seeds; prefer factory method */
         // LocalGroup::create([
