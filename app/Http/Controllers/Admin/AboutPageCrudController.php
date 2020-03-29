@@ -41,7 +41,7 @@ class AboutPageCrudController extends CrudController
         // Columns when browsing
         $this->crud->addColumn('title');
         $this->crud->addColumn('header');
-        $this->crud->addColumn(['name' => 'content', 'type' => 'textarea', 'label' => 'Content']);
+        $this->crud->addColumn(['name' => 'published', 'label' => 'Publicly visible', 'type' => 'boolean']);
 
         // Fields on the edit page
         $this->crud->addField(
@@ -86,6 +86,11 @@ class AboutPageCrudController extends CrudController
             'label' => 'The thumbnail image that should show up for this page',
             'type' => 'image',
             'upload' => true,
+        ]);
+        $this->crud->addField([
+            'name' => 'published',
+            'type' => 'checkbox',
+            'label' => 'Make this page visible to the public?',
         ]);
 
         $this->manageButtons();
