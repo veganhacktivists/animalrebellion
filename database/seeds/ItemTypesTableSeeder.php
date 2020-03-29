@@ -14,6 +14,10 @@ class ItemTypesTableSeeder extends Seeder
     {
         // ** manual database seeds with basic categories */
         ItemType::create([
+            'name' => 'Resource',
+        ]);
+
+        ItemType::create([
             'name' => 'Book',
         ]);
 

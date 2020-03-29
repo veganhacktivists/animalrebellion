@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Item;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
@@ -38,7 +39,7 @@ class ItemType extends Model
     /** Establish hasMany relationship with Item */
     public function items()
     {
-        return $this->hasMany('App\Models\Item');
+        return $this->hasMany(Item::class);
     }
 
     /*

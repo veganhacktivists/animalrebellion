@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Item;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
@@ -40,7 +41,7 @@ class ItemTag extends Model
     */
     public function items()
     {
-        return $this->belongsToMany('App\Models\Item', 'item_tag', 'item_tag_id')->withTimestamps();
+        return $this->belongsToMany(Item::class, 'item_tags_pivot_table', 'item_tag_id')->withTimestamps();
     }
     /*
     |--------------------------------------------------------------------------

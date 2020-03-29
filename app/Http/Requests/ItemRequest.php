@@ -26,7 +26,8 @@ class ItemRequest extends FormRequest
     {
         return [
             'title' => 'required|min:5|max:255',
-            'url' => 'required|min:5',
+            'url' => 'required|url',
+            'source' => 'url',
         ];
     }
 

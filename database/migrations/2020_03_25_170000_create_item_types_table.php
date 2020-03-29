@@ -4,6 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/** Reordered this migration to run before create_items_table since this
+ * must exist prior to foreign key constraint assignment.
+ */
 class CreateItemTypesTable extends Migration
 {
     /**

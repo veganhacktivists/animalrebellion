@@ -13,11 +13,14 @@ class CreateItemTagPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('item_tag', function (Blueprint $table) {
+        Schema::create('item_tags_pivot_table', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('item_id');
             $table->unsignedBigInteger('item_tag_id');
             $table->timestamps();
+
+            $table->foreign('item_id')->references('id')->on('items');
+            $table->foreign('item_tag_id')->references('id')->on('item_tags');
         });
     }
 

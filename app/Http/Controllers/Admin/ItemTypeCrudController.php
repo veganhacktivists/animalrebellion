@@ -32,8 +32,16 @@ class ItemTypeCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+        $this->crud->addColumn('name');
+
+        $this->crud->addField([
+            'name' => 'name',
+            'type' => 'text',
+            'label' => 'Name',
+            'attributes' => [
+                'placeholder' => 'Resource type name',
+            ],
+        ]);
 
         // add asterisk for fields that are required in Item_typeRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');

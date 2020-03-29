@@ -31,27 +31,89 @@ class ItemCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+        $this->crud->addColumn('title');
+        $this->crud->addColumn('url');
+        $this->crud->addColumn('blurb');
+        $this->crud->addColumn('publication_date');
+        $this->crud->addColumn('source');
+        $this->crud->addColumn('primary_author');
+        $this->crud->addColumn('secondary_author');
 
-        $this->crud->addField(['label' => 'Category',
-            'type' => 'select2',
-            'name' => 'item_type_id', // the db column for the foreign key
-            'entity' => 'item_type', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\ItemType", // foreign key model
+        $this->crud->addField([
+            'name' => 'title',
+            'type' => 'text',
+            'label' => 'Title',
+            'attributes' => [
+                'placeholder' => 'Resource title',
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'url',
+            'type' => 'text',
+            'label' => 'URL',
+            'attributes' => [
+                'placeholder' => 'Resource URL',
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'blurb',
+            'type' => 'textarea',
+            'label' => 'Blurb',
+            'attributes' => [
+                'placeholder' => 'Short description of resource',
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'source',
+            'type' => 'text',
+            'label' => 'Source',
+            'attributes' => [
+                'placeholder' => 'Source of resource',
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'primary_author',
+            'type' => 'text',
+            'label' => 'Primary Author',
+            'attributes' => [
+                'placeholder' => 'Resource Primary Author',
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'secondary_author',
+            'type' => 'text',
+            'label' => 'Secondary Author',
+            'attributes' => [
+                'placeholder' => 'Resource Secondary Author',
+            ],
+        ]);
+
+        $this->crud->addField(
+            [
+                'label' => 'Category',
+                'type' => 'select2',
+                'name' => 'item_type_id', // the db column for the foreign key
+                'entity' => 'item_type', // the method that defines the relationship in your Model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'model' => "App\Models\ItemType", // foreign key model
             ],
         );
 
-        $this->crud->addField([       // Select2Multiple = n-n relationship (with pivot table)
-            'label' => 'Tags',
-            'type' => 'select2_multiple',
-            'name' => 'tags', // the method that defines the relationship in your Model
-            'entity' => 'tags', // the method that defines the relationship in your Model
-            'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\ItemTag", // foreign key model
-            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
-            'select_all' => true, // show Select All and Clear buttons?
+        $this->crud->addField(
+            [       // Select2Multiple = n-n relationship (with pivot table)
+                'label' => 'Tags',
+                'type' => 'select2_multiple',
+                'name' => 'tags', // the method that defines the relationship in your Model
+                'entity' => 'tags', // the method that defines the relationship in your Model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'model' => "App\Models\ItemTag", // foreign key model
+                'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+                'select_all' => true, // show Select All and Clear buttons?
             ],
         );
 
