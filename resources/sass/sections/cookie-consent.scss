@@ -1,0 +1,12 @@
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: $black;
+
+    .cookie-consent__message {
+        color: $white;
+        font-family: $font-family-secondary;
+    }
+}

@@ -11,9 +11,10 @@
         <h3 class="card-title text-dark">{{ $event->name }}</h5>
           <p class="card-text">{{ $event->short_description }}</p>
 
-          <div class="d-flex flex-row justify-content-between mb-3">
+          <div class="mb-3">
             <span><i class="far fa-calendar pr-1"></i>{{ Carbon\Carbon::parse($event->start_date)->format('d M, Y') }} / {{ Carbon\Carbon::parse($event->end_date)->format('d M, Y') }}</span>
-            <span><i class="fa fa-map-marker-alt pr-1"></i>{{ $event->city }}</span>
+            <br/>
+            <span><i class="fa fa-map-marker-alt pr-1 mt-2"></i>{{ $event->city }}</span>
           </div>
           <a href="{{url('/events/' . $event->slug)}}" class="btn btn-primary px-5">Find out more</a>
       </div>
