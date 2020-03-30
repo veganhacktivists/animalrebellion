@@ -28,8 +28,8 @@
         <env name="DB_DATABASE" value="animalrebellion_test" />
         <env name="DB_HOST" value="127.0.0.1" />
         <env name="DB_PORT" value="3306" />
-        <env name="DB_USERNAME" value="root" />
-        <env name="DB_PASSWORD" value="" />
+        <env name="DB_USERNAME" value="homestead" />
+        <env name="DB_PASSWORD" value="secret" />
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>

@@ -17,6 +17,7 @@
 
       {{-- Right Side Of Navbar --}}
       <ul class="navbar-nav ml-auto">
+
         <li class="nav-item dropdown">
           <a id="aboutDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             About Us <span class="caret"></span>
@@ -27,6 +28,18 @@
             @endforeach
           </div>
         </li>
+
+        <li class="nav-item dropdown">
+          <a id="joinUsDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            Join Us <span class="caret"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="joinUsDropdown">
+            <a class="dropdown-item" href="{{ route('events.index') }}">Events</a>
+            <a class="dropdown-item" href="{{ route('local-groups.index') }}">Local Groups</a>
+            <a class="dropdown-item" href="#">Resources</a>
+          </div>
+        </li>
+
         <li class="nav-item">
           {{ link_to_route('contact.form', __('Contact'), null, ['class' => 'nav-link']) }}
         </li>

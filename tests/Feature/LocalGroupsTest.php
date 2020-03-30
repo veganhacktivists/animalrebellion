@@ -2,30 +2,41 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class LocalGroupsTest extends TestCase
 {
-    use DatabaseMigrations;
+    use RefreshDatabase;
 
-    /** @test */
-    public function local_groups_route_exists()
+     /**
+     * Test existence of Local Groups page
+     *
+     * @return void
+     */
+    public function testLocalGroupsRouteExists()
     {
         $response = $this->get('/local-groups');
         $response->assertStatus(200);
     }
 
-    /** @test */
-    public function local_groups_index_view_exists()
+     /**
+     * Test existence of Local Groups index page with content
+     *
+     * @return void
+     */
+    public function testLocalGroupsIndexViewExists()
     {
         $response = $this->get('/local-groups');
         $response->assertSee("Local Groups");
     }
 
-    /** @test */
-    public function users_can_see_all_local_groups()
+     /**
+     * Test for Local Groups data to be present on Local Groups page
+     *
+     * @return void
+     */
+    public function testUsersCanSeeAllLocalGroups()
     {
         $group = factory('App\Models\LocalGroup')->create();
         $response = $this->get('/local-groups');
