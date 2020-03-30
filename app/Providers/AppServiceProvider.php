@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('*', function ($view) {
-            $view->with('aboutPages', AboutPage::all());
+            $view->with('aboutPages', AboutPage::where(['published' => true])->get());
         });
         Event::observe(EventObserver::class);
     }

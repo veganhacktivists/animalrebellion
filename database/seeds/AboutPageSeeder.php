@@ -27,6 +27,7 @@ class AboutPageSeeder extends Seeder
                 'but a framework based on natural principles allows each of us to develop our own approach to practicing a '.
                 'regenerative way of being. At its simplest this means putting a little bit more in than we take out.',
             'slug' => 'culture',
+            'published' => true,
         ]);
 
         $storyPage = \App\Models\AboutPage::create([
@@ -48,6 +49,7 @@ class AboutPageSeeder extends Seeder
                 '<br><br><i>Now, we are working relentlessly to build our movement. So come and join us. Rebel for life. '.
                 'For the planet. For the animals. For our children’s children’s futures. There is so much work to be done.</i>',
             'slug' => 'story',
+            'published' => true,
         ]);
     }
 }

@@ -143,6 +143,15 @@ The file also contains a method called `seedCustomData()`. Use this if you wish 
 
 **Please test this script out locally on a completely wiped database before running it in production. Once it's run, it's annoying to un-seed things in order to re-run the script!**
 
+## Testing (AnimalRebellion)
+
+To run tests locally, you will need to set up a local MySQL database with the name `animalrebellion_test`. Also make sure to update the following values in `phpunit.xml` to match your
+local MySQL credentials:
+```
+<env name="DB_USERNAME" value="root" />
+<env name="DB_PASSWORD" value="" />
+```
+
 ## (Optional) IDE Helper
 
 The [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper) is installed as a dev dependency for those who use PHPStorm. For now, please limit its usage to the Facade auto-complete/intellisense feature.

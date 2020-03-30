@@ -13,6 +13,10 @@ class Page extends Model
 
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'published' => 'boolean',
+    ];
+
     protected $childTypes = [
         'about_page' => AboutPage::class,
     ];
