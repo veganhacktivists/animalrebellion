@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use Carbon\Carbon;
+
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -19,6 +14,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $events = Event::whereDate('end_date', '>=', Carbon::now())
+            ->orderBy('start_date')
+            ->get();
+
+        return view('home', compact('events'));
     }
 }

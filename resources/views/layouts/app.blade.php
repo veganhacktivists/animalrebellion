@@ -10,10 +10,11 @@
     <title>@yield('title')</title>
 
     <!-- Scripts -->
-    <script>
-      window.__config = {!! json_encode(config('base')) !!}
-    </script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+    <!-- OpenLayers JS lib -->
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/build/ol.js"></script>
 
     <script src="https://unpkg.com/react@16.8.6/umd/react.production.min.js"></script>
 
@@ -34,10 +35,29 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+    <!-- OpenLayers CSS lib -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/css/ol.css" type="text/css">
 
   @if (config('base.livewire'))
       @livewireAssets
     @endif
+
+    <style>
+      .custom-thumbnail {
+        /* Specify the image in the blade template */
+        /* Full height */
+        height: 100%;
+
+        min-height:350px;
+        min-width:350px;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
   </head>
   <body>
     <div id="app">

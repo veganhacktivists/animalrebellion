@@ -1,0 +1,59 @@
+/** Event details page **/
+.event-content {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.event-details {
+    .label {
+        color: $black;
+        padding-bottom: 1%;
+        border-bottom: 1px solid black;
+    }
+}
+
+
+/** Event search component **/
+.datepicker {
+    margin-top: 70px;
+
+    table {
+        tr {
+            td.day {
+                width: 35px;
+                padding: 2.5%;
+            }
+
+            td.active.active,
+            td.day:focus,
+            td.day:active,
+            td.day:visited {
+                background-color: $dark-gray !important;
+                color: $white !important;
+                background-image: none;
+            }
+        }
+    }
+}
+
+.event-filters {
+    padding: 2% 3%;
+    background-color: $black;
+    color: $white;
+
+    .form-group {
+        label {
+            font-family: $font-family-primary;
+            font-size: 1.1em;
+        }
+
+        .form-control {
+            height: 2.9rem;
+        }
+    }
+
+    .event-count {
+        color: $white;
+    }
+    
+}

@@ -20,7 +20,7 @@ class Event extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['name', 'start_date', 'end_date', 'start_time', 'end_time', 'address', 'city', 'country', 'type', 'hosted_by', 'description', 'image'];
+    protected $fillable = ['name', 'start_date', 'end_date', 'start_time', 'end_time', 'address', 'city', 'country', 'type', 'hosted_by', 'short_description', 'full_description', 'image', 'slug'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -50,6 +50,15 @@ class Event extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     /*
     |--------------------------------------------------------------------------

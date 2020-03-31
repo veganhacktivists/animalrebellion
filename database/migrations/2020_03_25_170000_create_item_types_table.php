@@ -4,7 +4,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAboutPagesTable extends Migration
+/** Reordered this migration to run before create_items_table since this
+ * must exist prior to foreign key constraint assignment.
+ */
+class CreateItemTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +16,9 @@ class CreateAboutPagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('about_pages', function (Blueprint $table) {
+        Schema::create('item_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->string('title');
-            $table->string('header');
-            $table->text('content');
-            $table->string('slug')->unique();
-            $table->string('thumbnail');
-
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class CreateAboutPagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('about_pages');
+        Schema::dropIfExists('item_types');
     }
 }

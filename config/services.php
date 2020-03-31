@@ -19,6 +19,10 @@ return [
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 
+    'opencage' => [
+        'api_key' => env("OPEN_CAGE_API_KEY"),
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
