@@ -7,9 +7,9 @@
   var groups = {!! json_encode($groups) !!};
 </script>
 
-<div class="container text-center">
+<div class="container">
   <div class="row">
-    <div class="col-12 pt-5">
+    <div class="col-12 pt-5 text-center">
       <h1>Local Groups</h1>
     </div>
   </div>

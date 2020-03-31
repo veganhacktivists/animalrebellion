@@ -35,7 +35,7 @@ class ResourcesPageTest extends TestCase
         $response->assertSee("Resources");
     }
 
-       /**
+    /**
      * Test for Resources data to be present on page
      *
      * @return void

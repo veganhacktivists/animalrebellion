@@ -2,15 +2,16 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
+use App\Models\LocalGroup;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class LocalGroupsTest extends TestCase
 {
     use RefreshDatabase;
 
-     /**
-     * Test existence of Local Groups page
+    /**
+     * Test existence of Local Groups page.
      *
      * @return void
      */
@@ -20,25 +21,25 @@ class LocalGroupsTest extends TestCase
         $response->assertStatus(200);
     }
 
-     /**
-     * Test existence of Local Groups index page with content
+    /**
+     * Test existence of Local Groups index page with visible content.
      *
      * @return void
      */
     public function testLocalGroupsIndexViewExists()
     {
         $response = $this->get('/local-groups');
-        $response->assertSee("Local Groups");
+        $response->assertSee('Local Groups');
     }
 
-     /**
-     * Test for Local Groups data to be present on Local Groups page
+    /**
+     * Test for Local Groups data to be present on Local Groups page.
      *
      * @return void
      */
     public function testUsersCanSeeAllLocalGroups()
     {
-        $group = factory('App\Models\LocalGroup')->create();
+        $group = factory(LocalGroup::class)->create();
         $response = $this->get('/local-groups');
         $response->assertSee($group->name);
     }

@@ -39,7 +39,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="joinUsDropdown">
             <a class="dropdown-item" href="{{ route('events.index') }}">Events</a>
             <a class="dropdown-item" href="{{ route('local-groups.index') }}">Local Groups</a>
-            <a class="dropdown-item" href="#">Resources</a>
+            <a class="dropdown-item" href="{{ route('resources.index') }}">Resources</a>
           </div>
         </li>
 
