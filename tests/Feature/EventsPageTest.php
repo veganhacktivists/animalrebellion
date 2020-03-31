@@ -40,7 +40,7 @@ class EventsPageTest extends TestCase
      */
     public function testUsersCanSeeAllEvents()
     {
-        // Use seeder since no factory existis
+        // Use seeder since no factory exists
         $this->seed(EventsTableSeeder::class);
 
         // Check for content
