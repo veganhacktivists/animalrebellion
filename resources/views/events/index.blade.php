@@ -11,7 +11,7 @@
   </div>
 
   <div class="row">
-    <div class="col0-12">
+    <div class="col-12">
       <p class="text-featured">
         Rebels are organising meetings, talks, events, trainings and actions all the time and you can get involved.
         <br /><br />
