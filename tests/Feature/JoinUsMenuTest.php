@@ -17,6 +17,7 @@ class JoinUsMenuTest extends TestCase
     public function testJoinUsMenuExists()
     {
         $response = $this->get('/');
+        $response->assertStatus(200);
         $response->assertSee('Join Us');
     }
 
@@ -28,6 +29,7 @@ class JoinUsMenuTest extends TestCase
     public function testSubMenuItemLocalGroupsExists()
     {
         $response = $this->get('/');
+        $response->assertStatus(200);
         $response->assertSeeInOrder(['Events', 'Local Groups', 'Resources']);
     }
 }

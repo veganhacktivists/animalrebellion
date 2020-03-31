@@ -32,6 +32,7 @@ class ResourcesPageTest extends TestCase
     public function testResourcesIndexViewExists()
     {
         $response = $this->get('/resources');
+        $response->assertStatus(200);
         $response->assertSee("Resources");
     }
 
@@ -50,6 +51,7 @@ class ResourcesPageTest extends TestCase
 
         // Check for content
         $response = $this->get('/resources');
+        $response->assertStatus(200);
         $response->assertSee($item->title);
     }
 }

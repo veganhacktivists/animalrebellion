@@ -6,7 +6,7 @@ use App\Models\LocalGroup;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class LocalGroupsTest extends TestCase
+class LocalGroupsPageTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -29,6 +29,7 @@ class LocalGroupsTest extends TestCase
     public function testLocalGroupsIndexViewExists()
     {
         $response = $this->get('/local-groups');
+        $response->assertStatus(200);
         $response->assertSee('Local Groups');
     }
 
@@ -41,6 +42,7 @@ class LocalGroupsTest extends TestCase
     {
         $group = factory(LocalGroup::class)->create();
         $response = $this->get('/local-groups');
+        $response->assertStatus(200);
         $response->assertSee($group->name);
     }
 }
