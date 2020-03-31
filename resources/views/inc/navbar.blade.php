@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm">
   <div class="container">
-    <a href="{{url('')}}" class="logo d-flex flex-row">
+    <a href="{{ route('home') }}" class="logo d-flex flex-row">
       <img class="logo-img" src="https://animalrebellion.org/wp-content/uploads/2020/01/cropped-Animal-Rebellion-Logo-White-No-Background.png" alt="">
       <div class="ml-4">
         <h4 class="logo-text mb-0 mt-2">Animal</h4>
@@ -12,11 +12,14 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
       {{-- Left Side Of Navbar --}}
       <ul class="navbar-nav mr-auto"></ul>
 
       {{-- Right Side Of Navbar --}}
       <ul class="navbar-nav ml-auto">
+
+        {{-- About Pages menu items --}}
         <li class="nav-item dropdown">
           <a id="aboutDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             About Us <span class="caret"></span>
@@ -27,6 +30,20 @@
             @endforeach
           </div>
         </li>
+
+        {{-- Join Us menu items --}}
+        <li class="nav-item dropdown">
+          <a id="joinUsDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            Join Us <span class="caret"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="joinUsDropdown">
+            <a class="dropdown-item" href="{{ route('events.index') }}">Events</a>
+            <a class="dropdown-item" href="{{ route('local-groups.index') }}">Local Groups</a>
+            <a class="dropdown-item" href="{{ route('resources.index') }}">Resources</a>
+          </div>
+        </li>
+
+        {{-- Contact menu item --}}
         <li class="nav-item">
           {{ link_to_route('contact.form', __('Contact'), null, ['class' => 'nav-link']) }}
         </li>

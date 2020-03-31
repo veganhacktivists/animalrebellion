@@ -14,6 +14,6 @@
       </div>
     @endforeach
     <div class="container text-center">
-      <a href="{{url('/events')}}" class="btn btn-lg btn-dark">View All Events</a>
+      <a href="{{ route('events.index') }}" class="btn btn-lg btn-dark">View All Events</a>
     </div>
 @endsection
