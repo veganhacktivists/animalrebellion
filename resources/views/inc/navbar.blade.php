@@ -22,7 +22,7 @@
         {{-- About Pages menu items --}}
         <li class="nav-item dropdown">
           <a id="aboutDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-            About Us <span class="caret"></span>
+            @lang('navbar.about') <span class="caret"></span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="aboutDropdown">
             @foreach($aboutPages as $aboutPage)
@@ -34,7 +34,7 @@
         {{-- Join Us menu items --}}
         <li class="nav-item dropdown">
           <a id="joinUsDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-            Join Us <span class="caret"></span>
+            @lang('navbar.join') <span class="caret"></span>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="joinUsDropdown">
             <a class="dropdown-item" href="{{ route('events.index') }}">Events</a>
@@ -45,7 +45,7 @@
 
         {{-- Contact menu item --}}
         <li class="nav-item">
-          {{ link_to_route('contact.form', __('Contact'), null, ['class' => 'nav-link']) }}
+          {{ link_to_route('contact.form', __('navbar.contact'), null, ['class' => 'nav-link']) }}
         </li>
       </ul>
     </div>
