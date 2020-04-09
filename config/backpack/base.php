@@ -46,6 +46,8 @@ return [
     'overlays' => [
         'vendor/backpack/base/backpack.bold.css',
         'vendor/backpack/base/backpack.content.is.king.css',
+        'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
+        'resources/css/backpack.css',
     ],
 
     /*

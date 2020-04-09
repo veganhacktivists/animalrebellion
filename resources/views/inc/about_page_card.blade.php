@@ -15,7 +15,7 @@
 
   <div class="card-header other-page-icon">
     <div class="d-flex justify-content-center align-content-center">
-      <span style="font-size:7rem;"><i class="fas fa-file"></i></span>
+      <span style="font-size:7rem;"><i class="{{ $otherPage->thumbnail }}"></i></span>
     </div>
   </div>
 

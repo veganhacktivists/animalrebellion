@@ -44,34 +44,33 @@ class AboutPageCrudController extends CrudController
         $this->crud->addColumn(['name' => 'published', 'label' => 'Publicly visible', 'type' => 'boolean']);
 
         // Fields on the edit page
-        $this->crud->addField(
-            [
+        $this->crud->addField([
                 'name' => 'title',
                 'type' => 'text',
                 'label' => 'Title',
                 'attributes' => [
                     'placeholder' => 'Page title',
                 ],
-            ]
-        );
-        $this->crud->addField(
-            [
+            ]);
+
+        $this->crud->addField([
                 'name' => 'slug',
                 'type' => 'text',
                 'label' => 'Slug (the identifier that shows up in the page\'s URL',
                 'attributes' => [
                     'placeholder' => 'Page slug',
                 ],
-            ]
-        );
+            ]);
+
         $this->crud->addField([
-            'name' => 'header',
-            'type' => 'text',
-            'label' => 'Header (the bolded text users see at the top of the page',
-            'attributes' => [
-                'placeholder' => 'Page header',
-            ],
-        ]);
+                'name' => 'header',
+                'type' => 'text',
+                'label' => 'Header (the bolded text users see at the top of the page',
+                'attributes' => [
+                    'placeholder' => 'Page header',
+                ],
+            ]);
+
         $this->crud->addField([
             'name' => 'content',
             'type' => 'summernote',
@@ -80,13 +79,24 @@ class AboutPageCrudController extends CrudController
                 'placeholder' => 'The textual body of the page',
             ],
         ]);
+
         $this->crud->addField([
-            // Upload
             'name' => 'thumbnail',
-            'label' => 'The thumbnail image that should show up for this page',
-            'type' => 'image',
-            'upload' => true,
+            'label' => 'Page Icon',
+            'type' => 'radio',
+            'options' => [
+                'fas fa-paw' => '<span style="font-size:4rem;"><i class="fas fa-paw"></i></span>',
+                'fas fa-file' => '<span style="font-size:4rem;"><i class="fas fa-file"></i></span>',
+                'fas fa-users' => '<span style="font-size:4rem;"><i class="fas fa-users"></i></span>',
+                'far fa-calendar-check' => '<span style="font-size:4rem;"><i class="far fa-calendar-check"></i></span>',
+                'fas fa-folder-open' => '<span style="font-size:4rem;"><i class="fas fa-folder-open"></i></span>',
+                'fas fa-comments' => '<span style="font-size:4rem;"><i class="fas fa-comments"></i></span>',
+            ],
+            // optional
+            'inline' => true,
+            'default' => 'fas fa-paw',
         ]);
+
         $this->crud->addField([
             'name' => 'published',
             'type' => 'checkbox',
