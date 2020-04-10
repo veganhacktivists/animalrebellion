@@ -34,3 +34,8 @@ Route::post('/contact', 'SendContactEmailController')->name('contact.send');
 Route::resource('about', 'AboutPageController')->parameters([
    'about' => 'about_page',
 ])->only('show');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
+{
+    CRUD::resource('elfinder', 'Admin\ElfinderController');
+});
