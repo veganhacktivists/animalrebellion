@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
 use Parental\HasParent;
+use Spatie\Translatable\HasTranslations;
 
 class AboutPage extends Page
 {
     use CrudTrait;
     use HasParent;
+    use HasTranslations;
 
     /*
     |--------------------------------------------------------------------------
@@ -23,6 +25,7 @@ class AboutPage extends Page
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
+    public $translatable = ['title', 'header', 'content'];
 
     /*
     |--------------------------------------------------------------------------
