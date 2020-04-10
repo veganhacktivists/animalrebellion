@@ -1,16 +1,3 @@
-<style>
-  .other-page-card {
-    width: 25vw;
-  }
-  .other-page-icon {
-    background: #82C36B;
-    width: 100%;
-    height: 175px;
-    margin: 0;
-    padding: 0;
-  }
-</style>
-
 <div class="card other-page-card border-primary border-1">
 
   <div class="card-header other-page-icon">
