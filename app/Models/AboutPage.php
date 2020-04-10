@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Parental\HasParent;
-use Spatie\Translatable\HasTranslations;
 
 class AboutPage extends Page
 {
