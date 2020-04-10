@@ -38,7 +38,7 @@ class AboutPageTest extends TestCase
         $response->assertDontSee($page->slug);
     }
 
-    public function testDoesNotLinkToDraftPagees()
+    public function testDoesNotLinkToDraftPages()
     {
         $page = factory(AboutPage::class)->create(['published' => true]);
 
@@ -54,5 +54,16 @@ class AboutPageTest extends TestCase
         $response->assertSee($page->header);
         $response->assertSee($visiblePage->slug);
         $response->assertDontSee($draftPage->slug);
+    }
+
+    public function testOtherPageCardsAreViewableOnAboutPages()
+    {
+        $pages = factory(AboutPage::class, 3)->create(['published' => true]);
+
+        $response = $this->get('/about/'.$pages[0]->slug);
+        $response->assertStatus(200);
+
+        // Should see two cards for other pages; "Find out more" is the button text for each card
+        $response->assertSeeTextInOrder(['Find out more', 'Find out more']);
     }
 }

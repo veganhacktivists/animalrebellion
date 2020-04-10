@@ -1,5 +1,5 @@
 <div class="p-1" id="accordionSocial">
-  <div class="card border-primary border-2">
+  <div class="card border-primary border-1">
     <div class="card-header bg-primary" id="heading">
       <button class="btn btn-link btn-block text-decoration-none align-items-center" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapse">
         <span class="h2 text-white float-left">@lang('footer.social')</span>

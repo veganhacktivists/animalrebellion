@@ -1,7 +1,7 @@
 <!-- This file is used to store sidebar items, starting with Backpack\Base 0.9.0 -->
 <li>
     <a href="{{ backpack_url('dashboard') }}">
-        <i class="fa fa-dashboard"></i>
+        <i class="fa fa-tachometer-alt"></i>
         <span>{{ trans('backpack::base.dashboard') }}</span>
     </a>
 </li>
