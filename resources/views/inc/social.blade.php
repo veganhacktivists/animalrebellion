@@ -2,7 +2,7 @@
   <div class="card border-primary border-1">
     <div class="card-header bg-primary" id="heading">
       <button class="btn btn-link btn-block text-decoration-none align-items-center" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapse">
-        <span class="h2 text-white float-left">Social Media</span>
+        <span class="h2 text-white float-left">@lang('footer.social')</span>
         <i class="fa fa-chevron-down fa-2x text-white float-right"></i>
       </button>
     </div>
