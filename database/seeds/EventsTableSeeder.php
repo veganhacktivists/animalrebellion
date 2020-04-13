@@ -13,8 +13,8 @@ class EventsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Event::class, 2)->state('meeting')->create();
-        factory(Event::class, 2)->state('training')->create();
-        factory(Event::class, 2)->state('talk')->create();
+        factory(Event::class, 2)->state(Event::TYPE_MEETING)->create();
+        factory(Event::class, 2)->state(Event::TYPE_TRAINING)->create();
+        factory(Event::class, 2)->state(Event::TYPE_TALK)->create();
     }
 }

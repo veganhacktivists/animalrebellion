@@ -26,14 +26,14 @@ $factory->define(Event::class, function (Faker $faker) {
     ];
 });
 
-$factory->state(Event::class, 'meeting', [
+$factory->state(Event::class, Event::TYPE_MEETING, [
     'type' => Event::TYPE_MEETING,
 ]);
 
-$factory->state(Event::class, 'training', [
+$factory->state(Event::class, Event::TYPE_TRAINING, [
     'type' => Event::TYPE_TRAINING,
 ]);
 
-$factory->state(Event::class, 'talk', [
+$factory->state(Event::class, Event::TYPE_TALK, [
     'type' => Event::TYPE_TALK,
 ]);
