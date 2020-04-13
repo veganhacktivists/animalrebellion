@@ -50,6 +50,7 @@ class Event extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+
     /**
      * Get the route key for the model.
      *
@@ -58,22 +59,6 @@ class Event extends Model
     public function getRouteKeyName()
     {
         return 'slug';
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::created(function (Event $event) {
-            $address = $event->address . ', ' . $event->city . ', ' . ', ' . $event->country;
-            $results = app()->make('Geocoder')->geocode($address);
-            if (count($results['results'])) {
-                $event->update([
-                    'lat' => $results['results'][0]['geometry']['lat'],
-                    'lng' => $results['results'][0]['geometry']['lng']
-                ]);
-            }
-        });
     }
 
     /*

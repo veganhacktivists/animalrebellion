@@ -19,6 +19,14 @@ class EventObserver
     {
         $slug = $this->createSlug($event->name, $event->id, Event::class);
         $event->slug = $slug;
+
+        $address = $event->address . ', ' . $event->city . ', ' . ', ' . $event->country;
+        $results = app()->make('Geocoder')->geocode($address);
+        if (count($results['results'])) {
+            $event->lat = $results['results'][0]['geometry']['lat'];
+            $event->lng = $results['results'][0]['geometry']['lng'];
+        }
+
         $event->save();
     }
 
