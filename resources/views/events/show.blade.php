@@ -3,6 +3,11 @@
 @section('title', title(__('Home')))
 
 @section('content')
+<script>
+  $('document').ready(function() {
+    initializeMap({!! json_encode([$event]) !!});
+  })
+</script>
 <div class="container">
     <div class="text-center">
         <img class="mb-4" src="{{$event->image}}" alt="" width="70%">
@@ -63,6 +68,16 @@
 
         <div class="mt-4 mb-4">
             <p>{!! $event->full_description !!}</p>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-12 mt-2">
+            <!-- Map -->
+            <div id="map" class="map">
+              <!-- Popup -->
+              <div id="popup"></div>
+            </div>
+          </div>
         </div>
 
         <div class="text-center">
