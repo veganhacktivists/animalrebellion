@@ -20,7 +20,7 @@ class Event extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['name', 'start_date', 'end_date', 'start_time', 'end_time', 'address', 'city', 'country', 'type', 'hosted_by', 'short_description', 'full_description', 'image', 'slug'];
+    protected $fillable = ['name', 'start_date', 'end_date', 'start_time', 'end_time', 'address', 'city', 'country', 'type', 'hosted_by', 'short_description', 'full_description', 'image', 'slug', 'lat', 'lng'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -58,6 +58,22 @@ class Event extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function (Event $event) {
+            $address = $event->address . ', ' . $event->city . ', ' . ', ' . $event->country;
+            $results = app()->make('Geocoder')->geocode($address);
+            if (count($results['results'])) {
+                $event->update([
+                    'lat' => $results['results'][0]['geometry']['lat'],
+                    'lng' => $results['results'][0]['geometry']['lng']
+                ]);
+            }
+        });
     }
 
     /*
