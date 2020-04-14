@@ -2,9 +2,10 @@
 
 @section('content')
 
-<!-- Expose groups data array to javascript -->
 <script>
-  var groups = {!! json_encode($groups) !!};
+  $('document').ready(function() {
+    initializeMap({!! json_encode($groups) !!});
+  });
 </script>
 
 <div class="container">

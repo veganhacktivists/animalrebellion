@@ -5,4 +5,4 @@
  */
 
 require('./bootstrap')
-require('./map')
+import { initializeMap } from './map'
