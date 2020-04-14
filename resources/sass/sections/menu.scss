@@ -16,6 +16,7 @@
     .logo-text {
         color: $white;
     }
+
     .logo-img {
         height: 65px;
     }
@@ -23,4 +24,22 @@
 
 .logo:hover {
     text-decoration: none;
+}
+
+.nav-item .dropdown-menu {
+    font-family: $font-family-primary;
+    background-color: $black;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-size: $font-size-base * 1.2;
+
+    .dropdown-item {
+        color: $white;
+    }
+
+    .dropdown-item:hover {
+        background-color: $white;
+        color: $black;
+    }
 }

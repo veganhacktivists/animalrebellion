@@ -329,7 +329,7 @@ class LocalGroupCrudController extends CrudController
                 'Uganda' => 'Uganda',
                 'United Kingdom' => 'United Kingdom',
                 'Ukraine' => 'Ukraine',
-                'United Arab Erimates' => 'United Arab Emirates',
+                'United Arab Emirates' => 'United Arab Emirates',
                 'United States of America' => 'United States of America',
                 'Uraguay' => 'Uruguay',
                 'Uzbekistan' => 'Uzbekistan',
