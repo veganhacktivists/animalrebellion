@@ -6,13 +6,14 @@ use App\Models\LocalGroup;
 
 class LocalGroupObserver
 {
-     /**
+    /**
      * Handle LocalGroup "created" event.
      *
      * On creation of a new localGroup, grab lat/lng coordinates
      * via Geocoder lib and assign in the coords table.
      *
-     * @param  \App\LocalGroup  $event
+     * @param \App\LocalGroup $event
+     *
      * @return void
      */
     public function created(LocalGroup $localGroup)
