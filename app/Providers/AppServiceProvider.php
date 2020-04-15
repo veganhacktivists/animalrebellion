@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\AboutPage;
 use App\Models\Event;
+use App\Models\LocalGroup;
 use App\Observers\EventObserver;
 use App\Observers\LocalGroupObserver;
 use Illuminate\Support\Facades\View;
@@ -37,6 +38,6 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Event::observe(EventObserver::class);
-        Event::observe(LocalGroupObserver::class);
+        LocalGroup::observe(LocalGroupObserver::class);
     }
 }
