@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\Models\ItemTag;
-use App\Models\ItemType;
 use Backpack\CRUD\CrudTrait;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
     use CrudTrait;
+    use HasTranslations;
 
     /*
     |--------------------------------------------------------------------------
@@ -24,6 +24,7 @@ class Item extends Model
     protected $fillable = ['title', 'url', 'blurb', 'publication_date', 'source', 'primary_author', 'secondary_author'];
     // protected $hidden = [];
     // protected $dates = [];
+    protected $translatable = ['title', 'blurb'];
 
     /*
     |--------------------------------------------------------------------------
@@ -43,14 +44,14 @@ class Item extends Model
         return $this->belongsTo(ItemType::class);
     }
 
-     /** Establish belongsToMany relationship with ItemTag.
-      * Specify table and value to relieve ambiguity
-      * of automatically general SQL.
+    /** Establish belongsToMany relationship with ItemTag.
+     * Specify table and value to relieve ambiguity
+     * of automatically general SQL.
      */
-     public function tags()
-     {
-         return $this->belongsToMany(ItemTag::class, 'item_tags_pivot_table', 'item_id')->withTimestamps();
-     }
+    public function tags()
+    {
+        return $this->belongsToMany(ItemTag::class, 'item_tags_pivot_table', 'item_id')->withTimestamps();
+    }
 
     /*
     |--------------------------------------------------------------------------

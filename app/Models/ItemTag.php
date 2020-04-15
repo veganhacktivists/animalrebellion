@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use App\Models\Item;
 use Backpack\CRUD\CrudTrait;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
 
 class ItemTag extends Model
 {
     use CrudTrait;
+    use HasTranslations;
 
     /*
     |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ class ItemTag extends Model
     protected $fillable = ['name'];
     // protected $hidden = [];
     // protected $dates = [];
+    protected $translatable = ['name'];
 
     /*
     |--------------------------------------------------------------------------

@@ -14,7 +14,7 @@ class AddShortDescriptionToEventsTable extends Migration
     public function up()
     {
         Schema::table('events', function (Blueprint $table) {
-            $table->text('short_description');
+            $table->json('short_description');
             $table->renameColumn('description', 'full_description');
         });
     }
