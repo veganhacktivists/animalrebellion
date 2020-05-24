@@ -116,7 +116,37 @@ class AboutPageSeeder extends Seeder
                 'It is therefore crucial that a citizens’ assembly is presented with the facts about animal '.
                 'agriculture and the plant-based food alternatives. Members of the assembly need to make '.
                 'educated and unbiased choices. People must have the power to make informed legislative change.',
-            'slug' => 'values',
+            'slug' => 'demands',
+            'thumbnail' => 'fas fa-comments',
+            'published' => true,
+        ]);
+
+        $strategyPage = \App\Models\AboutPage::create([
+            'title' => 'Strategy',
+            'header' => 'Our Strategy',
+            'content' => 'Animal Rebellion engages in mass nonviolent civil disobedience '.
+                'to demand transition to a just and sustainable plant-based food system.<br>'.
+                'We ask everyone to draw courage from the movement and collaborate to achieve change. '.
+                'Whilst our strategy does focus on acts of rebellion, physical rebellion is not a'.
+                'requirement. We encourage various actions provided they are peaceful and contribute towards our aim.<br>'.
+                'Nonviolent civil disobedience is a fundamental part of Animal Rebellion’s strategy. '.
+                'We promote civil disobedience and rebellion because the situation is urgent and such action '.
+                'is necessary. Those of us who can rebel on the streets will do so. Those of us who can’t will '.
+                'find other ways of resisting. All of us will work together.<br>'.
+                'Animal Rebellion focuses our strategy on political and systemic change, not personal change. '.
+                'You do not need to be vegan, or even vegetarian, to join the movement. If you believe '.
+                'in a just and sustainable plant-based food system, then you are already '.
+                'part of the solution. Belief is half the battle.<br>'.
+                'Whilst we commend organisations encouraging individual lifestyle changes, our role '.
+                'lies in demanding broader system change from the UK government. We do not concentrate '.
+                'on traditional systems of campaigning such as petitions or writing to our MPs. '.
+                'Again, we honour the work that is already being done and we do not attempt to replace or erase that.<br>'.
+                'Instead, we promote mass civil disobedience in full public view. This can mean '.
+                'creating economic disruption to shake the political system and civil '.
+                'disruption to raise awareness. We are deeply sorry for any inconvenience '.
+                'that this causes. We encourage you to compare temporary inconvenience with'.
+                ' irreversible destruction and decide which one you’d rather be impacted by.<br>',
+            'slug' => 'strategy',
             'thumbnail' => 'fas fa-comments',
             'published' => true,
         ]);
