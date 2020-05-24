@@ -11,6 +11,18 @@ class AboutPageSeeder extends Seeder
      */
     public function run()
     {
+        $aboutPage = \App\Models\AboutPage::create([
+            'title' => 'About',
+            'header' => 'About Animal Rebellion',
+            'content' => 'Animal Rebellion is a mass movement calling for immediate transition to a just and sustainable plant-based food system.<br><br>'.
+                ' We invite everyone to make the connection between animal agriculture and the climate crisis. Driven by mounting evidence, we are calling on government to transition to a food system that will support farmers, nourish communities, care for animals, and help save the planet.<br><br>'.
+                'Join us in using nonviolent civil resistance to create a sustainable plant-based food system and ensure justice for all animals.<br><br>'.
+                'Anyone can be part of Animal Rebellion. You do not have to be a rebel to join our community. You do not need to live or eat a certain way. If you support the systemic changes that we call for, then you are already part of the movement.',
+            'slug' => 'about',
+            'thumbnail' => 'fas fa-folder-open',
+            'published' => true,
+        ]);
+
         $culturePage = \App\Models\AboutPage::create([
             'title' => 'Culture',
             'header' => 'Our Culture',
@@ -27,6 +39,7 @@ class AboutPageSeeder extends Seeder
                 'but a framework based on natural principles allows each of us to develop our own approach to practicing a '.
                 'regenerative way of being. At its simplest this means putting a little bit more in than we take out.',
             'slug' => 'culture',
+            'thumbnail' => 'fas fa-users',
             'published' => true,
         ]);
 
@@ -49,6 +62,26 @@ class AboutPageSeeder extends Seeder
                 '<br><br><i>Now, we are working relentlessly to build our movement. So come and join us. Rebel for life. '.
                 'For the planet. For the animals. For our children’s children’s futures. There is so much work to be done.</i>',
             'slug' => 'story',
+            'thumbnail' => 'fas fa-paw',
+            'published' => true,
+        ]);
+
+        $valuesPage = \App\Models\AboutPage::create([
+            'title' => 'Values',
+            'header' => 'Our Principles & Values',
+            'content' => '<h4>All are welcome who want to adhere to our principles and values: </h4><br><br><br><br>'.
+                '<strong>1. We are an anti-speciesist movement with a shared vision of change</strong> <br><br>'.
+                '<strong>2. We set our mission on what is necessary</strong><br><br>'.
+                '<strong>3. We need a regenerative culture</strong><br><br>'.
+                '<strong>4. We openly challenge ourselves and our toxic system</strong><br><br>'.
+                '<strong>5. We value reflecting and learning</strong><br><br>'.
+                '<strong>6. We welcome everyone and every part of everyone</strong><br><br>'.
+                '<strong>7. We actively mitigate for power</strong><br><br>'.
+                '<strong>8. We avoid blaming and shaming</strong><br><br>'.
+                '<strong>9. We are a non-violent network</strong><br><br>'.
+                '<strong>10. We are based on autonomy and decentralisation</strong>',
+            'slug' => 'values',
+            'thumbnail' => 'fas fa-comments',
             'published' => true,
         ]);
     }
