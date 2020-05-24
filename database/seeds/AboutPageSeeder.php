@@ -150,5 +150,27 @@ class AboutPageSeeder extends Seeder
             'thumbnail' => 'fas fa-comments',
             'published' => true,
         ]);
+
+        $structurePage = \App\Models\AboutPage::create([
+            'title' => 'Structure',
+            'header' => 'Our Structure',
+            'content' => 'Animal Rebellion works to build a movement that is inclusive, non-hierarchical,'.
+                ' and free of coercive power dynamics.<br>'.
+                'We empower individuals to harness their creativity and initiative, whilst also balancing the need for group consent.<br>'.
+                'To achieve this, we organise in decentralised and autonomous teams. Within these teams, '.
+                'individuals have the authority to react to ever-changing situations whilst also '.
+                'harnessing the collective intelligence of the group.<br>'.
+                'This strategy is part of a Self-Organising System outlined in our Constitution. The system '.
+                'is founded on the principle of distributed authority where decisions are decentralised '.
+                'to individuals in roles with clear mandates for those decisions.<br>'.
+                'When someone occupies a role, they have the authority to act and make decisions; '.
+                'they are also accountable for ensuring these actions match their mandate.<br>'.
+                'The constitution exists so that power is removed from people and placed into processes.<br>'.
+                'This ensures that everyone abides by the same rules and no individual has power over another.<br>'.
+                'To witness the structure in action, visit our <a href="/local-groups">Interactive Map</a> of all UK-level teams (GlassFrog).<br>',
+            'slug' => 'structure',
+            'thumbnail' => 'fas fa-comments',
+            'published' => true,
+        ]);
     }
 }
