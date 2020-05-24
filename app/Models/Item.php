@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
-use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {

@@ -6,6 +6,9 @@ use App\User;
 use Backpack\Base\app\Models\Traits\InheritsRelationsFromParentModel;
 use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
 
+/**
+ * @mixin \Eloquent
+ */
 class BackpackUser extends User
 {
     use InheritsRelationsFromParentModel;

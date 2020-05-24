@@ -5,7 +5,6 @@ namespace App\Models;
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Carbon\Traits\Date;
-use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {

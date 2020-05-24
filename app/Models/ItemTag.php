@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
-use Illuminate\Database\Eloquent\Model;
 
 class ItemTag extends Model
 {
@@ -39,12 +38,13 @@ class ItemTag extends Model
     */
 
     /** Establish belongsToMany relationship with Item.
-     * Specify table and value to relieve ambiguity
-    */
+     * Specify table and value to relieve ambiguity.
+     */
     public function items()
     {
         return $this->belongsToMany(Item::class, 'item_tags_pivot_table', 'item_tag_id')->withTimestamps();
     }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

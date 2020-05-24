@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
-use Illuminate\Database\Eloquent\Model;
 
 class LocalGroup extends Model
 {
