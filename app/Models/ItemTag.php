@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use App\Models\Item;
 use Backpack\CRUD\CrudTrait;
-use Illuminate\Database\Eloquent\Model;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 
 class ItemTag extends Model
 {
     use CrudTrait;
+    use HasTranslations;
 
     /*
     |--------------------------------------------------------------------------
@@ -23,6 +23,7 @@ class ItemTag extends Model
     protected $fillable = ['name'];
     // protected $hidden = [];
     // protected $dates = [];
+    protected $translatable = ['name'];
 
     /*
     |--------------------------------------------------------------------------
@@ -37,12 +38,13 @@ class ItemTag extends Model
     */
 
     /** Establish belongsToMany relationship with Item.
-     * Specify table and value to relieve ambiguity
-    */
+     * Specify table and value to relieve ambiguity.
+     */
     public function items()
     {
         return $this->belongsToMany(Item::class, 'item_tags_pivot_table', 'item_tag_id')->withTimestamps();
     }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

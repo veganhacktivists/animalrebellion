@@ -355,7 +355,7 @@ class EventCrudController extends CrudController
                 'Uganda' => 'Uganda',
                 'United Kingdom' => 'United Kingdom',
                 'Ukraine' => 'Ukraine',
-                'United Arab Erimates' => 'United Arab Emirates',
+                'United Arab Emirates' => 'United Arab Emirates',
                 'United States of America' => 'United States of America',
                 'Uraguay' => 'Uruguay',
                 'Uzbekistan' => 'Uzbekistan',
@@ -374,6 +374,18 @@ class EventCrudController extends CrudController
             ],
             'default' => 'United Kingdom',
         ]);
+
+        $this->crud->addField([
+            'name' => 'lat',
+            'type' => 'number',
+            'label' => 'Latitude',
+        ], 'update');
+
+        $this->crud->addField([
+            'name' => 'lng',
+            'type' => 'number',
+            'label' => 'Longitude',
+        ], 'update');
 
         $this->crud->addField([
             'name' => 'type',
@@ -450,6 +462,15 @@ class EventCrudController extends CrudController
         if (!$this->user->hasPermissionTo(BackpackUser::PERMISSION_EVENTS_DELETE)) {
             $this->crud->denyAccess('delete');
         }
+    }
+
+    public function show($id)
+    {
+        $content = parent::show($id);
+        $this->crud->removeColumn('lat');
+        $this->crud->removeColumn('lng');
+
+        return $content;
     }
 
     public function store(StoreRequest $request)

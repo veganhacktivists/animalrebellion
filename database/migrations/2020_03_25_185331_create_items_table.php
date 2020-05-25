@@ -15,10 +15,10 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
+            $table->json('title');
             $table->string('url');
             $table->unsignedBigInteger('item_type_id')->default(1);
-            $table->text('blurb')->nullable();
+            $table->json('blurb')->nullable();
             $table->date('publication_date')->nullable();
             $table->string('source')->nullable();
             $table->string('primary_author')->nullable();

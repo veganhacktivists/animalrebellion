@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddShortDescriptionToEventsTable extends Migration
+class AddCoordinatesToEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddShortDescriptionToEventsTable extends Migration
     public function up()
     {
         Schema::table('events', function (Blueprint $table) {
-            $table->json('short_description');
-            $table->renameColumn('description', 'full_description');
+            $table->decimal('lat', 10, 8)->nullable();
+            $table->decimal('lng', 11, 8)->nullable();
         });
     }
 
@@ -27,8 +27,8 @@ class AddShortDescriptionToEventsTable extends Migration
     public function down()
     {
         Schema::table('events', function (Blueprint $table) {
-            $table->dropColumn('short_description');
-            $table->renameColumn('full_description', 'short_description');
+            $table->dropColumn('lat');
+            $table->dropColumn('lng');
         });
     }
 }

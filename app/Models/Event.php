@@ -3,12 +3,13 @@
 namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Carbon\Traits\Date;
-use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
     use CrudTrait;
+    use HasTranslations;
 
     /*
     |--------------------------------------------------------------------------
@@ -20,9 +21,10 @@ class Event extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['name', 'start_date', 'end_date', 'start_time', 'end_time', 'address', 'city', 'country', 'type', 'hosted_by', 'short_description', 'full_description', 'image', 'slug'];
+    protected $fillable = ['name', 'start_date', 'end_date', 'start_time', 'end_time', 'address', 'city', 'country', 'type', 'hosted_by', 'short_description', 'full_description', 'image', 'slug', 'lat', 'lng'];
     // protected $hidden = [];
     // protected $dates = [];
+    public $translatable = ['name', 'short_description', 'full_description'];
 
     public function setDatetimeAttribute($value)
     {
@@ -50,6 +52,7 @@ class Event extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+
     /**
      * Get the route key for the model.
      *
