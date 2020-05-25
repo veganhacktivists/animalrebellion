@@ -15,6 +15,13 @@
   </li>
 @endcan
 
+<li>
+  <a href='{{ backpack_url('blogpost') }}'>
+    <i class='fa fa-newspaper'></i>
+    <span>Blog Posts</span>
+  </a>
+</li>
+
 @can(\App\Models\BackpackUser::PERMISSION_EVENTS_ADMIN_VIEW)
   <li>
       <a href="{{ backpack_url('event') }}">
@@ -23,6 +30,7 @@
       </a>
   </li>
 @endcan
+
 
 @role(\App\Models\BackpackUser::ROLE_ADMIN)
 
