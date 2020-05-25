@@ -4,6 +4,32 @@
     border: 1px solid black;
   }
 
-  .ol-attribution {
+.ol-attribution {
     font-size: 0.7em;
-  }
+}
+
+.social-icons {
+    font-size: 1.5rem;
+}
+
+.social-icons i{
+    color: $white;
+}
+
+.social-icons i:hover {
+    color: $green;
+}
+
+.popover-body {
+    font-family: $font-family-primary;
+    font-size: $font-size-base * 1.2;
+    color: $white;
+    background-color: $black;
+    border: none;
+    padding: 3;
+    margin: 3;
+}
+
+.bs-popover-top > .arrow::after, .bs-popover-auto[x-placement^=top] > .arrow::after {
+    border-top-color: $black;
+}
