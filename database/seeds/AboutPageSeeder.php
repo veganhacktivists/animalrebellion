@@ -89,30 +89,30 @@ class AboutPageSeeder extends Seeder
             'title' => 'Demands',
             'header' => 'Our Demands',
             'content' => '<h4>Animal Rebellion shares Extinction Rebellion’s Three Demands.<br>'.
-                'To each we add our own: transition to a just and sustainable plant-based food system.</h4><br><br>'.
-                '<strong>1. TELL THE TRUTH</strong> <br>'.
+                'To each we add our own: transition to a just and sustainable plant-based food system.</h4><br><br><br>'.
+                '<strong>1. TELL THE TRUTH</strong> <br><br>'.
                 '<i>Government must tell the truth by declaring a climate and ecological emergency, working with '.
-                'other institutions to communicate the urgency for change.</i><br>'.
+                'other institutions to communicate the urgency for change.</i><br><br>'.
                 'To tell the truth about the climate and ecological emergency (CEE) government, '.
                 'media, and all other institutions must tell the truth about animal agriculture. '.
                 'The CEE cannot be addressed effectively without acknowledging the devastating '.
                 'impacts of animal agriculture on the planet. These include, but are not limited to, '.
                 'deforestation, ocean dead-zones, biodiversity loss and air pollution. '.
-                'Without mentioning a plant-based food system, the true solution will always be silenced.<br><br>'.
-                '<strong>2. ACT NOW</strong><br>'.
-                '<i>Government must act now to halt biodiversity loss and reduce greenhouse gas emissions to net zero by 2025.</i><br>'.
+                'Without mentioning a plant-based food system, the true solution will always be silenced.<br><br><br>'.
+                '<strong>2. ACT NOW</strong><br><br>'.
+                '<i>Government must act now to halt biodiversity loss and reduce greenhouse gas emissions to net zero by 2025.</i><br><br>'.
                 'We are all hurtling towards climate catastrophe, social collapse, mass starvation, and the death of billions of beings.'.
                 ' To halt this devastation, the government must reduce greenhouse gas (GHG) emissions to net zero by 2025. '.
-                'This cannot be done without transition to a just and sustainable plant-based food system.<br><br>'.
+                'This cannot be done without transition to a just and sustainable plant-based food system.<br><br><br>'.
                 '<strong>3. BEYOND POLITICS</strong><br><br>'.
-                '<i>Government must create and be led by the decisions of a Citizens’ Assembly on climate and ecological justice.</i><br>'.
+                '<i>Government must create and be led by the decisions of a Citizens’ Assembly on climate and ecological justice.</i><br><br>'.
                 'This is an emergency. The issues are huge and complex, and the solutions needed are urgent. '.
                 'Political power in the UK lies in the hands of a few elected politicians. Over the last 40 years, '.
                 'this system has proved incapable of making the long-term decisions needed to '.
-                'deal with the climate and ecological emergency.<br>'.
+                'deal with the climate and ecological emergency.<br><br>'.
                 'The political timescale is short-term: intimately linked to electoral, rather than environmental, change. '.
                 'Politicians are also lobbied by huge corporate interests to protect certain industries, '.
-                'including the animal farming and fishing industries.<br>'.
+                'including the animal farming and fishing industries.<br><br>'.
                 'It is therefore crucial that a citizens’ assembly is presented with the facts about animal '.
                 'agriculture and the plant-based food alternatives. Members of the assembly need to make '.
                 'educated and unbiased choices. People must have the power to make informed legislative change.',
@@ -125,22 +125,22 @@ class AboutPageSeeder extends Seeder
             'title' => 'Strategy',
             'header' => 'Our Strategy',
             'content' => 'Animal Rebellion engages in mass nonviolent civil disobedience '.
-                'to demand transition to a just and sustainable plant-based food system.<br>'.
+                'to demand transition to a just and sustainable plant-based food system.<br><br>'.
                 'We ask everyone to draw courage from the movement and collaborate to achieve change. '.
                 'Whilst our strategy does focus on acts of rebellion, physical rebellion is not a'.
-                'requirement. We encourage various actions provided they are peaceful and contribute towards our aim.<br>'.
+                'requirement. We encourage various actions provided they are peaceful and contribute towards our aim.<br><br>'.
                 'Nonviolent civil disobedience is a fundamental part of Animal Rebellion’s strategy. '.
                 'We promote civil disobedience and rebellion because the situation is urgent and such action '.
                 'is necessary. Those of us who can rebel on the streets will do so. Those of us who can’t will '.
-                'find other ways of resisting. All of us will work together.<br>'.
+                'find other ways of resisting. All of us will work together.<br><br>'.
                 'Animal Rebellion focuses our strategy on political and systemic change, not personal change. '.
                 'You do not need to be vegan, or even vegetarian, to join the movement. If you believe '.
                 'in a just and sustainable plant-based food system, then you are already '.
-                'part of the solution. Belief is half the battle.<br>'.
+                'part of the solution. Belief is half the battle.<br><br>'.
                 'Whilst we commend organisations encouraging individual lifestyle changes, our role '.
                 'lies in demanding broader system change from the UK government. We do not concentrate '.
                 'on traditional systems of campaigning such as petitions or writing to our MPs. '.
-                'Again, we honour the work that is already being done and we do not attempt to replace or erase that.<br>'.
+                'Again, we honour the work that is already being done and we do not attempt to replace or erase that.<br><br>'.
                 'Instead, we promote mass civil disobedience in full public view. This can mean '.
                 'creating economic disruption to shake the political system and civil '.
                 'disruption to raise awareness. We are deeply sorry for any inconvenience '.
@@ -155,18 +155,18 @@ class AboutPageSeeder extends Seeder
             'title' => 'Structure',
             'header' => 'Our Structure',
             'content' => 'Animal Rebellion works to build a movement that is inclusive, non-hierarchical,'.
-                ' and free of coercive power dynamics.<br>'.
+                ' and free of coercive power dynamics.<br><br>'.
                 'We empower individuals to harness their creativity and initiative, whilst also balancing the need for group consent.<br>'.
                 'To achieve this, we organise in decentralised and autonomous teams. Within these teams, '.
                 'individuals have the authority to react to ever-changing situations whilst also '.
-                'harnessing the collective intelligence of the group.<br>'.
+                'harnessing the collective intelligence of the group.<br><br>'.
                 'This strategy is part of a Self-Organising System outlined in our Constitution. The system '.
                 'is founded on the principle of distributed authority where decisions are decentralised '.
-                'to individuals in roles with clear mandates for those decisions.<br>'.
+                'to individuals in roles with clear mandates for those decisions.<br><br>'.
                 'When someone occupies a role, they have the authority to act and make decisions; '.
-                'they are also accountable for ensuring these actions match their mandate.<br>'.
-                'The constitution exists so that power is removed from people and placed into processes.<br>'.
-                'This ensures that everyone abides by the same rules and no individual has power over another.<br>'.
+                'they are also accountable for ensuring these actions match their mandate.<br><br>'.
+                'The constitution exists so that power is removed from people and placed into processes.<br><br>'.
+                'This ensures that everyone abides by the same rules and no individual has power over another.<br><br>'.
                 'To witness the structure in action, visit our <a href="/local-groups">Interactive Map</a> of all UK-level teams (GlassFrog).<br>',
             'slug' => 'structure',
             'thumbnail' => 'fas fa-comments',
