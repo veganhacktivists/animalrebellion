@@ -25,6 +25,7 @@ class BlogPost extends Page
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
+    public $translatable = ['title', 'header', 'content'];
 
     /*
     |--------------------------------------------------------------------------
