@@ -73,7 +73,7 @@ class BlogPost extends Page
     {
         $attribute_name = 'thumbnail';
         $disk = 'public';
-        $destination_path = 'images/about_pages/'.$this->slug;
+        $destination_path = 'images/blog_posts/'.$this->slug;
 
         // if a base64 was sent, store it in the db
         if (starts_with($value, 'data:image')) {
