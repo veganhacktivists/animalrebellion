@@ -39,7 +39,7 @@ class ResourcesPageTest extends TestCase
      *
      * @return void
      */
-    public function testUsersCanSeeAllResources()
+    public function testUsersCanSeeResourceDetails()
     {
         // Items are dependent on ItemTypes existing because of foreign key constraint
         $this->seed(ItemTypesTableSeeder::class);
@@ -52,5 +52,6 @@ class ResourcesPageTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee($item->title);
         $response->assertSee($item->blurb);
+        $response->assertSee($item->item_type->name);
     }
 }
