@@ -21,8 +21,8 @@ class BlogPost extends Page
     // protected $table = 'blog_posts';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
-    protected $fillable = [];
+    protected $guarded = ['id'];
+    // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -49,6 +49,10 @@ class BlogPost extends Page
     | ACCESORS
     |--------------------------------------------------------------------------
     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     /*
     |--------------------------------------------------------------------------
