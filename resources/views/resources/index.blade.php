@@ -20,6 +20,13 @@
       </ul>
     </div>
   </div>
+
+  <div class="row">
+    <div class="pagination-links mx-auto">
+      {{ $items->links() }}
+    </div>
+  </div>
+
 </div>
 
 @endsection
