@@ -10,10 +10,10 @@
   </div>
 
   <div class="row">
-    <div class="col-12">
+    <div class="card-columns">
       <ul>
         @foreach($items as $item)
-        <li>{{ $item->title }}</li>
+          @include('components._resource_card', ['item' => $item])
         @endforeach
       </ul>
     </div>

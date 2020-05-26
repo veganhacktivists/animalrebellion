@@ -3,10 +3,8 @@
 namespace Tests\Feature;
 
 use App\Models\Item;
-use App\Models\ItemType;
-use ItemTypesTableSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use ItemTypesTableSeeder;
 use Tests\TestCase;
 
 class ResourcesPageTest extends TestCase
@@ -14,7 +12,7 @@ class ResourcesPageTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * Test existence of Resources Page
+     * Test existence of Resources Page.
      *
      * @return void
      */
@@ -25,7 +23,7 @@ class ResourcesPageTest extends TestCase
     }
 
     /**
-     * Test existence of Resources index page content
+     * Test existence of Resources index page content.
      *
      * @return void
      */
@@ -33,11 +31,11 @@ class ResourcesPageTest extends TestCase
     {
         $response = $this->get('/resources');
         $response->assertStatus(200);
-        $response->assertSee("Resources");
+        $response->assertSee('Resources');
     }
 
     /**
-     * Test for Resources data to be present on page
+     * Test for Resources data to be present on page.
      *
      * @return void
      */
@@ -53,5 +51,6 @@ class ResourcesPageTest extends TestCase
         $response = $this->get('/resources');
         $response->assertStatus(200);
         $response->assertSee($item->title);
+        $response->assertSee($item->blurb);
     }
 }
