@@ -35,6 +35,10 @@ Route::resource('about', 'AboutPageController')->parameters([
    'about' => 'about_page',
 ])->only('show');
 
+Route::resource('blog', 'BlogPostController')->parameters([
+    'blog' => 'blog_post',
+])->only('show');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     CRUD::resource('elfinder', 'Admin\ElfinderController');
 });
