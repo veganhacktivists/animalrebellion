@@ -43,7 +43,7 @@ Route::resource('join', 'JoinPageController')->parameters([
     'join' => 'join_page',
 ])->only('show');
 
-Route::resource('/join-responses', 'JoinResponseController')->only('post');
+Route::post('/join-responses', 'JoinResponseController@store')->name('join-response');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     CRUD::resource('elfinder', 'Admin\ElfinderController');
