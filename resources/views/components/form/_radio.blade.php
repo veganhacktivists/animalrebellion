@@ -1,6 +1,6 @@
 <div>
   <div>
-    {{ $formInput->name }}
+    {{ $formInput->name }} @if ($formInput->required) * @endif
   </div>
 
   <div class="form-check">
