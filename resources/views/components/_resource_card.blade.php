@@ -40,6 +40,7 @@
   </div>
 
   <div class="card-footer text-muted">
+<<<<<<< HEAD
     <div class="resource-type">
       <p><b>Type:</b> <span class="badge badge-dark type-badges">{{ $item->item_type->name }}</span></p>
     </div>
@@ -55,4 +56,13 @@
     </div>
   </div>
 
+=======
+    <span class="badge badge-dark type-badges">{{ $item->item_type->name }}</span>
+    @if(count($item->tags) > 0)
+    @foreach($item->tags as $tag)
+    <span class="badge badge-pill badge-dark tag-badges">{{ $tag->name }}</span>
+    @endforeach
+    @endif
+  </div>
+>>>>>>> 9d230631cc477f9835533cf104070c2a892ca403
 </div>
