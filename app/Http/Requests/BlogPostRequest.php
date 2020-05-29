@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
 class BlogPostRequest extends FormRequest
@@ -38,7 +37,6 @@ class BlogPostRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
         ];
     }
 
@@ -50,7 +48,6 @@ class BlogPostRequest extends FormRequest
     public function messages()
     {
         return [
-            //
         ];
     }
 }
