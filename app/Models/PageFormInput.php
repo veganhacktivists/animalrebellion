@@ -10,6 +10,12 @@ class PageFormInput extends Model
     use CrudTrait;
     use HasTranslations;
 
+    const TYPE_TEXT = 'text';
+    const TYPE_EMAIL = 'email';
+    const TYPE_PHONE = 'phone';
+    const TYPE_CHECKBOX = 'checkbox';
+    const TYPE_RADIO_BUTTON = 'radio';
+
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES

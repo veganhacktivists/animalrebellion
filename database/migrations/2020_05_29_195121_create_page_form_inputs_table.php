@@ -17,7 +17,7 @@ class CreatePageFormInputsTable extends Migration
             $table->bigIncrements('id');
 
             $table->json('name');
-            $table->string('type');
+            $table->string('type')->unique();
 
             $table->timestamps();
         });
