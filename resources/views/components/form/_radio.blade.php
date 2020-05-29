@@ -1,1 +1,18 @@
-{{ $formInput->name }} of type radio is required? {{ $formInput->required }}
+<div>
+  <div>
+    {{ $formInput->name }}
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="{{ $formInput->formName }}" id="exampleRadios1" value="yes">
+    <label class="form-check-label" for="{{ $formInput->formName }}">
+      Yes
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="{{ $formInput->formName }}" id="exampleRadios2" value="no">
+    <label class="form-check-label" for="{{ $formInput->formName }}">
+      No
+    </label>
+  </div>
+</div>

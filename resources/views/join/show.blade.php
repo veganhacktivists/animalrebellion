@@ -20,7 +20,14 @@
         @include('components.form._'.$formInput->type, ['formInput' => $formInput])
       @endforeach
 
-      <button></button>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="gdpr" value="" id="gdpr">
+        <label class="form-check-label" for="gdpr">
+          GDPR PERMISSION: BY CLICKING "I AGREE" WITHIN THE CHECKBOX BELOW YOU ARE AGREEING TO THE TERMS AND CONDITIONS SET OUT IN OUR PRIVACY POLICY: HTTPS://TINYURL.COM/Y6FQ85K9
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add Your Name</button>
     </form>
     @endif
   </div>

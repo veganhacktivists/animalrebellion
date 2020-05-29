@@ -65,6 +65,18 @@ class PageFormInput extends Model
     | ACCESORS
     |--------------------------------------------------------------------------
     */
+    public function getFormNameAttribute()
+    {
+        $exploded = explode(' ', $this->name);
+
+        return $filtered = collect($exploded)->filter(function ($str) {
+            return $str !== '';
+        })->map(function ($str) {
+            $str = preg_replace('/&#?[a-z0-9]+;/i', '', $str);
+
+            return str_slug($str);
+        })->join('_');
+    }
 
     /*
     |--------------------------------------------------------------------------
