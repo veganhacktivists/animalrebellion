@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\PageFormInputRequest as StoreRequest;
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\PageFormInputRequest as UpdateRequest;
+use App\Models\PageFormInput;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\CrudPanel;
 
@@ -32,8 +33,37 @@ class PageFormInputCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+        $this->crud->addColumn('name');
+        $this->crud->addColumn('type');
+        $this->crud->addColumn(['name' => 'required', 'label' => 'Required', 'type' => 'boolean']);
+
+        $this->crud->addField([
+            'name' => 'name',
+            'type' => 'text',
+            'label' => 'Field name',
+            'attributes' => [
+                'placeholder' => 'Form field name',
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'type',
+            'type' => 'select2_from_array',
+            'label' => 'Field type',
+            'options' => [
+                PageFormInput::TYPE_TEXT => PageFormInput::TYPE_TEXT,
+                PageFormInput::TYPE_EMAIL => PageFormInput::TYPE_EMAIL,
+                PageFormInput::TYPE_PHONE => PageFormInput::TYPE_PHONE,
+                PageFormInput::TYPE_CHECKBOX => PageFormInput::TYPE_CHECKBOX,
+                PageFormInput::TYPE_RADIO_BUTTON => PageFormInput::TYPE_RADIO_BUTTON,
+            ],
+        ]);
+
+        $this->crud->addField([
+            'name' => 'required',
+            'type' => 'checkbox',
+            'label' => 'Is this field required in forms that use it?',
+        ]);
 
         // add asterisk for fields that are required in PageFormInputRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');

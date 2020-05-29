@@ -17,7 +17,7 @@ class JoinPage extends Page
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'join_pages';
+    // protected $table = 'join_pages';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];

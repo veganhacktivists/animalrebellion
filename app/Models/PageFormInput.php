@@ -26,10 +26,13 @@ class PageFormInput extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'type', 'required'];
     // protected $hidden = [];
     // protected $dates = [];
     protected $translatable = ['name'];
+    protected $casts = [
+        'required' => 'boolean',
+    ];
 
     /*
     |--------------------------------------------------------------------------
