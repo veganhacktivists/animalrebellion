@@ -1,8 +1,14 @@
 <div>
 
   <div class="row mb-5">
-    <div class="col-8 mx-auto">
-      <input type="text" wire:model="searchTerm" />
+    <div class="col-6 mx-auto">
+      <form>
+        <div class="form-group">
+          <label for="resource-search-bar">Search Resources</label>
+          <input id="resource-search-bar" class="form-control" type="text" wire:model.debounce.200ms="searchTerm" />
+          <small id="search-help" class="form-text text-muted">Search for resources by title, description, type, or tag.</small>
+        </div>
+      </form>
     </div>
   </div>
 
