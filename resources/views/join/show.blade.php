@@ -22,7 +22,7 @@
 
       <div>
         <hr>
-        GDPR PERMISSION: BY CLICKING "I AGREE" WITHIN THE CHECKBOX BELOW YOU ARE AGREEING TO THE TERMS AND CONDITIONS SET OUT IN OUR PRIVACY POLICY: HTTPS://TINYURL.COM/Y6FQ85K9
+        GDPR PERMISSION: BY CLICKING "I AGREE" WITHIN THE CHECKBOX BELOW YOU ARE AGREEING TO THE TERMS AND CONDITIONS SET OUT IN OUR <a href="/privacy" target="_blank">PRIVACY POLICY</a>
 
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="gdpr" value="" id="gdpr">
