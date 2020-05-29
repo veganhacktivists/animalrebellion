@@ -4,26 +4,27 @@ namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
+use Parental\HasParent;
 
-class PageFormInput extends Model
+class JoinPage extends Page
 {
     use CrudTrait;
+    use HasParent;
     use HasTranslations;
-
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'page_form_inputs';
+    protected $table = 'join_pages';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['name'];
+    protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
-    protected $translatable = ['name'];
+    public $translatable = ['title', 'header', 'content'];
 
     /*
     |--------------------------------------------------------------------------
@@ -36,12 +37,12 @@ class PageFormInput extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function pages()
+    public function formInputs()
     {
         return $this->belongsToMany(
-            JoinPage::class,
+            PageFormInput::class,
             'page_form_input_pivot_table',
-            'page_form_input_id'
+            'page_id'
         )->withTimestamps();
     }
 

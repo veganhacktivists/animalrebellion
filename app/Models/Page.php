@@ -19,5 +19,6 @@ class Page extends Model
     protected $childTypes = [
         'about_page' => AboutPage::class,
         'blog_post' => BlogPost::class,
+        'join_page' => JoinPage::class,
     ];
 }
