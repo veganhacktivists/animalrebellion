@@ -11,13 +11,17 @@
     <p>{!!  nl2br($joinPage->content) !!}</p>
 
     @if($joinPage->formInputs->count() > 0)
-    <div class="row justify-content-around">
+    <form action="/join-responses" method="POST">
+      @csrf
+
+      <input type="hidden" name="page_id" value="{{ $joinPage->id }}">
 
       @foreach($joinPage->formInputs as $formInput)
-        @include('components.form._'.$formInputs->type, ['formInput' => $formInput])
+        @include('components.form._'.$formInput->type, ['formInput' => $formInput])
       @endforeach
 
-    </div>
+      <button></button>
+    </form>
     @endif
   </div>
 @endsection

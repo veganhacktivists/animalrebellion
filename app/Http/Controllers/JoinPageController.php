@@ -10,6 +10,6 @@ class JoinPageController extends Controller
     {
         abort_unless($joinPage->published, 404);
 
-        return view('join.show', compact('$joinPage'));
+        return view('join.show', compact('joinPage'));
     }
 }
