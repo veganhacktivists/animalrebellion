@@ -27,5 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ItemTypesTableSeeder::class);
         $this->call(ItemsTableSeeder::class);
         $this->call(ItemTagsTableSeeder::class);
+
+        $this->call(PressContactSeeder::class);
     }
 }
