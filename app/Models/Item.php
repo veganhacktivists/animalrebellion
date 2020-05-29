@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Item extends Model
@@ -39,7 +40,7 @@ class Item extends Model
     */
 
     /** Establish belongsTo relationship with ItemType */
-    public function item_type()
+    public function item_type(): BelongsTo
     {
         return $this->belongsTo(ItemType::class);
     }
