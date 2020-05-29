@@ -18,6 +18,6 @@ Route::group([
     CRUD::resource('item_type', 'ItemTypeCrudController');
     CRUD::resource('item_tag', 'ItemTagCrudController');
     CRUD::resource('blogpost', 'BlogPostCrudController');
-    CRUD::resource('PageFormInput', 'PageFormInputCrudController');
-    CRUD::resource('JoinPage', 'JoinPageCrudController');
+    CRUD::resource('page_form_input', 'PageFormInputCrudController');
+    CRUD::resource('join_page', 'JoinPageCrudController');
 }); // this should be the absolute last line of this file
