@@ -39,6 +39,10 @@ Route::resource('blog', 'BlogPostController')->parameters([
     'blog' => 'blog_post',
 ])->only('show');
 
+Route::resource('join', 'JoinPageController')->parameters([
+    'join' => 'join_page',
+])->only('show');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     CRUD::resource('elfinder', 'Admin\ElfinderController');
 });
