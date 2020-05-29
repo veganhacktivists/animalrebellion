@@ -1,4 +1,5 @@
 <div>
+  <hr>
   <div>
     {{ $formInput->name }} @if ($formInput->required) * @endif
   </div>
