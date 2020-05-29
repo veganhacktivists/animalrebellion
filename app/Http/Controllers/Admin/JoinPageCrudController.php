@@ -80,6 +80,19 @@ class JoinPageCrudController extends CrudController
             'label' => 'Make this post visible to the public?',
         ]);
 
+        $this->crud->addField(
+            [       // Select2Multiple = n-n relationship (with pivot table)
+                'label' => 'What data can users input?',
+                'type' => 'select2_multiple',
+                'name' => 'formInputs', // the method that defines the relationship in your Model
+                'entity' => 'formInputs', // the method that defines the relationship in your Model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'model' => "App\Models\PageFormInput", // foreign key model
+                'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+                'select_all' => true, // show Select All and Clear buttons?
+            ],
+        );
+
         // add asterisk for fields that are required in JoinPageRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
