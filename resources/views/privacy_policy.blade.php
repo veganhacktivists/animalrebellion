@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1>Privacy Policy for Vegan Hacktivists</h1>
+        <h1>Privacy Policy for Animal Rebellion</h1>
 
         <p>At {{ config('app.name') }}, accessible from <a href="{{ config('app.url') }}">{{ config('app.url') }}</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by {{ config('app.url') }} and how we use it.</p>
 
@@ -15,15 +15,15 @@
         <h2>General Data Protection Regulation (GDPR)</h2>
         <p>We are a Data Controller of your information.</p>
 
-        <p>Vegan Hacktivists legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information:</p>
+        <p>Animal Rebellion's legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information:</p>
         <ul>
-          <li>Vegan Hacktivists needs to perform a contract with you</li>
-          <li>You have given Vegan Hacktivists permission to do so</li>
-          <li>Processing your personal information is in Vegan Hacktivists legitimate interests</li>
-          <li>Vegan Hacktivists needs to comply with the law</li>
+          <li>Animal Rebellion needs to perform a contract with you</li>
+          <li>You have given Animal Rebellion permission to do so</li>
+          <li>Processing your personal information is in Animal Rebellion's legitimate interests</li>
+          <li>Animal Rebellion needs to comply with the law</li>
         </ul>
 
-        <p>Vegan Hacktivists will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies. Our Privacy Policy was generated with the help of <a href="https://www.gdprprivacynotice.com/">GDPR Privacy Policy Generator</a>.</p>
+        <p>Animal Rebellion will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies. Our Privacy Policy was generated with the help of <a href="https://www.gdprprivacynotice.com/">GDPR Privacy Policy Generator</a>.</p>
 
         <p>If you are a resident of the European Economic Area (EEA), you have certain data protection rights. If you wish to be informed what Personal Information we hold about you and if you want it to be removed from our systems, please contact us.</p>
         <p>In certain circumstances, you have the following data protection rights:</p>

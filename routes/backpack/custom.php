@@ -19,6 +19,9 @@ Route::group([
     CRUD::resource('item_type', 'ItemTypeCrudController');
     CRUD::resource('item_tag', 'ItemTagCrudController');
     CRUD::resource('blogpost', 'BlogPostCrudController');
+    CRUD::resource('pageforminput', 'PageFormInputCrudController');
+    CRUD::resource('joinpage', 'JoinPageCrudController');
+    CRUD::resource('joinresponse', 'JoinResponseCrudController');
     CRUD::resource('presscontact', 'PressContactCrudController');
     CRUD::resource('teamcontact', 'TeamContactCrudController');
     CRUD::resource('faq', 'FaqCrudController');

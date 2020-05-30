@@ -44,6 +44,36 @@
 <li class="treeview">
   <a href="#">
     <i class="fa fa-folder-open"></i>
+    <span>"Join Us" Pages</span>
+    <i class="fa fa-angle-left pull-right"></i>
+  </a>
+  <ul class="treeview-menu">
+    <li>
+      <a href='{{ backpack_url('joinpage') }}'>
+        <i class='fa fa-sticky-note'></i>
+        <span>"Join Us" Pages</span>
+      </a>
+    </li>
+
+    <li>
+      <a href='{{ backpack_url('pageforminput') }}'>
+        <i class='fa fa-list-ul'></i>
+        <span>Available Form Fields</span>
+      </a>
+    </li>
+
+    <li>
+      <a href='{{ backpack_url('joinresponse') }}'>
+        <i class='fa fa-tag'></i>
+        <span>Responses to "Join Us"</span>
+      </a>
+    </li>
+  </ul>
+</li>
+
+<li class="treeview">
+  <a href="#">
+    <i class="fa fa-folder-open"></i>
     <span>Resource Library</span>
     <i class="fa fa-angle-left pull-right"></i>
   </a>

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\AboutPage;
 use App\Models\Event;
+use App\Models\JoinPage;
 use App\Models\LocalGroup;
 use App\Observers\EventObserver;
 use App\Observers\LocalGroupObserver;
@@ -35,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function ($view) {
             $view->with('aboutPages', AboutPage::where(['published' => true])->get());
+            $view->with('joinPages', JoinPage::where(['published' => true])->get());
         });
 
         Event::observe(EventObserver::class);

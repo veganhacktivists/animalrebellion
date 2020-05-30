@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FaqRequest extends FormRequest
+class JoinPageRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +25,10 @@ class FaqRequest extends FormRequest
     public function rules()
     {
         return [
-            'question' => 'required|max:255',
-            'answer' => 'required|max:255',
+            'title' => 'required|min:2|max:255',
+            'header' => 'required|min:3|max:150',
+            'slug' => 'required|min:1|max:50',
+            'content' => 'required',
         ];
     }
 
