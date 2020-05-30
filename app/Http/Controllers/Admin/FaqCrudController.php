@@ -46,7 +46,7 @@ class FaqCrudController extends CrudController
 
         $this->crud->addField([
             'name' => 'answer',
-            'type' => 'text',
+            'type' => 'summernote',
             'label' => 'Answer',
             'attributes' => [
                 'placeholder' => 'Answer',
