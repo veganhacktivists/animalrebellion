@@ -6,11 +6,15 @@
 
 @section('content')
   <div class="container">
-    <h1 class="h1 mb-4">{{ $blogPost->header }}</h1>
 
-  <h5>{{ $blogPost->header }}</h5>
+    <h5>{{ $blogPost->header }}</h5>
 
-  {!! $blogPost->content !!}
+    <div>
+      <img src="{{ $blogPost->thumbnail_url }}" class="img-fluid" style="max-width: 640px; max-height: 640px;" />
+    </div>
 
-  <img src="{{ $blogPost->thumbnail_url }}" />
+    <div>
+      {!! $blogPost->content !!}
+    </div>
+  </div>
 @endsection
