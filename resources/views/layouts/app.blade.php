@@ -40,6 +40,8 @@
     </div>
 
     <main class="py-4">
+      @include('inc.flash')
+
       @yield('content')
     </main>
 

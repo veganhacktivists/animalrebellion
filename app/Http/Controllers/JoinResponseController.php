@@ -8,12 +8,12 @@ class JoinResponseController extends Controller
 {
     public function store()
     {
-        $joinPage = JoinPage::findOrFail('page_id');
+        $joinPage = JoinPage::findOrFail(request()->page_id);
 
         $jsonResponse = request()->except(['_token', 'page_id']);
 
         $joinPage->addResponse($jsonResponse);
 
-        return back('201');
+        return back('201')->with('success', 'response created successfully');
     }
 }
