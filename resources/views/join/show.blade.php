@@ -30,8 +30,8 @@
             I agree
           </label>
         </div>
-        @error($formInput->formName)
-          <div class="alert alert-danger">This field is required</div>
+        @error('has_gdpr_consent')
+          <div class="invalid-feedback">You must agree to submit a response</div>
         @enderror
       </div>
 
