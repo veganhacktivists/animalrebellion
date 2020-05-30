@@ -48,7 +48,7 @@
 
         {{-- Contact menu item --}}
         <li class="nav-item">
-          {{ link_to_route('contact.form', __('navbar.contact'), null, ['class' => 'nav-link']) }}
+          {{ link_to_route('contact.index', __('navbar.contact'), null, ['class' => 'nav-link']) }}
         </li>
 
         {{-- Donate menu item --}}

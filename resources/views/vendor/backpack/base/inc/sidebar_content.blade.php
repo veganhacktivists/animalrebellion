@@ -101,6 +101,36 @@
   </ul>
 </li>
 
+<li class="treeview">
+  <a href="#">
+    <i class="fa fa-folder-open"></i>
+    <span>Contact Page</span>
+    <i class="fa fa-angle-left pull-right"></i>
+  </a>
+  <ul class="treeview-menu">
+    <li>
+      <a href='{{ backpack_url('presscontact') }}'>
+      <i class="fa fa-address-card"></i>
+        <span>Press Contacts</span>
+      </a>
+    </li>
+
+    <li>
+      <a href='{{ backpack_url('teamcontact') }}'>
+        <i class="fa fa-address-book"></i>
+        <span>Team Contacts</span>
+      </a>
+    </li>
+
+    <li>
+      <a href='{{ backpack_url('faq') }}'>
+        <i class='fa fa-question'></i>
+        <span>FAQs</span>
+      </a>
+    </li>
+  </ul>
+</li>
+
 
 <li class="treeview">
     <a href="#">

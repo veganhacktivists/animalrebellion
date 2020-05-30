@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 // --------------------------
 // Custom Backpack Routes
 // --------------------------
@@ -21,4 +22,7 @@ Route::group([
     CRUD::resource('pageforminput', 'PageFormInputCrudController');
     CRUD::resource('joinpage', 'JoinPageCrudController');
     CRUD::resource('joinresponse', 'JoinResponseCrudController');
+    CRUD::resource('presscontact', 'PressContactCrudController');
+    CRUD::resource('teamcontact', 'TeamContactCrudController');
+    CRUD::resource('faq', 'FaqCrudController');
 }); // this should be the absolute last line of this file
