@@ -25,11 +25,14 @@
         GDPR PERMISSION: BY CLICKING "I AGREE" WITHIN THE CHECKBOX BELOW YOU ARE AGREEING TO THE TERMS AND CONDITIONS SET OUT IN OUR <a href="/privacy" target="_blank">PRIVACY POLICY</a>
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="has_gdpr_consent" value="yes" id="has_gdpr_consent">
+          <input class="form-check-input" type="checkbox" name="has_gdpr_consent" value="yes" id="has_gdpr_consent" required>
           <label class="form-check-label" for="has_gdpr_consent">
             I agree
           </label>
         </div>
+        @error($formInput->formName)
+          <div class="alert alert-danger">This field is required</div>
+        @enderror
       </div>
 
       <button type="submit" class="btn btn-primary">Add Your Name</button>

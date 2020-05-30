@@ -1,8 +1,7 @@
 <div class="form-group">
   <label for="{{ $formInput->formName }}">{{ $formInput->name }} @if ($formInput->required) * @endif</label>
-  <input type="text" class="form-control" name="{{ $formInput->formName }}"
-    @error("{{ $formInput->formName }}")
-      <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-  >
+  @error($formInput->formName)
+    <span class="alert alert-danger">This field is required</span>
+  @enderror
+  <input type="text" class="form-control" name="{{ $formInput->formName }}">
 </div>

@@ -1,4 +1,8 @@
 <div class="form-group">
+  @error($formInput->formName)
+    <div class="alert alert-danger">This field is required</div>
+  @enderror
+
   <label for="{{ $formInput->formName }}">{{ $formInput->name }} @if ($formInput->required) * @endif</label>
   <input type="phone" class="form-control" name="{{ $formInput->formName }}">
 </div>

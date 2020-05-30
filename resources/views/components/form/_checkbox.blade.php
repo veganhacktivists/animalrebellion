@@ -4,4 +4,7 @@
   <label class="form-check-label" for="{{ $formInput->formName }}">
     {{ $formInput->name }} @if ($formInput->required) * @endif
   </label>
+  @error($formInput->formName)
+    <span class="alert alert-danger">This field is required</span>
+  @enderror
 </div>
