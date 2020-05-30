@@ -21,4 +21,5 @@ Route::group([
     CRUD::resource('blogpost', 'BlogPostCrudController');
     CRUD::resource('presscontact', 'PressContactCrudController');
     CRUD::resource('teamcontact', 'TeamContactCrudController');
+    CRUD::resource('faq', 'FaqCrudController');
 }); // this should be the absolute last line of this file

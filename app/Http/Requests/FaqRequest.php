@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class TeamContactRequest extends FormRequest
+class FaqRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +26,8 @@ class TeamContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'team_name' => 'required|max:255',
-            'email' => 'required|email|max:255',
+            'question' => 'required|max:255',
+            'answer' => 'required|max:255',
         ];
     }
 

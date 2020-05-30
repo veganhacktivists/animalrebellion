@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\TeamContactRequest as StoreRequest;
+use App\Http\Requests\FaqRequest as StoreRequest;
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\TeamContactRequest as UpdateRequest;
+use App\Http\Requests\FaqRequest as UpdateRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\CrudPanel;
 
 /**
- * Class TeamContactCrudController.
+ * Class FaqCrudController.
  *
  * @property CrudPanel $crud
  */
-class TeamContactCrudController extends CrudController
+class FaqCrudController extends CrudController
 {
     public function setup()
     {
@@ -22,9 +22,9 @@ class TeamContactCrudController extends CrudController
         | CrudPanel Basic Information
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\TeamContact');
-        $this->crud->setRoute(config('backpack.base.route_prefix').'/teamcontact');
-        $this->crud->setEntityNameStrings('teamcontact', 'team_contacts');
+        $this->crud->setModel('App\Models\Faq');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/faq');
+        $this->crud->setEntityNameStrings('faq', 'faqs');
 
         /*
         |--------------------------------------------------------------------------
@@ -32,28 +32,28 @@ class TeamContactCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->addColumn('team_name');
-        $this->crud->addColumn('email');
+        $this->crud->addColumn('question');
+        $this->crud->addColumn('answer');
 
         $this->crud->addField([
-            'name' => 'team_name',
+            'name' => 'question',
             'type' => 'text',
-            'label' => 'Team Name',
+            'label' => 'Question',
             'attributes' => [
-                'placeholder' => 'Team name',
+                'placeholder' => 'Frequently asked question',
             ],
         ]);
 
         $this->crud->addField([
-            'name' => 'email',
-            'type' => 'email',
-            'label' => 'Email',
+            'name' => 'answer',
+            'type' => 'text',
+            'label' => 'Answer',
             'attributes' => [
-                'placeholder' => 'Team email contact',
+                'placeholder' => 'Answer',
             ],
         ]);
 
-        // add asterisk for fields that are required in TeamContactRequest
+        // add asterisk for fields that are required in FaqRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
     }

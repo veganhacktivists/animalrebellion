@@ -28,7 +28,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ItemsTableSeeder::class);
         $this->call(ItemTagsTableSeeder::class);
 
+        // Contact page CRUDs
         $this->call(PressContactsTableSeeder::class);
         $this->call(TeamContactsTableSeeder::class);
+        $this->call(FaqsTableSeeder::class);
     }
 }

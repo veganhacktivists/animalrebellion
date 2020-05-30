@@ -26,9 +26,9 @@ class PressContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'mobile_number' => 'required',
-            'email' => 'required|email',
+            'name' => 'required|max:255',
+            'mobile_number' => 'required|max:255',
+            'email' => 'required|email|max:255',
         ];
     }
 
