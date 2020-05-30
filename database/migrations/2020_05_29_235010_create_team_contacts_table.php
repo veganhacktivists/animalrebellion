@@ -15,8 +15,8 @@ class CreateTeamContactsTable extends Migration
     {
         Schema::create('team_contacts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('team_name');
-            $table->string('email');
+            $table->string('team_name')->unique();
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }

@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
+use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
 
 class Faq extends Model
 {
     use CrudTrait;
+    use HasTranslations;
 
     /*
     |--------------------------------------------------------------------------
@@ -19,9 +21,10 @@ class Faq extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['question', 'answer'];
+    // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
+    public $translatable = ['question', 'answer'];
 
     /*
     |--------------------------------------------------------------------------
