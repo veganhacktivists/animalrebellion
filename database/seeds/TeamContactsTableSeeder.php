@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\PressContact;
+use App\Models\TeamContact;
 use Illuminate\Database\Seeder;
 
-class PressContactSeeder extends Seeder
+class TeamContactsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class PressContactSeeder extends Seeder
      */
     public function run()
     {
-        factory(PressContact::class, 2)->create();
+        factory(TeamContact::class, 20)->create();
     }
 }

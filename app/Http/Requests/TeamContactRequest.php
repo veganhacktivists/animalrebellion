@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class PressContactRequest extends FormRequest
+class TeamContactRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +26,7 @@ class PressContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'mobile_number' => 'required',
+            'team_name' => 'required|min:5|max:255',
             'email' => 'required|email',
         ];
     }
