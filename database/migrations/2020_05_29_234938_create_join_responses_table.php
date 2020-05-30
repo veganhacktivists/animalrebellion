@@ -19,6 +19,8 @@ class CreateJoinResponsesTable extends Migration
             $table->unsignedBigInteger('page_id');
             $table->json('response');
 
+            $table->boolean('resolved')->default(false);
+
             $table->foreign('page_id')->references('id')->on('pages');
 
             $table->timestamps();

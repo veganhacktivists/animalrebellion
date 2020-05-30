@@ -21,7 +21,10 @@ class JoinResponse extends Model
 //    protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
-    protected $casts = ['response' => 'json'];
+    protected $casts = [
+        'response' => 'json',
+        'resolved' => 'boolean',
+    ];
 
     /*
     |--------------------------------------------------------------------------

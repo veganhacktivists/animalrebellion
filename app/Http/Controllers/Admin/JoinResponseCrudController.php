@@ -48,10 +48,22 @@ class JoinResponseCrudController extends CrudController
             'name' => 'response',
         ]);
 
+        $this->crud->addColumn([
+           'label' => 'Has this visitor been responded to?',
+           'type' => 'boolean',
+           'name' => 'resolved',
+        ]);
+
         $this->crud->addField([
             'label' => 'Response',
             'type' => 'json',
             'name' => 'response',
+        ]);
+
+        $this->crud->addField([
+            'label' => 'Has this visitor been responded to?',
+            'type' => 'checkbox',
+            'name' => 'resolved',
         ]);
 
         // add asterisk for fields that are required in JoinResponseRequest

@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
 class JoinPageRequest extends FormRequest
@@ -26,7 +25,10 @@ class JoinPageRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'title' => 'required|min:2|max:255',
+            'header' => 'required|min:3|max:150',
+            'slug' => 'required|min:1|max:50',
+            'content' => 'required',
         ];
     }
 
@@ -38,7 +40,6 @@ class JoinPageRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
         ];
     }
 
@@ -50,7 +51,6 @@ class JoinPageRequest extends FormRequest
     public function messages()
     {
         return [
-            //
         ];
     }
 }

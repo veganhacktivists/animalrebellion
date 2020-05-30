@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PageFormInputRequest extends FormRequest
@@ -26,7 +25,8 @@ class PageFormInputRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:5|max:100',
+            'type' => 'required',
         ];
     }
 
@@ -38,7 +38,6 @@ class PageFormInputRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
         ];
     }
 
@@ -50,7 +49,6 @@ class PageFormInputRequest extends FormRequest
     public function messages()
     {
         return [
-            //
         ];
     }
 }

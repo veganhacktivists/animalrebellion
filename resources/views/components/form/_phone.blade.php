@@ -4,7 +4,7 @@
   @enderror
 
   <label for="{{ $formInput->formName }}">{{ $formInput->name }} @if ($formInput->required) * @endif</label>
-  <input type="phone" class="form-control" name="{{ $formInput->formName }}"
+  <input type="tel" class="form-control" name="{{ $formInput->formName }}"
      @if($formInput->required) required @endif
   >
 </div>
