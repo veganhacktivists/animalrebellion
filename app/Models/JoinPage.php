@@ -31,6 +31,23 @@ class JoinPage extends Page
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    public function addResponse($rawInput)
+    {
+        $validatedInput = [];
+
+        foreach ($rawInput as $key => $value) {
+            if (array_key_exists($key, $this->formNameToFullNameMap)) {
+                $readableKey = $this->formNameToFullNameMap[$key];
+
+                $validatedInput[$readableKey] = $value;
+            }
+        }
+
+        JoinResponse::create([
+            'page_id' => $this->id,
+            'response' => $validatedInput,
+        ]);
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -65,6 +82,17 @@ class JoinPage extends Page
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function getFormNameToFullNameMapAttribute()
+    {
+        $nameToFullNameMap = [];
+
+        foreach ($this->formInputs as $formInput) {
+            $nameToFullNameMap[$formInput->formName] = $formInput->name;
+        }
+
+        return $nameToFullNameMap;
     }
 
     /*

@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\JoinResponse;
+use App\Models\JoinPage;
 
 class JoinResponseController extends Controller
 {
     public function store()
     {
+        $joinPage = JoinPage::findOrFail('page_id');
+
         $jsonResponse = request()->except(['_token', 'page_id']);
 
-        JoinResponse::create([
-            'page_id' => request()->page_id,
-            'response' => $jsonResponse,
-        ]);
+        $joinPage->addResponse($jsonResponse);
 
         return back('201');
     }

@@ -31,6 +31,7 @@ class JoinResponseCrudController extends CrudController
         | CrudPanel Configuration
         |--------------------------------------------------------------------------
         */
+        $this->crud->removeButton('create');
 
         $this->crud->addColumn([
             'label' => 'Page',
@@ -44,6 +45,12 @@ class JoinResponseCrudController extends CrudController
         $this->crud->addColumn([
            'label' => 'Response',
            'type' => 'json',
+            'name' => 'response',
+        ]);
+
+        $this->crud->addField([
+            'label' => 'Response',
+            'type' => 'json',
             'name' => 'response',
         ]);
 
