@@ -4,5 +4,7 @@
     <div class="alert alert-danger">This field is required</div>
   @enderror
 
-  <input type="email" class="form-control" name="{{ $formInput->formName }}">
+  <input type="email" class="form-control" name="{{ $formInput->formName }}"
+         @if($formInput->required) required @endif
+  >
 </div>

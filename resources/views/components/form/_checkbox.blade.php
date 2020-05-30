@@ -5,6 +5,6 @@
     {{ $formInput->name }} @if ($formInput->required) * @endif
   </label>
   @error($formInput->formName)
-    <span class="alert alert-danger">This field is required</span>
+    <span class="alert alert-danger">You must agree to submit a response</span>
   @enderror
 </div>

@@ -6,7 +6,7 @@
 
   <div>
     @error($formInput->formName)
-      <div class="alert alert-danger">This field is required</div>
+      <div class="alert alert-danger">Please select a response</div>
     @enderror
 
     <div class="form-check">
