@@ -50,6 +50,10 @@ class JoinResponse extends Model
     | ACCESORS
     |--------------------------------------------------------------------------
     */
+    public function getJoinPageNameAttribute()
+    {
+        return $this->joinPage->title;
+    }
 
     /*
     |--------------------------------------------------------------------------

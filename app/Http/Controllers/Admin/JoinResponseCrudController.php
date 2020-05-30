@@ -35,7 +35,7 @@ class JoinResponseCrudController extends CrudController
         $this->crud->addColumn([
             'label' => 'Page',
             'type' => 'text',
-            'name' => 'page_id', // the column that contains the ID of that connected entity
+            'name' => 'joinPageName', // the column that contains the ID of that connected entity
             'entity' => 'joinPage', // the method that defines the relationship in your Model,
             'attribute' => 'title',
             'model' => "App\Models\JoinPage",
