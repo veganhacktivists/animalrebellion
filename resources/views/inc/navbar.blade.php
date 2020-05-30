@@ -50,6 +50,11 @@
         <li class="nav-item">
           {{ link_to_route('contact.form', __('navbar.contact'), null, ['class' => 'nav-link']) }}
         </li>
+
+        {{-- Donate menu item --}}
+        <li class="nav-item ml-2">
+          <a href="{{ route('donate') }}"><button class="btn btn-dark btn-lg">Donate</button></a>
+        </li>
       </ul>
     </div>
   </div>

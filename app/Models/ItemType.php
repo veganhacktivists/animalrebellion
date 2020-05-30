@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ItemType extends Model
 {
@@ -38,7 +39,7 @@ class ItemType extends Model
     */
 
     /** Establish hasMany relationship with Item */
-    public function items()
+    public function items(): HasMany
     {
         return $this->hasMany(Item::class);
     }

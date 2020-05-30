@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +13,7 @@
 |
 */
 
-/** General site visitors should not be able to login to the publicly available site */
+/* General site visitors should not be able to login to the publicly available site */
 //Auth::routes(['verify' => true]);
 
 Route::get('/', 'HomeController@index')->name('home');
@@ -19,6 +21,7 @@ Route::resource('events', 'EventsController')->only(['index', 'show']);
 Route::resource('local-groups', 'LocalGroupsController')->only(['index']);
 Route::resource('resources', 'ResourcesController')->only(['index']);
 Route::view('/privacy', 'privacy_policy')->name('privacy_policy');
+Route::view('/donate', 'donate')->name('donate');
 
 Route::view('/contact', 'contact.form')->name('contact.form');
 Route::post('/contact', 'SendContactEmailController')->name('contact.send');
