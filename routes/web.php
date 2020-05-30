@@ -40,7 +40,7 @@ Route::resource('about', 'AboutPageController')->parameters([
 
 Route::resource('blog', 'BlogPostController')->parameters([
     'blog' => 'blog_post',
-])->only('show');
+])->only('index', 'show');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     CRUD::resource('elfinder', 'Admin\ElfinderController');
