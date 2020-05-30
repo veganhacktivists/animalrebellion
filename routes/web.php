@@ -20,10 +20,11 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::resource('events', 'EventsController')->only(['index', 'show']);
 Route::resource('local-groups', 'LocalGroupsController')->only(['index']);
 Route::resource('resources', 'ResourcesController')->only(['index']);
+Route::resource('contact', 'ContactController')->only(['index']);
 Route::view('/privacy', 'privacy_policy')->name('privacy_policy');
 Route::view('/donate', 'donate')->name('donate');
 
-Route::view('/contact', 'contact.form')->name('contact.form');
+// Route::view('/contact', 'contact.form')->name('contact.form');
 Route::post('/contact', 'SendContactEmailController')->name('contact.send');
 
 /* Commenting this out for now as users can be managed in Backpack
