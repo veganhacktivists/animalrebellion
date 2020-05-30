@@ -20,4 +20,5 @@ Route::group([
     CRUD::resource('blogpost', 'BlogPostCrudController');
     CRUD::resource('pageforminput', 'PageFormInputCrudController');
     CRUD::resource('joinpage', 'JoinPageCrudController');
+    CRUD::resource('joinresponse', 'JoinResponseCrudController');
 }); // this should be the absolute last line of this file

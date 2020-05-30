@@ -61,6 +61,13 @@
         <span>Available Form Fields</span>
       </a>
     </li>
+
+    <li>
+      <a href='{{ backpack_url('joinresponse') }}'>
+        <i class='fa fa-tag'></i>
+        <span>Responses to "Join Us"</span>
+      </a>
+    </li>
   </ul>
 </li>
 

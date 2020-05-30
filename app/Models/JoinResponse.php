@@ -3,28 +3,25 @@
 namespace App\Models;
 
 use Backpack\CRUD\CrudTrait;
-use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
-use Parental\HasParent;
 
-class JoinPage extends Page
+class JoinResponse extends Model
 {
     use CrudTrait;
-    use HasParent;
-    use HasTranslations;
+
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
 
-    // protected $table = 'join_pages';
+    protected $table = 'join_responses';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
-    // protected $guarded = ['id'];
-    protected $fillable = [];
+    protected $guarded = ['id'];
+//    protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
-    public $translatable = ['title', 'header', 'content'];
+    protected $casts = ['response' => 'json'];
 
     /*
     |--------------------------------------------------------------------------
@@ -37,18 +34,9 @@ class JoinPage extends Page
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function formInputs()
+    public function joinPage()
     {
-        return $this->belongsToMany(
-            PageFormInput::class,
-            'page_form_input_pivot_table',
-            'page_id'
-        )->withTimestamps();
-    }
-
-    public function joinResponses()
-    {
-        return $this->hasMany(JoinResponse::class, 'page_id');
+        return $this->belongsTo(JoinPage::class, 'page_id');
     }
 
     /*
@@ -62,10 +50,6 @@ class JoinPage extends Page
     | ACCESORS
     |--------------------------------------------------------------------------
     */
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
 
     /*
     |--------------------------------------------------------------------------
