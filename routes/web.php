@@ -41,7 +41,7 @@ Route::resource('about', 'AboutPageController')->parameters([
 
 Route::resource('blog', 'BlogPostController')->parameters([
     'blog' => 'blog_post',
-])->only('show');
+])->only('index', 'show');
 
 Route::resource('join', 'JoinPageController')->parameters([
     'join' => 'join_page',

@@ -46,6 +46,11 @@
           </div>
         </li>
 
+        {{-- Blog menu item --}}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('blog.index') }}">Blog</a>
+        </li>
+
         {{-- Contact menu item --}}
         <li class="nav-item">
           {{ link_to_route('contact.index', __('navbar.contact'), null, ['class' => 'nav-link']) }}
