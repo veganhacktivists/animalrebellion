@@ -17,12 +17,12 @@
 
         <div class="card-body">
           <div class="flex-fill justify-content-center align-items-center">
-            {{ str_limit($blogPost->content, 500) }} ...
+            {!! str_limit($blogPost->content, 500) !!} ...
 
             <div>
               <a href="{{ route('blog.show', $blogPost) }}" class="btn btn-primary">Read More</a>
             </div>
-          </div>
+          </div>ta
         </div>
       </div>
     @empty
